@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-sea text-cream font-sans antialiased;
+}
+
+::selection {
+  @apply bg-ochre text-sea;
+}
+
+/* Foco de teclado visible en toda la web */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid theme('colors.ochre.DEFAULT');
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Componentes reutilizables ─────────────────────────────── */
+
+.dateline {
+  @apply font-mono text-[.7rem] uppercase tracking-[.08em] text-sage;
+}
+
+.kicker {
+  @apply font-mono text-[.68rem] uppercase tracking-[.06em];
+}
+
+.eyebrow-ochre {
+  @apply kicker text-ochre;
+}
+
+.eyebrow-sage {
+  @apply kicker text-sage;
+}
+
+.btn-ochre {
+  @apply inline-block bg-ochre text-sea font-sans font-semibold text-sm px-5 py-2.5 rounded-sm transition-colors hover:bg-ochre-light;
+}
+
+.btn-sage {
+  @apply inline-block bg-sage text-sea font-sans font-semibold text-sm px-5 py-2.5 rounded-sm transition-colors hover:bg-sage-light;
+}
+
+.btn-outline {
+  @apply inline-block border border-cream/30 text-cream font-sans text-sm px-5 py-2.5 rounded-sm transition-colors hover:border-cream/60;
+}
+
+.wp-dot {
+  @apply w-2 h-2 rounded-full bg-ochre inline-block;
+}
+
+.card-sand {
+  @apply bg-sand text-ink rounded-md;
+}
+
+.route-line {
+  stroke: theme('colors.sage.DEFAULT');
+  stroke-width: 1.2;
+  stroke-dasharray: 4 5;
+  fill: none;
+}

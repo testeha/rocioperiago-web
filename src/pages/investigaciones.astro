@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RouteMap from '../components/RouteMap.astro';
+import { investigaciones } from '../data/contenido';
+
+const totalFinanciado = '€35.100';
+---
+
+<Layout
+  title="Investigaciones"
+  description="Investigaciones periodísticas transfronterizas de Rocío Periago financiadas por Journalismfund Europe: la ruta del carbón Colombia–Alemania y los filtros solares en el Mediterráneo."
+>
+  <section class="relative overflow-hidden">
+    <RouteMap class="absolute top-0 -right-20 w-[480px] h-[380px] opacity-30 hidden md:block" />
+    <div class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-10 relative z-10">
+      <p class="eyebrow-ochre mb-3">Periodismo transfronterizo</p>
+      <h1 class="font-serif text-4xl md:text-5xl mb-4">Investigaciones financiadas</h1>
+      <p class="text-cream/70 max-w-xl mb-8">
+        Proyectos de largo aliento financiados por convocatorias competitivas europeas,
+        con trabajo de campo en varios países y publicación simultánea en medios internacionales.
+      </p>
+      <div class="flex gap-8 flex-wrap font-mono text-xs uppercase tracking-wide text-cream/60">
+        <span><strong class="text-ochre text-sm">{totalFinanciado}</strong> financiados</span>
+        <span><strong class="text-ochre text-sm">2</strong> investigaciones</span>
+        <span><strong class="text-ochre text-sm">5</strong> países cubiertos</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-content mx-auto px-6 md:px-8 pb-24 space-y-8">
+    {investigaciones.map((inv) => (
+      <article class="card-sand rounded-md p-8 md:p-10">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="font-mono text-[.68rem] uppercase tracking-wide bg-sea text-cream px-2.5 py-1 rounded-sm">
+            Ref. {inv.ref}
+          </span>
+          <span class="font-mono text-[.68rem] uppercase tracking-wide text-ink/50">{inv.año}</span>
+        </div>
+
+        <h2 class="font-serif text-2xl md:text-[1.9rem] leading-tight mb-5">{inv.titulo}</h2>
+        <p class="text-ink/75 max-w-2xl mb-7">{inv.resumen}</p>
+
+        <div class="grid sm:grid-cols-3 gap-6 pt-6 border-t border-ink/10">
+          <div>
+            <div class="kicker text-ink/40 mb-1.5">Financiación</div>
+            <div class="text-sm font-medium">{inv.financiacion}</div>
+            <div class="text-sm text-ink/60">{inv.cantidad}</div>
+          </div>
+          <div>
+            <div class="kicker text-ink/40 mb-1.5">Países</div>
+            <div class="text-sm">{inv.paises.join(' → ')}</div>
+          </div>
+          <div>
+            <div class="kicker text-ink/40 mb-1.5">Medios &amp; idiomas</div>
+            <div class="text-sm">{inv.medios}</div>
+            <div class="text-sm text-ink/60">{inv.idiomas}</div>
+          </div>
+        </div>
+      </article>
+    ))}
+  </section>
+</Layout>

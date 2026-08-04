@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { trabajos, temas } from '../data/trabajos';
+
+const temaKeys = Object.keys(temas) as (keyof typeof temas)[];
+---
+
+<Layout
+  title="Trabajos"
+  description="Reportajes, crónicas e investigaciones de Rocío Periago publicados en El País, National Geographic, France 24, Altaïr Magazine y otros medios."
+>
+  <section class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-8">
+    <p class="eyebrow-ochre mb-3">Portfolio</p>
+    <h1 class="font-serif text-4xl md:text-5xl mb-4">Trabajos publicados</h1>
+    <p class="text-cream/70 max-w-xl">
+      Reportajes y crónicas sobre medio ambiente, migración, justicia social y viajes,
+      publicados en medios nacionales e internacionales desde 2012.
+    </p>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="max-w-content mx-auto px-6 md:px-8 pb-6">
+    <div class="flex flex-wrap gap-2" id="filtros">
+      <button data-filter="todos" class="filtro-btn is-active font-mono text-xs uppercase tracking-wide px-3 py-1.5 rounded-full border border-ochre bg-ochre text-sea">
+        Todos
+      </button>
+      {temaKeys.map((key) => (
+        <button
+          data-filter={key}
+          class="filtro-btn font-mono text-xs uppercase tracking-wide px-3 py-1.5 rounded-full border border-cream/25 text-cream/70 hover:border-cream/50"
+        >
+          {temas[key].label}
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <!-- TABLA / LISTA -->
+  <section class="max-w-content mx-auto px-6 md:px-8 pb-24">
+    <div class="border-t border-cream/10" id="lista-trabajos">
+      {trabajos.map((t) => (
+        <a
+          href={t.url}
+          target="_blank"
+          rel="noopener"
+          data-tema={t.tema}
+          class="trabajo-row group flex flex-col md:flex-row md:items-center gap-1.5 md:gap-6 py-5 border-b border-cream/10 hover:bg-sea-2/40 transition-colors px-2 -mx-2"
+        >
+          <span class="font-mono text-[.68rem] uppercase text-sage w-full md:w-40 flex-shrink-0">{t.medio}</span>
+          <span class="font-serif text-lg flex-1 group-hover:text-ochre transition-colors">
+            {t.titulo}
+            {t.destacado && (
+              <span class="ml-2 align-middle text-[.6rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1.5 py-0.5 rounded-sm">{t.destacado}</span>
+            )}
+          </span>
+          <span class="text-xs text-cream/45 flex-shrink-0 w-32">{t.temaLabel}</span>
+          <span class="font-mono text-xs text-cream/40 flex-shrink-0 w-14">{t.año}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filtro-btn');
+  const rows = document.querySelectorAll<HTMLAnchorElement>('.trabajo-row');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => {
+        b.classList.remove('is-active', 'bg-ochre', 'text-sea', 'border-ochre');
+        b.classList.add('border-cream/25', 'text-cream/70');
+      });
+      btn.classList.add('is-active', 'bg-ochre', 'text-sea', 'border-ochre');
+      btn.classList.remove('border-cream/25', 'text-cream/70');
+
+      const filter = btn.dataset.filter;
+      rows.forEach((row) => {
+        const show = filter === 'todos' || row.dataset.tema === filter;
+        row.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>

@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RouteMap from '../components/RouteMap.astro';
+import AwardMedal from '../components/AwardMedal.astro';
+import { premios } from '../data/contenido';
+import { trabajosDestacados } from '../data/trabajos';
+
+const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazine', 'Revista Haz', 'Revista Late', 'Ballena Blanca', 'Mundo Negro'];
+---
+
+<Layout
+  title="Periodista freelance · Comunicación digital"
+  description="Rocío Periago — Periodista freelance especializada en medio ambiente, migración y justicia social. Comunicación digital para ONGs y empresas con valores."
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <RouteMap class="absolute top-0 -right-16 w-[520px] h-[420px] opacity-50 hidden md:block" />
+    <div class="max-w-content mx-auto px-6 md:px-8 pt-20 pb-16 relative z-10">
+      <p class="dateline mb-6">Lorca / Madrid — Periodista · Comunicadora</p>
+      <h1 class="font-serif font-medium text-[3rem] md:text-[4.4rem] leading-[1] tracking-tight mb-6">
+        Rocío<br /><em class="italic text-ochre font-normal">Periago</em>
+      </h1>
+      <p class="max-w-xl text-lg text-cream/80 mb-10">
+        Investigo y cuento historias sobre <strong class="text-cream font-semibold">medio ambiente, migración y justicia social</strong>.
+        También ayudo a organizaciones a comunicar su trabajo con las palabras justas.
+      </p>
+
+      <div class="flex gap-6 md:gap-10 flex-wrap mb-14">
+        <div class="flex items-center gap-2">
+          <span class="wp-dot"></span>
+          <span class="font-mono text-xs uppercase tracking-wide text-cream/70">Colombia → Alemania</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="wp-dot"></span>
+          <span class="font-mono text-xs uppercase tracking-wide text-cream/70">España · Italia · Grecia</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="wp-dot"></span>
+          <span class="font-mono text-xs uppercase tracking-wide text-cream/70">2 rutas financiadas · €35k</span>
+        </div>
+      </div>
+
+      <!-- RECONOCIMIENTOS -->
+      <div class="flex flex-col sm:flex-row gap-8 sm:gap-10 pt-8 border-t border-cream/10 flex-wrap">
+        {premios.map((premio) => <AwardMedal premio={premio} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- BARRA DE PRENSA -->
+  <section class="border-y border-cream/10 bg-sea-2/40">
+    <div class="max-w-content mx-auto px-6 md:px-8 py-5 flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
+      <span class="kicker text-cream/40 flex-shrink-0">Publicada en</span>
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        {medios.map((m) => <span class="text-sm text-cream/60">{m}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- BIFURCACIÓN -->
+  <section class="max-w-content mx-auto px-6 md:px-8 py-16">
+    <div class="grid md:grid-cols-2 gap-4">
+      <a href="/trabajos" class="group bg-sea-2 rounded-md p-8 md:p-10 hover:bg-sea-3 transition-colors">
+        <p class="eyebrow-ochre mb-3">Para editores y medios</p>
+        <h2 class="font-serif text-2xl md:text-[1.7rem] leading-tight mb-5">Reportajes e investigaciones publicadas</h2>
+        <ul class="space-y-2.5 list-none mb-6">
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Premio Ciudad de Alcalá 2020 · Manos Unidas 2017</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">2 investigaciones financiadas por Journalismfund Europe</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">El País · France 24 · National Geographic</li>
+        </ul>
+        <span class="font-mono text-xs uppercase tracking-wide text-ochre group-hover:underline">Ver trabajos →</span>
+      </a>
+
+      <a href="/servicios" class="group bg-sea-2 rounded-md p-8 md:p-10 hover:bg-sea-3 transition-colors">
+        <p class="eyebrow-sage mb-3">Para ONGs y empresas con valores</p>
+        <h2 class="font-serif text-2xl md:text-[1.7rem] leading-tight mb-5">Comunicación digital con impacto social</h2>
+        <ul class="space-y-2.5 list-none mb-6">
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Estrategia de contenidos para tercer sector</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Redacción, podcast y gestión de redes sociales</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Más de diez años en el ámbito social</li>
+        </ul>
+        <span class="font-mono text-xs uppercase tracking-wide text-sage group-hover:underline">Ver servicios →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTENIDO DUAL -->
+  <section class="max-w-content mx-auto px-6 md:px-8 pb-24">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <div class="eyebrow-ochre mb-5 flex items-center gap-2">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="12" height="10" rx="1" /><line x1="5" y1="7" x2="11" y2="7" /><line x1="5" y1="10" x2="8" y2="10" /></svg>
+          Últimos trabajos
+        </div>
+        <div class="space-y-5">
+          {trabajosDestacados.map((t) => (
+            <a href={t.url} target="_blank" rel="noopener" class="block group">
+              <div class="text-[.7rem] font-mono uppercase tracking-wide text-sage mb-1">{t.medio}</div>
+              <div class="font-serif text-lg leading-snug group-hover:text-ochre transition-colors">
+                {t.titulo}
+                {t.destacado && (
+                  <span class="ml-2 align-middle text-[.6rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1.5 py-0.5 rounded-sm">{t.destacado}</span>
+                )}
+              </div>
+              <div class="text-xs text-cream/45 mt-1">{t.año} · {t.temaLabel}</div>
+            </a>
+          ))}
+        </div>
+        <a href="/trabajos" class="inline-block mt-8 text-sm text-cream/70 border-b border-cream/30 hover:border-ochre hover:text-ochre transition-colors">Ver todos los trabajos</a>
+      </div>
+
+      <div>
+        <div class="eyebrow-sage mb-5 flex items-center gap-2">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx="1" /><rect x="9" y="2" width="5" height="5" rx="1" /><rect x="2" y="9" width="5" height="5" rx="1" /><rect x="9" y="9" width="5" height="5" rx="1" /></svg>
+          ¿En qué puedo ayudarte?
+        </div>
+        <div class="space-y-6">
+          <div>
+            <div class="font-serif text-lg mb-1">Estrategia de comunicación digital</div>
+            <div class="text-sm text-cream/60">Plan de contenidos, tono y canales para tu organización. Sin tecnicismos, con foco en impacto real.</div>
+          </div>
+          <div>
+            <div class="font-serif text-lg mb-1">Redacción y contenidos</div>
+            <div class="text-sm text-cream/60">Reportajes, memorias de actividad, notas de prensa, posts y newsletter. Textos que suenan humanos.</div>
+          </div>
+          <div>
+            <div class="font-serif text-lg mb-1">Podcast institucional</div>
+            <div class="text-sm text-cream/60">Guion, producción y conducción. Con experiencia real en Achalay y Juntos Cambiamos el Mundo.</div>
+          </div>
+        </div>
+        <a href="/servicios" class="inline-block mt-8 text-sm text-cream/70 border-b border-cream/30 hover:border-sage hover:text-sage transition-colors">Ver todos los servicios</a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,21 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<svg
+  class:list={['pointer-events-none', className]}
+  viewBox="0 0 400 320"
+  fill="none"
+  aria-hidden="true"
+>
+  <path
+    d="M40 260 C 100 180, 160 140, 210 100 S 320 40, 360 30"
+    class="route-line"
+  />
+  <circle cx="40" cy="260" r="4" fill="#b8862f" />
+  <circle cx="210" cy="100" r="4" fill="#b8862f" />
+  <circle cx="360" cy="30" r="4" fill="#b8862f" />
+</svg>

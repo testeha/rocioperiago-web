@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { servicios, procesoServicio, clientes } from '../data/contenido';
+---
+
+<Layout
+  title="Servicios"
+  description="Estrategia de comunicación digital, redacción de contenidos, podcast institucional y gestión de redes sociales para ONGs, fundaciones y empresas con valores."
+>
+  <section class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <p class="eyebrow-sage mb-3">Para organizaciones</p>
+        <h1 class="font-serif text-4xl md:text-5xl mb-4">Comunicación con impacto social</h1>
+        <p class="text-cream/70 max-w-xl">
+          Ayudo a ONGs, fundaciones y empresas con propósito a comunicar su trabajo
+          con honestidad, precisión y las palabras justas. Sin tecnicismos, sin marketing vacío.
+        </p>
+      </div>
+      <a href="mailto:hola@rocioperiago.com" class="btn-sage flex-shrink-0">Pedir presupuesto</a>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="max-w-content mx-auto px-6 md:px-8 pb-20">
+    <div class="grid md:grid-cols-2 gap-5">
+      {servicios.map((s) => (
+        <div class:list={['relative rounded-md p-8 border', s.destacado ? 'border-sage bg-sea-2' : 'border-cream/10 bg-sea-2/40']}>
+          {s.destacado && (
+            <span class="absolute -top-3 left-8 bg-sage text-sea font-mono text-[.6rem] uppercase tracking-wide px-2.5 py-1 rounded-sm">
+              Más solicitado
+            </span>
+          )}
+          <div class="font-mono text-sm text-cream/30 mb-3">{s.num}</div>
+          <h2 class="font-serif text-xl mb-3">{s.nombre}</h2>
+          <p class="text-sm text-cream/65 mb-5">{s.descripcion}</p>
+          <ul class="space-y-2 list-none mb-6">
+            {s.incluye.map((item) => (
+              <li class="text-sm text-cream/70 flex items-start gap-2">
+                <span class="wp-dot mt-1.5 flex-shrink-0"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="font-mono text-xs uppercase tracking-wide text-sage">{s.precio}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="border-y border-cream/10 bg-sea-2/30">
+    <div class="max-w-content mx-auto px-6 md:px-8 py-16">
+      <h2 class="font-serif text-2xl mb-10">Cómo trabajamos</h2>
+      <div class="grid sm:grid-cols-4 gap-6">
+        {procesoServicio.map((p) => (
+          <div class="relative">
+            <div class="font-mono text-2xl text-sage/60 mb-2">{p.num}</div>
+            <div class="font-serif text-lg mb-1.5">{p.nombre}</div>
+            <div class="text-sm text-cream/55">{p.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES -->
+  <section class="max-w-content mx-auto px-6 md:px-8 py-20">
+    <h2 class="font-serif text-2xl mb-10">Organizaciones con las que he trabajado</h2>
+    <div class="grid md:grid-cols-3 gap-5">
+      {clientes.map((c) => (
+        <div class="card-sand rounded-md p-6">
+          <div class="font-serif text-lg mb-2">{c.org}</div>
+          <div class="text-sm text-ink/70 mb-4">{c.titulo}</div>
+          <div class="flex flex-wrap gap-1.5">
+            {c.tags.map((tag) => (
+              <span class="text-[.65rem] font-mono uppercase tracking-wide bg-ink/10 text-ink/70 px-2 py-1 rounded-sm">{tag}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="max-w-content mx-auto px-6 md:px-8 pb-24">
+    <div class="bg-sea-2 rounded-md p-10 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div>
+        <h2 class="font-serif text-2xl md:text-3xl mb-2">¿Hablamos de tu proyecto?</h2>
+        <p class="text-cream/65">Cuéntame qué necesita tu organización y te propongo un plan concreto.</p>
+      </div>
+      <a href="/contacto" class="btn-sage flex-shrink-0">Pedir presupuesto</a>
+    </div>
+  </section>
+</Layout>
