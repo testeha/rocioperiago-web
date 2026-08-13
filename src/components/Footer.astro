@@ -18,9 +18,13 @@ const año = new Date().getFullYear();
       <ul class="space-y-2 list-none">
         {proyectosPropios.map((p) => (
           <li>
-            <a href={p.url} target="_blank" rel="noopener" class="text-sm text-cream/70 hover:text-cream transition-colors">
-              {p.nombre}
-            </a>
+            {p.url ? (
+              <a href={p.url} target="_blank" rel="noopener" class="text-sm text-cream/70 hover:text-cream transition-colors">
+                {p.nombre}
+              </a>
+            ) : (
+              <span class="text-sm text-cream/70">{p.nombre}</span>
+            )}
           </li>
         ))}
       </ul>

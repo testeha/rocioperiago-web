@@ -164,16 +164,29 @@ export const premios: Premio[] = [
 ];
 
 export const proyectosPropios = [
-  { nombre: 'Soplalebeche', url: 'https://soplalebeche.com', formato: 'Blog de viajes y narrativa' },
+  {
+    nombre: 'Testeha Estudio',
+    url: '',
+    formato: 'Estudio de comunicación · Codirectora',
+    años: '',
+  },
   {
     nombre: 'Juntos Cambiamos el Mundo',
     url: 'https://juntoscambiamoselmundo.com',
     formato: 'Podcast de impacto social',
+    años: '2019–2025',
   },
   {
     nombre: 'Abriendo el Foco',
     url: 'https://open.spotify.com/show/5wPNHi6kYZxniKMRBTlJhE',
     formato: 'Podcast Achalay',
+    años: '2025',
+  },
+  {
+    nombre: 'Soplalebeche',
+    url: 'https://soplalebeche.com',
+    formato: 'Blog de viajes y narrativa',
+    años: '2015–2021',
   },
 ];
 

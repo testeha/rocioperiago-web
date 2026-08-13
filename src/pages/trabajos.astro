@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { trabajos, temas } from '../data/trabajos';
+import { proyectosPropios } from '../data/contenido';
 
 const temaKeys = Object.keys(temas) as (keyof typeof temas)[];
 
@@ -103,6 +104,32 @@ const investigacionesDestacadas = [
           <span class="font-mono text-xs text-cream/40 flex-shrink-0 w-14">{t.año}</span>
         </a>
       ))}
+    </div>
+  </section>
+
+  <!-- PROYECTOS PROPIOS -->
+  <section class="border-t border-cream/10 bg-sea-2/30">
+    <div class="max-w-content mx-auto px-6 md:px-8 py-16">
+      <p class="eyebrow-sage mb-3">Fuera de la redacción</p>
+      <h2 class="font-serif text-2xl md:text-3xl mb-8">Proyectos propios</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {proyectosPropios.map((p) =>
+          p.url ? (
+            <a href={p.url} target="_blank" rel="noopener" class="group block bg-sea-2 rounded-md p-6 hover:bg-sea-3 transition-colors">
+              {p.años && <div class="font-mono text-[.68rem] text-sage tracking-[.04em] mb-2">{p.años}</div>}
+              <div class="font-serif text-lg leading-snug mb-1.5 group-hover:text-ochre transition-colors">{p.nombre}</div>
+              <div class="text-sm text-cream/55">{p.formato}</div>
+            </a>
+          ) : (
+            <div class="bg-sea-2 rounded-md p-6">
+              {p.años && <div class="font-mono text-[.68rem] text-sage tracking-[.04em] mb-2">{p.años}</div>}
+              <div class="font-serif text-lg leading-snug mb-1.5">{p.nombre}</div>
+              <div class="text-sm text-cream/55">{p.formato}</div>
+            </div>
+          )
+        )}
+      </div>
     </div>
   </section>
 </Layout>
