@@ -2,10 +2,36 @@
 import Layout from '../layouts/Layout.astro';
 import RouteMap from '../components/RouteMap.astro';
 import AwardMedal from '../components/AwardMedal.astro';
-import { premios } from '../data/contenido';
 import { trabajosDestacados } from '../data/trabajos';
 
 const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazine', 'Revista Haz', 'Revista Late', 'Ballena Blanca', 'Mundo Negro'];
+
+const destacadosHero = [
+  {
+    año: '2020',
+    nombre: 'Premio de Periodismo Ciudad de Alcalá',
+    sub: '«La biblioteca de las mujeres de Estambul» · Altaïr Magazine',
+    icono: 'medalla' as const,
+  },
+  {
+    año: '2017',
+    nombre: 'Premio Prensa Manos Unidas',
+    sub: '«De las calles de Recife a los fogones» · El País',
+    icono: 'medalla' as const,
+  },
+  {
+    año: '',
+    nombre: 'Más de 10 años de experiencia en el tercer sector',
+    sub: '',
+    icono: 'expediente' as const,
+  },
+  {
+    año: '',
+    nombre: 'Proyectos de investigación transfronteriza',
+    sub: '',
+    icono: 'expediente' as const,
+  },
+];
 ---
 
 <Layout
@@ -16,13 +42,13 @@ const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazin
   <section class="relative overflow-hidden">
     <RouteMap class="absolute top-0 -right-16 w-[520px] h-[420px] opacity-50 hidden md:block" />
     <div class="max-w-content mx-auto px-6 md:px-8 pt-20 pb-16 relative z-10">
-      <p class="dateline mb-6">Lorca / Madrid — Periodista · Comunicadora</p>
+      <p class="dateline mb-6">Periodismo · Storytelling</p>
       <h1 class="font-serif font-medium text-[3rem] md:text-[4.4rem] leading-[1] tracking-tight mb-6">
         Rocío<br /><em class="italic text-ochre font-normal">Periago</em>
       </h1>
       <p class="max-w-xl text-lg text-cream/80 mb-10">
-        Investigo y cuento historias sobre <strong class="text-cream font-semibold">medio ambiente, migración y justicia social</strong>.
-        También ayudo a organizaciones a comunicar su trabajo con las palabras justas.
+        Escribo sobre personas, lugares, viajes o historias que tienen un impacto social.
+        También ayudo a organizaciones sociales a comunicar su trabajo con las palabras y narrativa que mejor se ajustan a ellas.
       </p>
 
       <div class="flex gap-6 md:gap-10 flex-wrap mb-14">
@@ -41,8 +67,8 @@ const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazin
       </div>
 
       <!-- RECONOCIMIENTOS -->
-      <div class="flex flex-col sm:flex-row gap-8 sm:gap-10 pt-8 border-t border-cream/10 flex-wrap">
-        {premios.map((premio) => <AwardMedal premio={premio} />)}
+      <div class="grid sm:grid-cols-3 gap-8 sm:gap-10 pt-8 border-t border-cream/10">
+        {destacadosHero.map((premio) => <AwardMedal premio={premio} />)}
       </div>
     </div>
   </section>
@@ -50,7 +76,7 @@ const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazin
   <!-- BARRA DE PRENSA -->
   <section class="border-y border-cream/10 bg-sea-2/40">
     <div class="max-w-content mx-auto px-6 md:px-8 py-5 flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
-      <span class="kicker text-cream/40 flex-shrink-0">Publicada en</span>
+      <span class="kicker text-cream/40 flex-shrink-0">He publicado en</span>
       <div class="flex flex-wrap gap-x-6 gap-y-2">
         {medios.map((m) => <span class="text-sm text-cream/60">{m}</span>)}
       </div>
@@ -62,22 +88,23 @@ const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazin
     <div class="grid md:grid-cols-2 gap-4">
       <a href="/trabajos" class="group bg-sea-2 rounded-md p-8 md:p-10 hover:bg-sea-3 transition-colors">
         <p class="eyebrow-ochre mb-3">Para editores y medios</p>
-        <h2 class="font-serif text-2xl md:text-[1.7rem] leading-tight mb-5">Reportajes e investigaciones publicadas</h2>
+        <h2 class="font-serif text-2xl md:text-[1.7rem] leading-tight mb-5">Reportajes, artículos y entrevistas</h2>
         <ul class="space-y-2.5 list-none mb-6">
-          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Premio Ciudad de Alcalá 2020 · Manos Unidas 2017</li>
-          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">2 investigaciones financiadas por Journalismfund Europe</li>
-          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">El País · France 24 · National Geographic</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">LVI Premio Ciudad de Alcalá (2020)</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">2º premio de prensa de Manos Unidas (2017)</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Dos investigaciones financiadas por Journalism Fund y una por EarthJournalism</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Colaboradora de El País, France 24, Ballena Blanca, Revista Haz, Revista LATE, National Geographic, etc.</li>
         </ul>
         <span class="font-mono text-xs uppercase tracking-wide text-ochre group-hover:underline">Ver trabajos →</span>
       </a>
 
       <a href="/servicios" class="group bg-sea-2 rounded-md p-8 md:p-10 hover:bg-sea-3 transition-colors">
         <p class="eyebrow-sage mb-3">Para ONGs y empresas con valores</p>
-        <h2 class="font-serif text-2xl md:text-[1.7rem] leading-tight mb-5">Comunicación digital con impacto social</h2>
+        <h2 class="font-serif text-2xl md:text-[1.7rem] leading-tight mb-5">Storytelling con impacto social</h2>
         <ul class="space-y-2.5 list-none mb-6">
-          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Estrategia de contenidos para tercer sector</li>
-          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Redacción, podcast y gestión de redes sociales</li>
-          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Más de diez años en el ámbito social</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Comunicación y estrategia de contenidos enfocada al tercer sector</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Redacción, creación de materiales y contenidos, gestión de canales online.</li>
+          <li class="text-sm text-cream/60 pt-2.5 border-t border-cream/10">Más de 12 años de trabajo en el ámbito social</li>
         </ul>
         <span class="font-mono text-xs uppercase tracking-wide text-sage group-hover:underline">Ver servicios →</span>
       </a>
@@ -90,7 +117,7 @@ const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazin
       <div>
         <div class="eyebrow-ochre mb-5 flex items-center gap-2">
           <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="12" height="10" rx="1" /><line x1="5" y1="7" x2="11" y2="7" /><line x1="5" y1="10" x2="8" y2="10" /></svg>
-          Últimos trabajos
+          Últimos trabajos publicados
         </div>
         <div class="space-y-5">
           {trabajosDestacados.map((t) => (
@@ -116,16 +143,16 @@ const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazin
         </div>
         <div class="space-y-6">
           <div>
-            <div class="font-serif text-lg mb-1">Estrategia de comunicación digital</div>
-            <div class="text-sm text-cream/60">Plan de contenidos, tono y canales para tu organización. Sin tecnicismos, con foco en impacto real.</div>
+            <div class="font-serif text-lg mb-1">Estrategia digital</div>
+            <div class="text-sm text-cream/60">Plan de comunicación. Propuestas de contenidos y acciones. Storytelling narrativo. Propuestas realistas y cercanas, poniendo el foco en las necesidades e impacto real de tu entidad.</div>
           </div>
           <div>
-            <div class="font-serif text-lg mb-1">Redacción y contenidos</div>
-            <div class="text-sm text-cream/60">Reportajes, memorias de actividad, notas de prensa, posts y newsletter. Textos que suenan humanos.</div>
+            <div class="font-serif text-lg mb-1">Comunicación corporativa y redacción</div>
+            <div class="text-sm text-cream/60">Realización de memorias, notas y convocatorias de prensa, posts y newsletter. En la era de la IA da mucha confianza saber que hay una persona real detrás de la comunicación de tu organización.</div>
           </div>
           <div>
-            <div class="font-serif text-lg mb-1">Podcast institucional</div>
-            <div class="text-sm text-cream/60">Guion, producción y conducción. Con experiencia real en Achalay y Juntos Cambiamos el Mundo.</div>
+            <div class="font-serif text-lg mb-1">Creación de contenidos</div>
+            <div class="text-sm text-cream/60">Realización de entrevistas y reportajes. Fotografía documental. Producción y desarrollo de guiones de podcasts y materiales audiovisuales.</div>
           </div>
         </div>
         <a href="/servicios" class="inline-block mt-8 text-sm text-cream/70 border-b border-cream/30 hover:border-sage hover:text-sage transition-colors">Ver todos los servicios</a>

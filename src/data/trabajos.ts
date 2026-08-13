@@ -21,12 +21,20 @@ export const temas: Record<Tema, { label: string; color: string }> = {
 
 export const trabajos: Trabajo[] = [
   {
-    titulo: 'Fin al «de sueldos no se habla»: transparencia salarial en las empresas españolas',
+    titulo: 'La biblioteca de barrio que lleva 20 años construyendo convivencia en Cartagena',
+    medio: 'Revista Haz',
+    tema: 'social',
+    temaLabel: 'Periodismo de soluciones',
+    año: '2026',
+    url: 'https://hazrevista.org/soluciones/2026/07/biblioteca-barrio-lleva-20-anos-construyendo-convivencia-cartagena/',
+  },
+  {
+    titulo: 'Fin al «de sueldos no se habla»: la transparencia salarial entra en las empresas',
     medio: 'Revista Haz',
     tema: 'rsc',
     temaLabel: 'RSC',
     año: '2026',
-    url: 'https://hazrevista.org/author/rocio-periago/',
+    url: 'https://hazrevista.org/transparencia/2026/03/fin-sueldos-no-se-habla-transparencia-salarial-entra-empresas/',
   },
   {
     titulo: 'Las huellas del verano en el invierno europeo',
@@ -43,7 +51,7 @@ export const trabajos: Trabajo[] = [
     tema: 'ambiente',
     temaLabel: 'Medio ambiente',
     año: '2025',
-    url: 'https://journalismfund.eu/not-so-sunny-side-of-sunscreen',
+    url: 'https://www.journalismfund.eu/not-so-sunny-side-of-sunscreen',
     destacado: 'Investigación',
   },
   {
@@ -51,24 +59,25 @@ export const trabajos: Trabajo[] = [
     medio: 'Ballena Blanca Nº42',
     tema: 'ambiente',
     temaLabel: 'Medio ambiente',
-    año: '2024',
+    año: '2025',
     url: 'https://ballenablanca.es/producto/42/',
   },
   {
-    titulo: 'El Mar Menor, laguna salada que lucha por sobrevivir',
+    titulo: 'El Mar Menor, una laguna salada que lucha por sobrevivir',
     medio: 'Revista Late',
     tema: 'ambiente',
     temaLabel: 'Medio ambiente',
-    año: '2024',
+    año: '2023',
     url: 'https://www.revistalate.net/el-mar-menor-una-laguna-salada-que-lucha-por-sobrevivir/',
+    destacado: 'Investigación',
   },
   {
-    titulo: 'La ruta del carbón Colombia–Alemania',
+    titulo: 'From Colombia to Germany. The impact of coal route',
     medio: 'Journalismfund Europe',
     tema: 'ambiente',
     temaLabel: 'Clima · Industria',
     año: '2023',
-    url: 'https://journalismfund.eu/coal-route',
+    url: 'https://www.journalismfund.eu/coal-route',
     destacado: 'Investigación',
   },
   {
@@ -131,4 +140,16 @@ export const trabajos: Trabajo[] = [
   },
 ];
 
-export const trabajosDestacados = trabajos.slice(0, 5);
+// Los 6 trabajos destacados en portada, en el orden acordado con Rocío
+const destacadosTitulos = [
+  'La biblioteca de barrio que lleva 20 años construyendo convivencia en Cartagena',
+  'Fin al «de sueldos no se habla»: la transparencia salarial entra en las empresas',
+  'Ostras para regenerar el Mar Menor',
+  'From Colombia to Germany. The impact of coal route',
+  'The not-so-sunny side of sunscreen',
+  'El Mar Menor, una laguna salada que lucha por sobrevivir',
+];
+
+export const trabajosDestacados = destacadosTitulos
+  .map((titulo) => trabajos.find((t) => t.titulo === titulo))
+  .filter((t): t is Trabajo => Boolean(t));

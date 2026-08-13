@@ -23,8 +23,8 @@ const { premio } = Astro.props;
     )}
   </div>
   <div class="max-w-[15rem]">
-    <div class="font-mono text-[.68rem] text-ochre tracking-[.04em]">{premio.año}</div>
+    {premio.año && <div class="font-mono text-[.68rem] text-ochre tracking-[.04em]">{premio.año}</div>}
     <div class="font-serif text-[1.02rem] leading-tight mt-0.5">{premio.nombre}</div>
-    <div class="text-[.75rem] text-cream/55 mt-1">{premio.sub}</div>
+    {premio.sub && <div class="text-[.75rem] text-cream/55 mt-1">{premio.sub}</div>}
   </div>
 </div>
