@@ -90,54 +90,75 @@ const capsulaHero = [
     </div>
   </section>
 
-  <!-- ÚLTIMOS TRABAJOS -->
-  <section class="max-w-content mx-auto px-6 md:px-8 pb-20">
-    <div class="eyebrow-ochre mb-6 flex items-center gap-2">
-      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="12" height="10" rx="1" /><line x1="5" y1="7" x2="11" y2="7" /><line x1="5" y1="10" x2="8" y2="10" /></svg>
-      Últimos trabajos publicados
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
-      {trabajosDestacados.map((t) => (
-        <a href={t.url} target="_blank" rel="noopener" class="group block">
-          <div class="aspect-[4/5] rounded-md mb-2.5 flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
-            <span class="font-mono text-[.55rem] uppercase tracking-wide text-cream/25 text-center px-2">Foto pendiente</span>
-          </div>
-          <div class="flex justify-between font-mono text-[.6rem] uppercase tracking-wide text-cream/40 mb-1">
-            <span>{t.medio}</span>
-            <span>{t.año}</span>
-          </div>
-          <div class="font-serif text-sm leading-snug group-hover:text-ochre transition-colors">
-            {t.titulo}
-            {t.destacado && (
-              <span class="ml-1.5 align-middle text-[.55rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1 py-0.5 rounded-sm">{t.destacado}</span>
-            )}
-          </div>
-        </a>
-      ))}
-    </div>
-    <a href="/trabajos" class="inline-block mt-8 text-sm text-cream/70 border-b border-cream/30 hover:border-ochre hover:text-ochre transition-colors">Ver todos los trabajos</a>
-  </section>
-
-  <!-- ¿EN QUÉ PUEDO AYUDARTE? -->
+  <!-- CONTENIDO DUAL — cada columna pertenece a su bloque de arriba -->
   <section class="max-w-content mx-auto px-6 md:px-8 pb-24">
-    <div class="eyebrow-sage mb-6 flex items-center gap-2">
-      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx="1" /><rect x="9" y="2" width="5" height="5" rx="1" /><rect x="2" y="9" width="5" height="5" rx="1" /><rect x="9" y="9" width="5" height="5" rx="1" /></svg>
-      ¿En qué puedo ayudarte?
+    <div class="grid md:grid-cols-2 gap-12">
+
+      <!-- IZQUIERDA · Para editores y medios -->
+      <div>
+        <div class="eyebrow-ochre mb-6 flex items-center gap-2">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="12" height="10" rx="1" /><line x1="5" y1="7" x2="11" y2="7" /><line x1="5" y1="10" x2="8" y2="10" /></svg>
+          Últimos trabajos publicados
+        </div>
+
+        {trabajosDestacados[0] && (
+          <a href={trabajosDestacados[0].url} target="_blank" rel="noopener" class="group block mb-6">
+            <div class="aspect-[16/10] rounded-md mb-3 flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
+              <span class="font-mono text-[.6rem] uppercase tracking-wide text-cream/25">Foto pendiente</span>
+            </div>
+            <div class="flex justify-between font-mono text-[.6rem] uppercase tracking-wide text-cream/40 mb-1">
+              <span>{trabajosDestacados[0].medio}</span>
+              <span>{trabajosDestacados[0].año}</span>
+            </div>
+            <div class="font-serif text-lg leading-snug group-hover:text-ochre transition-colors">
+              {trabajosDestacados[0].titulo}
+              {trabajosDestacados[0].destacado && (
+                <span class="ml-1.5 align-middle text-[.55rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1 py-0.5 rounded-sm">{trabajosDestacados[0].destacado}</span>
+              )}
+            </div>
+          </a>
+        )}
+
+        <div class="space-y-4">
+          {trabajosDestacados.slice(1).map((t) => (
+            <a href={t.url} target="_blank" rel="noopener" class="block group pt-4 border-t border-cream/10">
+              <div class="text-[.68rem] font-mono uppercase tracking-wide text-cream/40 mb-1">{t.medio} · {t.año}</div>
+              <div class="font-serif text-base leading-snug group-hover:text-ochre transition-colors">
+                {t.titulo}
+                {t.destacado && (
+                  <span class="ml-1.5 align-middle text-[.55rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1 py-0.5 rounded-sm">{t.destacado}</span>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <a href="/trabajos" class="inline-block mt-8 text-sm text-cream/70 border-b border-cream/30 hover:border-ochre hover:text-ochre transition-colors">Ver todos los trabajos</a>
+      </div>
+
+      <!-- DERECHA · Para ONGs y empresas con valores -->
+      <div>
+        <div class="eyebrow-sage mb-6 flex items-center gap-2">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx="1" /><rect x="9" y="2" width="5" height="5" rx="1" /><rect x="2" y="9" width="5" height="5" rx="1" /><rect x="9" y="9" width="5" height="5" rx="1" /></svg>
+          ¿En qué puedo ayudarte?
+        </div>
+        <div class="space-y-6">
+          <div>
+            <div class="font-serif text-lg mb-1">Estrategia digital</div>
+            <div class="text-sm text-cream/60">Plan de comunicación. Propuestas de contenidos y acciones. Storytelling narrativo. Propuestas realistas y cercanas, poniendo el foco en las necesidades e impacto real de tu entidad.</div>
+          </div>
+          <div>
+            <div class="font-serif text-lg mb-1">Comunicación corporativa y redacción</div>
+            <div class="text-sm text-cream/60">Realización de memorias, notas y convocatorias de prensa, posts y newsletter. En la era de la IA da mucha confianza saber que hay una persona real detrás de la comunicación de tu organización.</div>
+          </div>
+          <div>
+            <div class="font-serif text-lg mb-1">Creación de contenidos</div>
+            <div class="text-sm text-cream/60">Realización de entrevistas y reportajes. Fotografía documental. Producción y desarrollo de guiones de podcasts y materiales audiovisuales.</div>
+          </div>
+        </div>
+        <a href="/servicios" class="inline-block mt-8 text-sm text-cream/70 border-b border-cream/30 hover:border-sage hover:text-sage transition-colors">Ver todos los servicios</a>
+      </div>
+
     </div>
-    <div class="grid md:grid-cols-3 gap-5">
-      <div class="bg-sea-2/40 rounded-md p-6">
-        <div class="font-serif text-lg mb-2">Estrategia digital</div>
-        <div class="text-sm text-cream/60">Plan de comunicación. Propuestas de contenidos y acciones. Storytelling narrativo. Propuestas realistas y cercanas, poniendo el foco en las necesidades e impacto real de tu entidad.</div>
-      </div>
-      <div class="bg-sea-2/40 rounded-md p-6">
-        <div class="font-serif text-lg mb-2">Comunicación corporativa y redacción</div>
-        <div class="text-sm text-cream/60">Realización de memorias, notas y convocatorias de prensa, posts y newsletter. En la era de la IA da mucha confianza saber que hay una persona real detrás de la comunicación de tu organización.</div>
-      </div>
-      <div class="bg-sea-2/40 rounded-md p-6">
-        <div class="font-serif text-lg mb-2">Creación de contenidos</div>
-        <div class="text-sm text-cream/60">Realización de entrevistas y reportajes. Fotografía documental. Producción y desarrollo de guiones de podcasts y materiales audiovisuales.</div>
-      </div>
-    </div>
-    <a href="/servicios" class="inline-block mt-8 text-sm text-cream/70 border-b border-cream/30 hover:border-sage hover:text-sage transition-colors">Ver todos los servicios</a>
   </section>
 </Layout>
