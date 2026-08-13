@@ -45,8 +45,6 @@ export interface Servicio {
   nombre: string;
   descripcion: string;
   incluye: string[];
-  precio: string;
-  destacado?: boolean;
 }
 
 export const servicios: Servicio[] = [
@@ -54,53 +52,40 @@ export const servicios: Servicio[] = [
     num: '01',
     nombre: 'Estrategia de comunicación digital',
     descripcion:
-      'Diseño el plan de comunicación de tu organización desde cero: qué contar, a quién, en qué canales y con qué tono.',
+      'Diseño el plan de comunicación de tu organización desde cero: qué contar, a quién y en qué canales. También te planteo diferentes propuestas de acciones adaptadas a tu presupuesto y realidad. Porque a veces una mirada externa ayuda a explicar mejor cuáles son tus objetivos como entidad.',
     incluye: [
-      'Diagnóstico de comunicación actual',
-      'Plan de contenidos trimestral',
+      'Diagnóstico de la comunicación actual',
+      'Propuesta de contenidos y acciones trimestral',
       'Guía de tono y estilo editorial',
-      'Formación al equipo si se necesita',
+      'Formación al equipo (opcional)',
     ],
-    precio: 'Desde 1.200€',
-    destacado: true,
   },
   {
     num: '02',
-    nombre: 'Redacción y contenidos',
+    nombre: 'Redacción y comunicación corporativa',
     descripcion:
-      'Reportajes, memorias de actividad, notas de prensa, posts para RRSS o newsletter. Textos que suenan humanos y que se leen.',
+      'En la era de la Inteligencia Artificial, saber que hay una persona real detrás de la comunicación de tu entidad da mucha confianza a clientes y usuarios.',
     incluye: [
-      'Reportajes e historias de impacto',
-      'Memorias e informes anuales',
-      'Contenido para RRSS y blog',
-      'Comunicados y notas de prensa',
+      'Realización de memorias de actividad e informes anuales',
+      'Servicio de clipping, redacción de notas y convocatorias de prensa',
+      'Contenido para RRSS y blogs',
+      'Contenidos para posts y newsletters',
+      'Gestión de redes sociales. Calendario editorial mensual',
+      'Informe de resultados',
     ],
-    precio: 'Por pieza o retainer',
   },
   {
     num: '03',
-    nombre: 'Podcast institucional',
+    nombre: 'Creación de contenidos',
     descripcion:
-      'Guion, producción y conducción de podcasts para organizaciones sociales. Con experiencia real en Achalay y Juntos Cambiamos el Mundo.',
+      'Creación de contenidos específicos y personalizados. Una forma de contar las historias y humanizar el trabajo que realizas desde tu organización o empresa.',
     incluye: [
-      'Definición de formato y audiencia',
-      'Guion de episodios',
-      'Conducción y entrevistas',
-      'Distribución en plataformas',
+      'Entrevistas y reportajes corporativos',
+      'Fotografía documental',
+      'Producción de material audiovisual (podcasts, vídeo)',
+      'Guionización y conducción de podcasts',
+      'Distribución en plataformas digitales',
     ],
-    precio: 'Por temporada',
-  },
-  {
-    num: '04',
-    nombre: 'Gestión de redes sociales',
-    descripcion:
-      'Comunidades pequeñas con voz propia. Gestión mensual de Instagram o LinkedIn para organizaciones que quieren presencia sin ruido.',
-    incluye: [
-      'Calendario editorial mensual',
-      'Redacción y publicación',
-      'Informe mensual de resultados',
-    ],
-    precio: 'Desde 400€/mes',
   },
 ];
 

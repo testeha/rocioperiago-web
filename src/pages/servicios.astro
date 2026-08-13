@@ -5,16 +5,17 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
 
 <Layout
   title="Servicios"
-  description="Estrategia de comunicación digital, redacción de contenidos, podcast institucional y gestión de redes sociales para ONGs, fundaciones y empresas con valores."
+  description="Estrategia de comunicación digital, redacción corporativa y creación de contenidos para ONGs, fundaciones y empresas con valores, desde Testeha Estudio."
 >
   <section class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-10">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div>
         <p class="eyebrow-sage mb-3">Para organizaciones</p>
-        <h1 class="font-serif text-4xl md:text-5xl mb-4">Comunicación con impacto social</h1>
+        <h1 class="font-serif text-4xl md:text-5xl mb-4">Storytelling con impacto social</h1>
         <p class="text-cream/70 max-w-xl">
-          Ayudo a ONGs, fundaciones y empresas con propósito a comunicar su trabajo
-          con honestidad, precisión y las palabras justas. Sin tecnicismos, sin marketing vacío.
+          Ayudo a ONGs, fundaciones y empresas a comunicar su trabajo con honestidad, precisión y la narrativa
+          que mejor se ajusta a sus necesidades. Trabajo desde Testeha Estudio, donde un equipo multidisciplinar
+          de profesionales ofrecemos un servicio cercano y un contacto directo con los clientes.
         </p>
       </div>
       <a href="mailto:hola@rocioperiago.com" class="btn-sage flex-shrink-0">Pedir presupuesto</a>
@@ -23,18 +24,13 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
 
   <!-- SERVICIOS -->
   <section class="max-w-content mx-auto px-6 md:px-8 pb-20">
-    <div class="grid md:grid-cols-2 gap-5">
+    <div class="grid md:grid-cols-3 gap-5">
       {servicios.map((s) => (
-        <div class:list={['relative rounded-md p-8 border', s.destacado ? 'border-sage bg-sea-2' : 'border-cream/10 bg-sea-2/40']}>
-          {s.destacado && (
-            <span class="absolute -top-3 left-8 bg-sage text-sea font-mono text-[.6rem] uppercase tracking-wide px-2.5 py-1 rounded-sm">
-              Más solicitado
-            </span>
-          )}
+        <div class="rounded-md p-8 border border-cream/10 bg-sea-2/40">
           <div class="font-mono text-sm text-cream/30 mb-3">{s.num}</div>
           <h2 class="font-serif text-xl mb-3">{s.nombre}</h2>
           <p class="text-sm text-cream/65 mb-5">{s.descripcion}</p>
-          <ul class="space-y-2 list-none mb-6">
+          <ul class="space-y-2 list-none">
             {s.incluye.map((item) => (
               <li class="text-sm text-cream/70 flex items-start gap-2">
                 <span class="wp-dot mt-1.5 flex-shrink-0"></span>
@@ -42,7 +38,6 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
               </li>
             ))}
           </ul>
-          <div class="font-mono text-xs uppercase tracking-wide text-sage">{s.precio}</div>
         </div>
       ))}
     </div>
