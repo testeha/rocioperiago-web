@@ -1,36 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import RouteMap from '../components/RouteMap.astro';
-import AwardMedal from '../components/AwardMedal.astro';
 import { trabajosDestacados } from '../data/trabajos';
 
 const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazine', 'Revista Haz', 'Revista Late', 'Ballena Blanca', 'Mundo Negro'];
 
-const destacadosHero = [
-  {
-    año: '2020',
-    nombre: 'Premio de Periodismo Ciudad de Alcalá',
-    sub: '«La biblioteca de las mujeres de Estambul» · Altaïr Magazine',
-    icono: 'medalla' as const,
-  },
-  {
-    año: '2017',
-    nombre: 'Premio Prensa Manos Unidas',
-    sub: '«De las calles de Recife a los fogones» · El País',
-    icono: 'medalla' as const,
-  },
-  {
-    año: '',
-    nombre: 'Más de 10 años de experiencia en el tercer sector',
-    sub: '',
-    icono: 'expediente' as const,
-  },
-  {
-    año: '',
-    nombre: 'Proyectos de investigación transfronteriza',
-    sub: '',
-    icono: 'expediente' as const,
-  },
+const capsulaHero = [
+  { label: '2020', valor: 'Premio Ciudad de Alcalá' },
+  { label: '2017', valor: 'Premio Manos Unidas' },
+  { label: 'Trayectoria', valor: '+10 años en el tercer sector' },
+  { label: 'Investigación', valor: 'Proyectos transfronterizos' },
 ];
 ---
 
@@ -39,36 +17,36 @@ const destacadosHero = [
   description="Rocío Periago — Periodista freelance especializada en medio ambiente, migración y justicia social. Comunicación digital para ONGs y empresas con valores."
 >
   <!-- HERO -->
-  <section class="relative overflow-hidden">
-    <RouteMap class="absolute top-0 -right-16 w-[520px] h-[420px] opacity-50 hidden md:block" />
-    <div class="max-w-content mx-auto px-6 md:px-8 pt-20 pb-16 relative z-10">
+  <section class="relative overflow-hidden min-h-[620px] flex flex-col bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.DEFAULT)_2px,theme(colors.sea.DEFAULT)_4px)]">
+    <div class="absolute inset-0 bg-gradient-to-b from-sea/15 via-sea/40 to-sea pointer-events-none"></div>
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <span class="font-mono text-[.65rem] uppercase tracking-wide text-cream/20">Retrato editorial de Rocío en el terreno · pendiente</span>
+    </div>
+
+    <div class="max-w-content mx-auto px-6 md:px-8 pt-10 pb-16 relative z-10 mt-auto w-full">
       <p class="dateline mb-6">Periodismo · Storytelling</p>
       <h1 class="font-serif font-medium text-[3rem] md:text-[4.4rem] leading-[1] tracking-tight mb-6">
-        Rocío<br /><em class="italic text-ochre font-normal">Periago</em>
+        Rocío<br /><em class="italic text-ochre-light font-normal">Periago</em>
       </h1>
-      <p class="max-w-xl text-lg text-cream/80 mb-10">
+      <p class="max-w-xl text-lg text-cream/80 mb-5">
         Escribo sobre personas, lugares, viajes o historias que tienen un impacto social.
         También ayudo a organizaciones sociales a comunicar su trabajo con las palabras y narrativa que mejor se ajustan a ellas.
       </p>
 
-      <div class="flex gap-6 md:gap-10 flex-wrap mb-14">
-        <div class="flex items-center gap-2">
-          <span class="wp-dot"></span>
-          <span class="font-mono text-xs uppercase tracking-wide text-cream/70">Colombia → Alemania</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="wp-dot"></span>
-          <span class="font-mono text-xs uppercase tracking-wide text-cream/70">España · Italia · Grecia</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="wp-dot"></span>
-          <span class="font-mono text-xs uppercase tracking-wide text-cream/70">2 rutas financiadas · €35k</span>
-        </div>
+      <div class="flex gap-6 md:gap-8 flex-wrap mb-8">
+        <span class="font-mono text-xs uppercase tracking-wide text-ochre-light flex items-center gap-2"><span class="w-[5px] h-[5px] rounded-full bg-ochre-light inline-block"></span>Colombia → Alemania</span>
+        <span class="font-mono text-xs uppercase tracking-wide text-ochre-light flex items-center gap-2"><span class="w-[5px] h-[5px] rounded-full bg-ochre-light inline-block"></span>España · Italia · Grecia</span>
+        <span class="font-mono text-xs uppercase tracking-wide text-ochre-light flex items-center gap-2"><span class="w-[5px] h-[5px] rounded-full bg-ochre-light inline-block"></span>2 rutas financiadas · €35k</span>
       </div>
 
-      <!-- RECONOCIMIENTOS -->
-      <div class="grid sm:grid-cols-3 gap-8 sm:gap-10 pt-8 border-t border-cream/10">
-        {destacadosHero.map((premio) => <AwardMedal premio={premio} />)}
+      <!-- CÁPSULA DE CRISTAL — 4 bloques esquemáticos -->
+      <div class="inline-flex items-stretch bg-cream/10 backdrop-blur-md border border-cream/20 rounded-full p-1.5 flex-wrap">
+        {capsulaHero.map((item, i) => (
+          <div class:list={['px-5 py-3 flex flex-col gap-0.5 justify-center', i < capsulaHero.length - 1 && 'border-r border-cream/15']}>
+            <span class="font-mono text-[.62rem] uppercase tracking-wide text-ochre-light">{item.label}</span>
+            <span class="text-sm text-cream font-medium whitespace-nowrap">{item.valor}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -119,17 +97,22 @@ const destacadosHero = [
           <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="12" height="10" rx="1" /><line x1="5" y1="7" x2="11" y2="7" /><line x1="5" y1="10" x2="8" y2="10" /></svg>
           Últimos trabajos publicados
         </div>
-        <div class="space-y-5">
+        <div class="grid grid-cols-2 gap-4">
           {trabajosDestacados.map((t) => (
-            <a href={t.url} target="_blank" rel="noopener" class="block group">
-              <div class="text-[.7rem] font-mono uppercase tracking-wide text-sage mb-1">{t.medio}</div>
-              <div class="font-serif text-lg leading-snug group-hover:text-ochre transition-colors">
+            <a href={t.url} target="_blank" rel="noopener" class="group block">
+              <div class="aspect-[4/5] rounded-md mb-2.5 flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
+                <span class="font-mono text-[.55rem] uppercase tracking-wide text-cream/25 text-center px-2">Foto pendiente</span>
+              </div>
+              <div class="flex justify-between font-mono text-[.6rem] uppercase tracking-wide text-cream/40 mb-1">
+                <span>{t.medio}</span>
+                <span>{t.año}</span>
+              </div>
+              <div class="font-serif text-sm leading-snug group-hover:text-ochre transition-colors">
                 {t.titulo}
                 {t.destacado && (
-                  <span class="ml-2 align-middle text-[.6rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1.5 py-0.5 rounded-sm">{t.destacado}</span>
+                  <span class="ml-1.5 align-middle text-[.55rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1 py-0.5 rounded-sm">{t.destacado}</span>
                 )}
               </div>
-              <div class="text-xs text-cream/45 mt-1">{t.año} · {t.temaLabel}</div>
             </a>
           ))}
         </div>

@@ -44,18 +44,26 @@ const investigacionesDestacadas = [
     <h2 class="font-serif text-2xl md:text-3xl mb-8">Proyectos de largo aliento transfronterizos</h2>
 
     <div class="grid md:grid-cols-2 gap-5">
-      {investigacionesDestacadas.map((inv) => (
-        <div class="card-sand rounded-md p-7 md:p-8">
-          <a href={inv.url} target="_blank" rel="noopener" class="font-serif text-xl leading-snug hover:text-sea/70 transition-colors underline decoration-ochre/40 underline-offset-4">
+      {investigacionesDestacadas.map((inv, i) => (
+        <div class:list={['rounded-xl p-7 md:p-8', i % 2 === 0 ? 'bg-ochre' : 'bg-sea-2']}>
+          <span class:list={['block font-mono text-[.62rem] uppercase tracking-wide mb-4', i % 2 === 0 ? 'text-sea/60' : 'text-ochre-light']}>
+            Journalismfund Europe
+          </span>
+          <a
+            href={inv.url}
+            target="_blank"
+            rel="noopener"
+            class:list={['font-serif text-xl leading-snug transition-colors block mb-4', i % 2 === 0 ? 'text-sea hover:text-sea/70' : 'text-cream hover:text-ochre-light']}
+          >
             {inv.titulo}
           </a>
-          <p class="text-sm text-ink/75 mt-4 leading-relaxed">{inv.resumen}</p>
-          <p class="text-xs text-ink/55 mt-4">
-            Publicado en {inv.publicadoEn}
+          <p class:list={['text-sm leading-relaxed mb-5', i % 2 === 0 ? 'text-sea/75' : 'text-cream/70']}>{inv.resumen}</p>
+          <p class:list={['text-xs leading-relaxed', i % 2 === 0 ? 'text-sea/60' : 'text-cream/55']}>
+            <strong class:list={i % 2 === 0 ? 'text-sea' : 'text-cream'}>Publicado en</strong> {inv.publicadoEn}
             {inv.presentadoEn && (
               <>
                 <br />
-                Presentado en el <a href={inv.presentadoEn.url} target="_blank" rel="noopener" class="underline decoration-ochre/40 underline-offset-2 hover:text-ink">{inv.presentadoEn.texto}</a> {inv.presentadoEn.resto}
+                <strong class:list={i % 2 === 0 ? 'text-sea' : 'text-cream'}>Presentado en</strong> el <a href={inv.presentadoEn.url} target="_blank" rel="noopener" class="underline underline-offset-2 hover:opacity-70">{inv.presentadoEn.texto}</a> {inv.presentadoEn.resto}
               </>
             )}
           </p>

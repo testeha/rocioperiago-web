@@ -7,17 +7,17 @@ export default {
     extend: {
       colors: {
         sea: {
-          DEFAULT: '#1b3a3f', // fondo principal, dominante
-          2: '#234a50',       // paneles/tarjetas sobre fondo oscuro
-          3: '#2c5a61',       // hover / bordes sutiles
+          DEFAULT: '#0f1c1e', // fondo principal — casi negro, mayor contraste
+          2: '#1c3236',       // paneles/tarjetas sobre fondo oscuro
+          3: '#28454a',       // hover / bordes sutiles
         },
         sand: {
           DEFAULT: '#f3eee3', // tarjetas claras
           dim: '#e6dfcd',     // fondos secundarios claros
         },
         ochre: {
-          DEFAULT: '#b8862f', // acento cálido — premios, CTA editores, ruta
-          light: '#d4a655',
+          DEFAULT: '#cf9a34', // mostaza — premios, CTA editores, acentos
+          light: '#e3b458',
         },
         sage: {
           DEFAULT: '#7fa89e', // acento frío — CTA organizaciones
