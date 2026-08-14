@@ -1,0 +1,33 @@
+---
+// Botón flotante "volver arriba" — aparece tras hacer scroll, visible en todas las páginas
+---
+
+<button
+  id="scroll-to-top"
+  aria-label="Volver arriba"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-sea/90 backdrop-blur border border-cream/20 flex items-center justify-center text-cream/70 hover:text-cream hover:border-cream/40 transition-all duration-300 opacity-0 pointer-events-none translate-y-2 shadow-lg"
+>
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M8 14V3M3 7l5-5 5 5" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById('scroll-to-top');
+  const SHOW_AFTER = 480; // px de scroll antes de mostrar el botón
+
+  const toggleVisibility = () => {
+    if (!btn) return;
+    const show = window.scrollY > SHOW_AFTER;
+    btn.classList.toggle('opacity-0', !show);
+    btn.classList.toggle('pointer-events-none', !show);
+    btn.classList.toggle('translate-y-2', !show);
+  };
+
+  btn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  toggleVisibility();
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+</script>
