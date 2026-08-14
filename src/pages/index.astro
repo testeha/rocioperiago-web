@@ -90,77 +90,108 @@ const capsulaHero = [
     </div>
   </section>
 
-  <!-- CONTENIDO DUAL — cada columna pertenece a su bloque de arriba -->
-  <section class="max-w-content mx-auto px-6 md:px-8 pb-24">
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <!-- IZQUIERDA · Para editores y medios -->
-      <div class="border-l-2 border-ochre/50 bg-ochre/[0.03] pl-6 md:pl-8 py-8 pr-2">
-        <p class="eyebrow-ochre mb-2">Para editores y medios</p>
-        <div class="eyebrow-ochre mb-6 flex items-center gap-2 opacity-70">
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="12" height="10" rx="1" /><line x1="5" y1="7" x2="11" y2="7" /><line x1="5" y1="10" x2="8" y2="10" /></svg>
-          Últimos trabajos publicados
+  <!-- BLOQUE 1 · Para editores y medios -->
+  <section class="border-t-2 border-ochre/40 bg-ochre/[0.025]">
+    <div class="max-w-content mx-auto px-6 md:px-8 py-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <p class="eyebrow-ochre mb-3">Para editores y medios</p>
+          <h2 class="font-sans font-extrabold text-3xl md:text-4xl">Últimos trabajos publicados</h2>
         </div>
+        <a href="/trabajos" class="inline-flex items-center gap-2 text-sm text-ochre hover:text-ochre-light transition-colors flex-shrink-0">
+          Ver trabajos
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
 
-        {trabajosDestacados[0] && (
-          <a href={trabajosDestacados[0].url} target="_blank" rel="noopener" class="group block mb-6">
-            <div class="aspect-[16/10] rounded-md mb-3 flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
-              <span class="font-mono text-[.6rem] uppercase tracking-wide text-cream/25">Foto pendiente</span>
-            </div>
-            <div class="flex justify-between font-mono text-[.6rem] uppercase tracking-wide text-cream/40 mb-1">
-              <span>{trabajosDestacados[0].medio}</span>
-              <span>{trabajosDestacados[0].año}</span>
-            </div>
-            <div class="font-sans font-extrabold text-lg leading-snug group-hover:text-ochre transition-colors">
-              {trabajosDestacados[0].titulo}
-              {trabajosDestacados[0].destacado && (
-                <span class="ml-1.5 align-middle text-[.55rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1 py-0.5 rounded-sm">{trabajosDestacados[0].destacado}</span>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {trabajosDestacados.map((t) => (
+          <a
+            href={t.url}
+            target="_blank"
+            rel="noopener"
+            class="group relative aspect-[4/5] rounded-md overflow-hidden block bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]"
+          >
+            <span class="absolute top-3 left-3 font-mono text-[.55rem] uppercase tracking-wide text-cream/20 z-0">Foto pendiente</span>
+
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-colors duration-300 z-10"></div>
+
+            <div class="absolute inset-0 z-20 flex flex-col justify-end p-4">
+              {t.destacado && (
+                <span class="self-start mb-2 text-[.55rem] font-mono uppercase tracking-wide bg-ochre text-sea px-1.5 py-0.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">{t.destacado}</span>
               )}
+              <span class="font-sans font-extrabold text-white text-sm md:text-base leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,.6)]">
+                {t.titulo}
+              </span>
+              <span class="mt-2 font-mono text-[.6rem] uppercase tracking-wide text-cream/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                {t.medio} · {t.año}
+              </span>
             </div>
           </a>
-        )}
-
-        <div class="space-y-4">
-          {trabajosDestacados.slice(1).map((t) => (
-            <a href={t.url} target="_blank" rel="noopener" class="block group pt-4 border-t border-cream/10">
-              <div class="text-[.68rem] font-mono uppercase tracking-wide text-cream/40 mb-1">{t.medio} · {t.año}</div>
-              <div class="font-sans font-extrabold text-base leading-snug group-hover:text-ochre transition-colors">
-                {t.titulo}
-                {t.destacado && (
-                  <span class="ml-1.5 align-middle text-[.55rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1 py-0.5 rounded-sm">{t.destacado}</span>
-                )}
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <a href="/trabajos" class="inline-block mt-8 text-sm text-cream/70 border-b border-cream/30 hover:border-ochre hover:text-ochre transition-colors">Ver todos los trabajos</a>
+        ))}
       </div>
+    </div>
+  </section>
 
-      <!-- DERECHA · Para ONGs y empresas con valores -->
-      <div class="border-l-2 border-sage/50 bg-sage/[0.03] pl-6 md:pl-8 py-8 pr-2">
-        <p class="eyebrow-sage mb-2">Para ONGs y empresas con valores</p>
-        <div class="eyebrow-sage mb-6 flex items-center gap-2 opacity-70">
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="2" width="5" height="5" rx="1" /><rect x="9" y="2" width="5" height="5" rx="1" /><rect x="2" y="9" width="5" height="5" rx="1" /><rect x="9" y="9" width="5" height="5" rx="1" /></svg>
-          ¿En qué puedo ayudarte?
+  <!-- BLOQUE 2 · Para ONGs y empresas con valores -->
+  <section class="border-t-2 border-sage/40 bg-sage/[0.025]">
+    <div class="max-w-content mx-auto px-6 md:px-8 py-16">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <p class="eyebrow-sage mb-3">Para ONGs y empresas con valores</p>
+          <h2 class="font-sans font-extrabold text-3xl md:text-4xl mb-6">Storytelling con impacto social</h2>
+          <ul class="space-y-3 list-none">
+            <li class="text-sm text-cream/65 pt-3 border-t border-cream/10">Comunicación y estrategia de contenidos enfocada al tercer sector</li>
+            <li class="text-sm text-cream/65 pt-3 border-t border-cream/10">Redacción, creación de materiales y contenidos, gestión de canales online.</li>
+            <li class="text-sm text-cream/65 pt-3 border-t border-cream/10">Más de 12 años de trabajo en el ámbito social</li>
+          </ul>
         </div>
-        <div class="space-y-6">
-          <div>
-            <div class="font-sans font-extrabold text-lg mb-1">Estrategia digital</div>
-            <div class="text-sm text-cream/60">Plan de comunicación. Propuestas de contenidos y acciones. Storytelling narrativo. Propuestas realistas y cercanas, poniendo el foco en las necesidades e impacto real de tu entidad.</div>
-          </div>
-          <div>
-            <div class="font-sans font-extrabold text-lg mb-1">Comunicación corporativa y redacción</div>
-            <div class="text-sm text-cream/60">Realización de memorias, notas y convocatorias de prensa, posts y newsletter. En la era de la IA da mucha confianza saber que hay una persona real detrás de la comunicación de tu organización.</div>
-          </div>
-          <div>
-            <div class="font-sans font-extrabold text-lg mb-1">Creación de contenidos</div>
-            <div class="text-sm text-cream/60">Realización de entrevistas y reportajes. Fotografía documental. Producción y desarrollo de guiones de podcasts y materiales audiovisuales.</div>
-          </div>
+
+        <div>
+          <p class="eyebrow-sage mb-5">¿En qué puedo ayudarte?</p>
+
+          <details class="accordion-item border-t border-cream/15 py-4" open>
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-sans font-extrabold text-lg">Estrategia digital</span>
+              <span class="accordion-icon flex-shrink-0 text-sage text-xl leading-none">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-cream/60 leading-relaxed">Plan de comunicación. Propuestas de contenidos y acciones. Storytelling narrativo. Propuestas realistas y cercanas, poniendo el foco en las necesidades e impacto real de tu entidad.</p>
+          </details>
+
+          <details class="accordion-item border-t border-cream/15 py-4">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-sans font-extrabold text-lg">Comunicación corporativa y redacción</span>
+              <span class="accordion-icon flex-shrink-0 text-sage text-xl leading-none">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-cream/60 leading-relaxed">Realización de memorias, notas y convocatorias de prensa, posts y newsletter. En la era de la IA da mucha confianza saber que hay una persona real detrás de la comunicación de tu organización.</p>
+          </details>
+
+          <details class="accordion-item border-t border-b border-cream/15 py-4">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-sans font-extrabold text-lg">Creación de contenidos</span>
+              <span class="accordion-icon flex-shrink-0 text-sage text-xl leading-none">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-cream/60 leading-relaxed">Realización de entrevistas y reportajes. Fotografía documental. Producción y desarrollo de guiones de podcasts y materiales audiovisuales.</p>
+          </details>
+
+          <a href="/servicios" class="inline-flex items-center gap-2 mt-8 text-sm text-sage hover:text-sage-light transition-colors">
+            Ver todos los servicios
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
-        <a href="/servicios" class="inline-block mt-8 text-sm text-cream/70 border-b border-cream/30 hover:border-sage hover:text-sage transition-colors">Ver todos los servicios</a>
       </div>
-
     </div>
   </section>
 </Layout>
+
+<style>
+  .accordion-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .accordion-item .accordion-icon {
+    transition: transform 0.25s ease;
+  }
+  .accordion-item[open] .accordion-icon {
+    transform: rotate(45deg);
+  }
+</style>
