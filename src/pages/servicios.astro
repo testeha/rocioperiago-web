@@ -51,7 +51,7 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
         {procesoServicio.map((p) => (
           <div class="relative">
             <div class="font-mono text-2xl text-sage/60 mb-2">{p.num}</div>
-            <div class="font-serif text-lg mb-1.5">{p.nombre}</div>
+            <div class="font-sans font-extrabold text-lg mb-1.5">{p.nombre}</div>
             <div class="text-sm text-cream/55">{p.desc}</div>
           </div>
         ))}
@@ -65,7 +65,7 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
     <div class="grid md:grid-cols-3 gap-5">
       {clientes.map((c) => (
         <div class="card-sand rounded-md p-6">
-          <div class="font-serif text-lg mb-2">{c.org}</div>
+          <div class="font-sans font-extrabold text-lg mb-2">{c.org}</div>
           <div class="text-sm text-ink/70 mb-4">{c.titulo}</div>
           <div class="flex flex-wrap gap-1.5">
             {c.tags.map((tag) => (

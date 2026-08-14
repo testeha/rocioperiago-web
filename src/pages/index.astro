@@ -111,7 +111,7 @@ const capsulaHero = [
               <span>{trabajosDestacados[0].medio}</span>
               <span>{trabajosDestacados[0].año}</span>
             </div>
-            <div class="font-serif text-lg leading-snug group-hover:text-ochre transition-colors">
+            <div class="font-sans font-extrabold text-lg leading-snug group-hover:text-ochre transition-colors">
               {trabajosDestacados[0].titulo}
               {trabajosDestacados[0].destacado && (
                 <span class="ml-1.5 align-middle text-[.55rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1 py-0.5 rounded-sm">{trabajosDestacados[0].destacado}</span>
@@ -124,7 +124,7 @@ const capsulaHero = [
           {trabajosDestacados.slice(1).map((t) => (
             <a href={t.url} target="_blank" rel="noopener" class="block group pt-4 border-t border-cream/10">
               <div class="text-[.68rem] font-mono uppercase tracking-wide text-cream/40 mb-1">{t.medio} · {t.año}</div>
-              <div class="font-serif text-base leading-snug group-hover:text-ochre transition-colors">
+              <div class="font-sans font-extrabold text-base leading-snug group-hover:text-ochre transition-colors">
                 {t.titulo}
                 {t.destacado && (
                   <span class="ml-1.5 align-middle text-[.55rem] font-mono uppercase tracking-wide bg-ochre/20 text-ochre px-1 py-0.5 rounded-sm">{t.destacado}</span>
@@ -146,15 +146,15 @@ const capsulaHero = [
         </div>
         <div class="space-y-6">
           <div>
-            <div class="font-serif text-lg mb-1">Estrategia digital</div>
+            <div class="font-sans font-extrabold text-lg mb-1">Estrategia digital</div>
             <div class="text-sm text-cream/60">Plan de comunicación. Propuestas de contenidos y acciones. Storytelling narrativo. Propuestas realistas y cercanas, poniendo el foco en las necesidades e impacto real de tu entidad.</div>
           </div>
           <div>
-            <div class="font-serif text-lg mb-1">Comunicación corporativa y redacción</div>
+            <div class="font-sans font-extrabold text-lg mb-1">Comunicación corporativa y redacción</div>
             <div class="text-sm text-cream/60">Realización de memorias, notas y convocatorias de prensa, posts y newsletter. En la era de la IA da mucha confianza saber que hay una persona real detrás de la comunicación de tu organización.</div>
           </div>
           <div>
-            <div class="font-serif text-lg mb-1">Creación de contenidos</div>
+            <div class="font-sans font-extrabold text-lg mb-1">Creación de contenidos</div>
             <div class="text-sm text-cream/60">Realización de entrevistas y reportajes. Fotografía documental. Producción y desarrollo de guiones de podcasts y materiales audiovisuales.</div>
           </div>
         </div>

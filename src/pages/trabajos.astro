@@ -120,7 +120,7 @@ const pinesMapa = [
             href={inv.url}
             target="_blank"
             rel="noopener"
-            class:list={['font-serif text-xl leading-snug transition-colors block mb-4', i % 2 === 0 ? 'text-sea hover:text-sea/70' : 'text-cream hover:text-ochre-light']}
+            class:list={['font-sans font-extrabold text-xl leading-snug transition-colors block mb-4', i % 2 === 0 ? 'text-sea hover:text-sea/70' : 'text-cream hover:text-ochre-light']}
           >
             {inv.titulo}
           </a>
@@ -201,13 +201,13 @@ const pinesMapa = [
           p.url ? (
             <a href={p.url} target="_blank" rel="noopener" class="group block bg-sea-2 rounded-md p-6 hover:bg-sea-3 transition-colors">
               {p.años && <div class="font-mono text-[.68rem] text-sage tracking-[.04em] mb-2">{p.años}</div>}
-              <div class="font-serif text-lg leading-snug mb-1.5 group-hover:text-ochre transition-colors">{p.nombre}</div>
+              <div class="font-sans font-extrabold text-lg leading-snug mb-1.5 group-hover:text-ochre transition-colors">{p.nombre}</div>
               <div class="text-sm text-cream/55">{p.formato}</div>
             </a>
           ) : (
             <div class="bg-sea-2 rounded-md p-6">
               {p.años && <div class="font-mono text-[.68rem] text-sage tracking-[.04em] mb-2">{p.años}</div>}
-              <div class="font-serif text-lg leading-snug mb-1.5">{p.nombre}</div>
+              <div class="font-sans font-extrabold text-lg leading-snug mb-1.5">{p.nombre}</div>
               <div class="text-sm text-cream/55">{p.formato}</div>
             </div>
           )
