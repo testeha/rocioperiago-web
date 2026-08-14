@@ -36,6 +36,18 @@ textarea:focus-visible {
   }
 }
 
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 6px);
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2.2s ease-in-out infinite;
+}
+
 /* ── Componentes reutilizables ─────────────────────────────── */
 
 .dateline {

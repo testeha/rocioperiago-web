@@ -16,7 +16,7 @@ const capsulaHero = [
   transparentHero
 >
   <!-- HERO -->
-  <section class="relative overflow-hidden min-h-[620px] flex flex-col bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.DEFAULT)_2px,theme(colors.sea.DEFAULT)_4px)]">
+  <section class="relative overflow-hidden h-screen flex flex-col bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.DEFAULT)_2px,theme(colors.sea.DEFAULT)_4px)]">
     <div class="absolute inset-0 bg-gradient-to-b from-sea/15 via-sea/40 to-sea pointer-events-none"></div>
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
       <span class="font-mono text-[.65rem] uppercase tracking-wide text-cream/20">Retrato editorial de Rocío en el terreno · pendiente</span>
@@ -47,10 +47,21 @@ const capsulaHero = [
         ))}
       </div>
     </div>
+
+    <!-- INDICADOR DE SCROLL -->
+    <a
+      href="#bloque-1"
+      aria-label="Bajar al siguiente bloque"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 w-11 h-11 rounded-full border border-cream/25 flex items-center justify-center text-cream/70 hover:text-cream hover:border-cream/50 transition-colors animate-bounce-slow"
+    >
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M8 2v11M3 9l5 5 5-5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </a>
   </section>
 
   <!-- BLOQUE 1 · Para editores y medios -->
-  <section class="border-t-2 border-ochre/40 bg-ochre/[0.025]">
+  <section id="bloque-1" class="border-t-2 border-ochre/40 bg-ochre/[0.025]">
     <div class="max-w-content mx-auto px-6 md:px-8 py-16">
       <p class="eyebrow-ochre mb-3">Para editores y medios</p>
       <h2 class="font-sans font-extrabold text-3xl md:text-4xl mb-4">Reportajes, artículos y entrevistas</h2>
