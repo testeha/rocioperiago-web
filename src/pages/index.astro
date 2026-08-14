@@ -7,8 +7,6 @@ const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazin
 const capsulaHero = [
   { label: '2020', valor: 'Premio Ciudad de Alcalá' },
   { label: '2017', valor: 'Premio Manos Unidas' },
-  { label: 'Trayectoria', valor: '+10 años en el tercer sector' },
-  { label: 'Investigación', valor: 'Proyectos transfronterizos' },
 ];
 ---
 
@@ -35,12 +33,11 @@ const capsulaHero = [
       </p>
 
       <div class="flex gap-6 md:gap-8 flex-wrap mb-8">
-        <span class="font-mono text-xs uppercase tracking-wide text-ochre-light flex items-center gap-2"><span class="w-[5px] h-[5px] rounded-full bg-ochre-light inline-block"></span>Colombia → Alemania</span>
-        <span class="font-mono text-xs uppercase tracking-wide text-ochre-light flex items-center gap-2"><span class="w-[5px] h-[5px] rounded-full bg-ochre-light inline-block"></span>España · Italia · Grecia</span>
-        <span class="font-mono text-xs uppercase tracking-wide text-ochre-light flex items-center gap-2"><span class="w-[5px] h-[5px] rounded-full bg-ochre-light inline-block"></span>2 rutas financiadas · €35k</span>
+        <span class="font-mono text-xs uppercase tracking-wide text-ochre-light flex items-center gap-2"><span class="w-[5px] h-[5px] rounded-full bg-ochre-light inline-block"></span>+10 años en el tercer sector</span>
+        <span class="font-mono text-xs uppercase tracking-wide text-ochre-light flex items-center gap-2"><span class="w-[5px] h-[5px] rounded-full bg-ochre-light inline-block"></span>Proyectos transfronterizos</span>
       </div>
 
-      <!-- CÁPSULA DE CRISTAL — 4 bloques esquemáticos -->
+      <!-- CÁPSULA DE CRISTAL — 2 bloques (premios) -->
       <div class="inline-flex items-stretch bg-cream/10 backdrop-blur-md border border-cream/20 rounded-full p-1.5 flex-wrap">
         {capsulaHero.map((item, i) => (
           <div class:list={['px-5 py-3 flex flex-col gap-0.5 justify-center', i < capsulaHero.length - 1 && 'border-r border-cream/15']}>
@@ -48,16 +45,6 @@ const capsulaHero = [
             <span class="text-sm text-cream font-medium whitespace-nowrap">{item.valor}</span>
           </div>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- BARRA DE PRENSA -->
-  <section class="border-y border-cream/10 bg-sea-2/40">
-    <div class="max-w-content mx-auto px-6 md:px-8 py-5 flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
-      <span class="kicker text-cream/40 flex-shrink-0">He publicado en</span>
-      <div class="flex flex-wrap gap-x-6 gap-y-2">
-        {medios.map((m) => <span class="text-sm text-cream/60">{m}</span>)}
       </div>
     </div>
   </section>
@@ -105,6 +92,14 @@ const capsulaHero = [
             </div>
           </a>
         ))}
+      </div>
+
+      <!-- BARRA DE PRENSA -->
+      <div class="mt-12 pt-8 border-t border-cream/10 flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
+        <span class="kicker text-cream/40 flex-shrink-0">He publicado en</span>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+          {medios.map((m) => <span class="text-sm text-cream/60">{m}</span>)}
+        </div>
       </div>
     </div>
   </section>
