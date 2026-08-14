@@ -1,0 +1,199 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+export interface MapaPin {
+  codigo: string; // código ISO de 2 letras, debe existir como id en el SVG
+  nombre: string;
+  left: number; // porcentaje calculado a partir del viewBox
+  top: number;
+  kicker: string;
+  titulo: string;
+  url: string;
+  cta?: string;
+}
+
+interface Props {
+  pines: MapaPin[];
+  titulo?: string;
+}
+
+const { pines, titulo } = Astro.props;
+
+// Leemos el SVG fuente (Simple World Map, Al MacDonald / Fritz Lekschas, CC BY-SA 3.0)
+const svgPath = path.resolve('./public/mapas/world-map.svg');
+const svgRaw = fs.readFileSync(svgPath, 'utf-8');
+
+// Extraemos solo el contenido interno (todos los países) del <g> principal
+const innerMatch = svgRaw.match(/<svg[^>]*>[\s\S]*?<g>([\s\S]*)<\/g>\s*<\/svg>/);
+let worldInner = innerMatch ? innerMatch[1] : '';
+
+// Añadimos la clase "hl" a los países que tienen pin, para poder resaltarlos por CSS
+const codigosResaltados = [...new Set(pines.map((p) => p.codigo))];
+for (const codigo of codigosResaltados) {
+  worldInner = worldInner.replace(
+    new RegExp(`<path id="${codigo}"`, 'g'),
+    `<path id="${codigo}" class="hl"`
+  );
+  worldInner = worldInner.replace(
+    new RegExp(`<g id="${codigo}">`, 'g'),
+    `<g id="${codigo}" class="hl-group">`
+  );
+}
+---
+
+<div class="map-block">
+  {titulo && <p class="eyebrow-ochre mb-6">{titulo}</p>}
+
+  <div class="map-canvas">
+    <svg
+      id="worldmap"
+      viewBox="30.767 241.591 784.077 458.627"
+      preserveAspectRatio="xMidYMid slice"
+      set:html={worldInner}
+    />
+
+    {pines.map((pin) => (
+      <div class="map-pin" style={`left:${pin.left}%; top:${pin.top}%;`}>
+        <div class="map-pin-dot"></div>
+        <span class="map-pin-label">{pin.nombre}</span>
+        <div class="map-tooltip">
+          <div class="map-tt-kicker">{pin.kicker}</div>
+          <div class="map-tt-title">{pin.titulo}</div>
+          <a href={pin.url} target="_blank" rel="noopener" class="map-tt-link">{pin.cta ?? 'Leer más'} →</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .map-canvas {
+    position: relative;
+    height: 420px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: radial-gradient(circle at 40% 30%, rgba(247, 244, 236, 0.03) 0%, transparent 55%);
+  }
+
+  #worldmap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #worldmap :global(path) {
+    fill: rgba(247, 244, 236, 0.05);
+    stroke: rgba(247, 244, 236, 0.14);
+    stroke-width: 0.6;
+  }
+  #worldmap :global(path.hl) {
+    fill: rgba(207, 154, 52, 0.55);
+    stroke: rgba(227, 180, 88, 0.7);
+    stroke-width: 0.7;
+  }
+  #worldmap :global(g.hl-group path) {
+    fill: rgba(207, 154, 52, 0.55);
+    stroke: rgba(227, 180, 88, 0.7);
+    stroke-width: 0.7;
+  }
+
+  .map-pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  .map-pin-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: theme('colors.ochre.light');
+    box-shadow: 0 0 0 4px rgba(227, 180, 88, 0.2);
+    cursor: pointer;
+    position: relative;
+  }
+  .map-pin-dot::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(227, 180, 88, 0.4);
+    animation: map-ping 2.6s ease-out infinite;
+  }
+  @keyframes map-ping {
+    0% { transform: scale(0.6); opacity: 0.9; }
+    80% { transform: scale(1.9); opacity: 0; }
+    100% { transform: scale(1.9); opacity: 0; }
+  }
+  .map-pin-label {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: theme('fontFamily.mono');
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: rgba(247, 244, 236, 0.6);
+    white-space: nowrap;
+    pointer-events: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  .map-tooltip {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    width: 210px;
+    background: theme('colors.sand.DEFAULT');
+    border-radius: 10px;
+    padding: 0.85rem 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.18s ease;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    z-index: 20;
+  }
+  .map-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 11px;
+    height: 11px;
+    background: theme('colors.sand.DEFAULT');
+  }
+  .map-pin:hover .map-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+  .map-pin:hover .map-pin-dot {
+    background: theme('colors.cream');
+  }
+
+  .map-tt-kicker {
+    font-family: theme('fontFamily.mono');
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: theme('colors.ochre.DEFAULT');
+    margin-bottom: 0.3rem;
+  }
+  .map-tt-title {
+    font-family: theme('fontFamily.serif');
+    font-size: 0.88rem;
+    line-height: 1.3;
+    color: theme('colors.ink.DEFAULT');
+    margin-bottom: 0.45rem;
+  }
+  .map-tt-link {
+    font-family: theme('fontFamily.mono');
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: theme('colors.sea.2');
+    border-bottom: 1px solid theme('colors.sea.2');
+  }
+</style>
