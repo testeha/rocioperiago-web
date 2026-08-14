@@ -11,7 +11,7 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div>
         <p class="eyebrow-sage mb-3">Para organizaciones</p>
-        <h1 class="font-serif text-4xl md:text-5xl mb-4">Storytelling con impacto social</h1>
+        <h1 class="font-sans font-extrabold text-4xl md:text-5xl mb-4">Storytelling con impacto social</h1>
         <p class="text-cream/70 max-w-xl">
           Ayudo a ONGs, fundaciones y empresas a comunicar su trabajo con honestidad, precisión y la narrativa
           que mejor se ajusta a sus necesidades. Trabajo desde Testeha Estudio, donde un equipo multidisciplinar
@@ -28,7 +28,7 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
       {servicios.map((s) => (
         <div class="rounded-md p-8 border border-cream/10 bg-sea-2/40">
           <div class="font-mono text-sm text-cream/30 mb-3">{s.num}</div>
-          <h2 class="font-serif text-xl mb-3">{s.nombre}</h2>
+          <h2 class="font-sans font-extrabold text-xl mb-3">{s.nombre}</h2>
           <p class="text-sm text-cream/65 mb-5">{s.descripcion}</p>
           <ul class="space-y-2 list-none">
             {s.incluye.map((item) => (
@@ -46,7 +46,7 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
   <!-- PROCESO -->
   <section class="border-y border-cream/10 bg-sea-2/30">
     <div class="max-w-content mx-auto px-6 md:px-8 py-16">
-      <h2 class="font-serif text-2xl mb-10">Cómo trabajamos</h2>
+      <h2 class="font-sans font-extrabold text-2xl mb-10">Cómo trabajamos</h2>
       <div class="grid sm:grid-cols-4 gap-6">
         {procesoServicio.map((p) => (
           <div class="relative">
@@ -61,7 +61,7 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
 
   <!-- CLIENTES -->
   <section class="max-w-content mx-auto px-6 md:px-8 py-20">
-    <h2 class="font-serif text-2xl mb-10">Organizaciones con las que he trabajado</h2>
+    <h2 class="font-sans font-extrabold text-2xl mb-10">Organizaciones con las que he trabajado</h2>
     <div class="grid md:grid-cols-3 gap-5">
       {clientes.map((c) => (
         <div class="card-sand rounded-md p-6">
@@ -81,7 +81,7 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
   <section class="max-w-content mx-auto px-6 md:px-8 pb-24">
     <div class="bg-sea-2 rounded-md p-10 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-6">
       <div>
-        <h2 class="font-serif text-2xl md:text-3xl mb-2">¿Hablamos de tu proyecto?</h2>
+        <h2 class="font-sans font-extrabold text-2xl md:text-3xl mb-2">¿Hablamos de tu proyecto?</h2>
         <p class="text-cream/65">Cuéntame qué necesita tu organización y te propongo un plan concreto.</p>
       </div>
       <a href="/contacto" class="btn-sage flex-shrink-0">Pedir presupuesto</a>
