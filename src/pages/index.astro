@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { trabajosDestacados } from '../data/trabajos';
 
 const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazine', 'Revista Haz', 'Revista Late', 'Ballena Blanca', 'Mundo Negro'];
+const proyectosCon = ['ACCEM', 'Asociación Achalay', 'Instituto de Empresa', 'Aplica', 'Cooperama'];
 
 const capsulaHero = [
   { label: '2020', valor: 'Premio Ciudad de Alcalá' },
@@ -160,6 +161,14 @@ const capsulaHero = [
             Ver todos los servicios
             <span aria-hidden="true">→</span>
           </a>
+        </div>
+      </div>
+
+      <!-- BARRA PROYECTOS CON -->
+      <div class="mt-12 pt-8 border-t border-cream/10 flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
+        <span class="kicker text-cream/40 flex-shrink-0">Proyectos con</span>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+          {proyectosCon.map((p) => <span class="text-sm text-cream/60">{p}</span>)}
         </div>
       </div>
     </div>
