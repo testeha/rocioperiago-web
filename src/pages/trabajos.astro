@@ -113,7 +113,7 @@ const pinesMapa = [
     <div class="grid md:grid-cols-2 gap-5">
       {investigacionesDestacadas.map((inv, i) => (
         <div class:list={['rounded-xl p-8 md:p-10', i % 2 === 0 ? 'bg-ochre' : 'bg-sea-2']}>
-          <span class:list={['block font-mono text-[.62rem] uppercase tracking-wide mb-4', i % 2 === 0 ? 'text-sea/75' : 'text-ochre-light']}>
+          <span class:list={['block font-mono text-[.62rem] uppercase tracking-wide mb-4', i % 2 === 0 ? 'text-sea' : 'text-ochre-light']}>
             Journalismfund Europe
           </span>
           <a
@@ -125,7 +125,7 @@ const pinesMapa = [
             {inv.titulo}
           </a>
           <p class:list={['text-sm leading-relaxed mb-5', i % 2 === 0 ? 'text-sea' : 'text-cream/70']}>{inv.resumen}</p>
-          <p class:list={['text-xs leading-relaxed', i % 2 === 0 ? 'text-sea/75' : 'text-cream/55']}>
+          <p class:list={['text-xs leading-relaxed', i % 2 === 0 ? 'text-sea' : 'text-cream/55']}>
             <strong class:list={i % 2 === 0 ? 'text-sea' : 'text-cream'}>Publicado en</strong> {inv.publicadoEn}
             {inv.presentadoEn && (
               <>
