@@ -73,15 +73,15 @@ textarea:focus-visible {
 }
 
 .btn-ochre {
-  @apply inline-block bg-ochre text-sea font-sans font-semibold text-sm px-5 py-2.5 rounded-sm transition-colors hover:bg-ochre-light;
+  @apply inline-block bg-ochre text-sea font-sans font-semibold text-sm px-5 py-2.5 rounded-full transition-colors hover:bg-ochre-light;
 }
 
 .btn-sage {
-  @apply inline-block bg-sage text-sea font-sans font-semibold text-sm px-5 py-2.5 rounded-sm transition-colors hover:bg-sage-light;
+  @apply inline-block bg-sage text-sea font-sans font-semibold text-sm px-5 py-2.5 rounded-full transition-colors hover:bg-sage-light;
 }
 
 .btn-outline {
-  @apply inline-block border border-cream/30 text-cream font-sans text-sm px-5 py-2.5 rounded-sm transition-colors hover:border-cream/60;
+  @apply inline-block border border-cream/30 text-cream font-sans text-sm px-5 py-2.5 rounded-full transition-colors hover:border-cream/60;
 }
 
 .wp-dot {
