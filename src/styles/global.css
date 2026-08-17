@@ -51,11 +51,17 @@ textarea:focus-visible {
 /* ── Componentes reutilizables ─────────────────────────────── */
 
 .dateline {
-  @apply font-mono text-[.7rem] uppercase tracking-[.08em] text-sage;
+  @apply font-mono uppercase text-sage;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
 }
 
 .kicker {
-  @apply font-mono text-[.68rem] uppercase tracking-[.06em];
+  @apply font-mono uppercase;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
 }
 
 .eyebrow-ochre {

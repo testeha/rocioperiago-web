@@ -33,6 +33,9 @@ export default {
         sans: ['"Inter"', 'system-ui', 'sans-serif'],
         mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
       },
+      fontSize: {
+        sm: ['0.975rem', { lineHeight: '1.5rem', fontWeight: '500' }],
+      },
       maxWidth: {
         content: '1080px',
       },

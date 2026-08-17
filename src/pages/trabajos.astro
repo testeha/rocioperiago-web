@@ -113,7 +113,7 @@ const pinesMapa = [
     <div class="grid md:grid-cols-2 gap-5">
       {investigacionesDestacadas.map((inv, i) => (
         <div class:list={['rounded-xl p-8 md:p-10', i % 2 === 0 ? 'bg-ochre' : 'bg-sea-2']}>
-          <span class:list={['block font-mono text-[.62rem] uppercase tracking-wide mb-4', i % 2 === 0 ? 'text-sea' : 'text-ochre-light']}>
+          <span class:list={['block font-mono uppercase mb-4 font-medium', i % 2 === 0 ? 'text-sea' : 'text-ochre-light']} style="font-size:0.72rem; letter-spacing:0.4px;">
             Journalismfund Europe
           </span>
           <a
