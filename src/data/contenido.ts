@@ -87,6 +87,18 @@ export const servicios: Servicio[] = [
       'Distribución en plataformas digitales',
     ],
   },
+  {
+    num: '04',
+    nombre: 'Lorem ipsum dolor sit amet',
+    descripcion:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+    incluye: [
+      'Lorem ipsum dolor sit amet',
+      'Consectetur adipiscing elit',
+      'Sed do eiusmod tempor incididunt',
+      'Ut labore et dolore magna aliqua',
+    ],
+  },
 ];
 
 export const procesoServicio = [

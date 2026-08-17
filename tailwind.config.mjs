@@ -34,6 +34,7 @@ export default {
         mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
       },
       fontSize: {
+        xs: ['0.85rem', { lineHeight: '1.25rem' }],
         sm: ['0.975rem', { lineHeight: '1.5rem', fontWeight: '500' }],
       },
       maxWidth: {
