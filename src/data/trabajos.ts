@@ -28,7 +28,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Periodismo de soluciones',
     año: '2026',
     url: 'https://hazrevista.org/soluciones/2026/07/biblioteca-barrio-lleva-20-anos-construyendo-convivencia-cartagena/',
-    imagen: '/images/trabajos/biblioteca-cartagena.jpg',
+    imagen: '/images/trabajos/biblioteca-cartagena.webp',
   },
   {
     titulo: 'Fin al «de sueldos no se habla»: la transparencia salarial entra en las empresas',
