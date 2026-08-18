@@ -56,6 +56,7 @@ export const trabajos: Trabajo[] = [
     año: '2025',
     url: 'https://www.journalismfund.eu/not-so-sunny-side-of-sunscreen',
     destacado: 'Investigación',
+    imagen: '/images/trabajos/filtros-solares.webp',
   },
   {
     titulo: 'Ostras para regenerar el Mar Menor',
@@ -74,6 +75,7 @@ export const trabajos: Trabajo[] = [
     año: '2023',
     url: 'https://www.revistalate.net/el-mar-menor-una-laguna-salada-que-lucha-por-sobrevivir/',
     destacado: 'Investigación',
+    imagen: '/images/trabajos/mar-menor-laguna.webp',
   },
   {
     titulo: 'From Colombia to Germany. The impact of coal route',
