@@ -37,6 +37,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'RSC',
     año: '2026',
     url: 'https://hazrevista.org/transparencia/2026/03/fin-sueldos-no-se-habla-transparencia-salarial-entra-empresas/',
+    imagen: '/images/trabajos/transparencia-salarial.webp',
   },
   {
     titulo: 'Las huellas del verano en el invierno europeo',
