@@ -9,6 +9,7 @@ export interface Trabajo {
   url: string;
   destacado?: 'Investigación' | 'Premio';
   extracto?: string;
+  imagen?: string;
 }
 
 export const temas: Record<Tema, { label: string; color: string }> = {
@@ -27,6 +28,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Periodismo de soluciones',
     año: '2026',
     url: 'https://hazrevista.org/soluciones/2026/07/biblioteca-barrio-lleva-20-anos-construyendo-convivencia-cartagena/',
+    imagen: '/images/trabajos/biblioteca-cartagena.jpg',
   },
   {
     titulo: 'Fin al «de sueldos no se habla»: la transparencia salarial entra en las empresas',

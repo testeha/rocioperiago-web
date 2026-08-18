@@ -65,17 +65,17 @@ const capsulaHero = [
   <!-- BLOQUE 1 · Para editores y medios -->
   <section id="bloque-1" class="border-t-2 border-ochre/40 bg-ochre/[0.025] scroll-mt-20">
     <div class="max-w-content mx-auto px-6 md:px-8 py-16">
-      <p class="eyebrow-ochre mb-3">Para editores y medios</p>
-      <h2 class="font-sans font-extrabold text-3xl md:text-4xl mb-4">Reportajes, artículos y entrevistas</h2>
+      <p class="eyebrow-ochre mb-3">Reportajes y artículos</p>
+      <h2 class="font-sans font-extrabold text-3xl md:text-4xl mb-4">Para Editores y Medios</h2>
       <p class="text-cream/70 max-w-2xl mb-12">
-        Reportajes y crónicas sobre medio ambiente, migración, justicia social y viajes, publicados en medios
-        nacionales e internacionales desde 2012.
+        Crónicas, reportajes, artículos, entrevistas etc publicados en medios sobre diferentes temáticas,
+        especialmente desarrollo, migraciones, medio ambiente o periodismo de soluciones.
       </p>
 
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
         <h3 class="font-sans font-extrabold text-xl md:text-2xl">Últimos trabajos publicados</h3>
         <a href="/trabajos" class="inline-flex items-center gap-2 text-sm text-ochre hover:text-ochre-light transition-colors flex-shrink-0">
-          Ver trabajos
+          Editores y Medios
           <span aria-hidden="true">→</span>
         </a>
       </div>
@@ -86,9 +86,16 @@ const capsulaHero = [
             href={t.url}
             target="_blank"
             rel="noopener"
-            class="group relative aspect-[4/5] rounded-md overflow-hidden block bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]"
+            class:list={[
+              'group relative aspect-[4/5] rounded-md overflow-hidden block',
+              !t.imagen && 'bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]',
+            ]}
           >
-            <span class="absolute top-3 left-3 font-mono text-[.55rem] uppercase tracking-wide text-cream/20 z-0">Foto pendiente</span>
+            {t.imagen ? (
+              <img src={t.imagen} alt={t.titulo} class="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
+            ) : (
+              <span class="absolute top-3 left-3 font-mono text-[.55rem] uppercase tracking-wide text-cream/20 z-0">Foto pendiente</span>
+            )}
 
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-colors duration-300 z-10"></div>
 

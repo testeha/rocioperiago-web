@@ -166,9 +166,16 @@ const pinesMapa = [
           target="_blank"
           rel="noopener"
           data-tema={t.tema}
-          class="trabajo-card group relative aspect-[4/5] rounded-md overflow-hidden block bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]"
+          class:list={[
+            'trabajo-card group relative aspect-[4/5] rounded-md overflow-hidden block',
+            !t.imagen && 'bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]',
+          ]}
         >
-          <span class="absolute top-3 left-3 font-mono text-[.55rem] uppercase tracking-wide text-cream/20 z-0">Foto pendiente</span>
+          {t.imagen ? (
+            <img src={t.imagen} alt={t.titulo} class="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
+          ) : (
+            <span class="absolute top-3 left-3 font-mono text-[.55rem] uppercase tracking-wide text-cream/20 z-0">Foto pendiente</span>
+          )}
 
           <!-- overlay oscuro, aparece al hover -->
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-colors duration-300 z-10"></div>
