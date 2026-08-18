@@ -5,6 +5,15 @@ import { trabajosDestacados } from '../data/trabajos';
 const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazine', 'Revista Haz', 'Revista Late', 'Ballena Blanca', 'Mundo Negro'];
 const proyectosCon = ['ACCEM', 'Asociación Achalay', 'Instituto de Empresa', 'Aplica', 'Cooperama'];
 
+// Slideshow del hero — 4 fotos seleccionadas por Rocío, en rotación automática
+// El "caption" es un placeholder de momento; a futuro se sustituye por ubicación · año de cada foto
+const heroSlides = [
+  { imagen: '/images/hero/realidades-invisibles.webp', caption: 'Lorem ipsum · 2024' },
+  { imagen: '/images/hero/paseo-maritimo.webp', caption: 'Lorem ipsum · 2016' },
+  { imagen: '/images/hero/agaves-cabo-gata.webp', caption: 'Lorem ipsum · 2022' },
+  { imagen: '/images/hero/entrevista-campo.webp', caption: 'Lorem ipsum · 2020' },
+];
+
 const capsulaHero = [
   { label: '2020', valor: 'Premio Ciudad de Alcalá' },
   { label: '2017', valor: 'Premio Manos Unidas' },
@@ -18,10 +27,23 @@ const capsulaHero = [
 >
   <!-- HERO -->
   <section id="hero" class="relative overflow-hidden h-screen flex flex-col">
-    <div id="hero-bg" class="absolute inset-x-0 -top-32 -bottom-32 will-change-transform bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.DEFAULT)_2px,theme(colors.sea.DEFAULT)_4px)]"></div>
+    <div id="hero-bg" class="absolute inset-x-0 -top-32 -bottom-32 will-change-transform bg-sea">
+      {heroSlides.map((slide, i) => (
+        <div
+          class="hero-slide absolute inset-0 bg-cover bg-center transition-opacity ease-in-out"
+          style={`background-image:url('${slide.imagen}'); opacity:${i === 0 ? 1 : 0}; transition-duration:1800ms;`}
+          data-index={i}
+          data-caption={slide.caption}
+        ></div>
+      ))}
+    </div>
     <div class="absolute inset-0 bg-gradient-to-b from-sea/15 via-sea/40 to-sea pointer-events-none"></div>
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <span class="font-mono text-[.75rem] font-medium uppercase tracking-wide text-cream/20">Retrato editorial de Rocío en el terreno · pendiente</span>
+
+    <!-- LABEL DE FOTO — esquina inferior derecha, sincronizado con el slide activo -->
+    <div class="absolute bottom-24 md:bottom-8 right-6 z-10">
+      <span id="hero-caption" class="font-mono text-[.68rem] uppercase tracking-wide bg-sea/70 backdrop-blur-sm border border-cream/15 px-3 py-1.5 rounded-full text-cream/75 transition-opacity duration-500">
+        {heroSlides[0].caption}
+      </span>
     </div>
 
     <div class="max-w-content mx-auto px-6 md:px-8 pt-10 pb-16 relative z-10 mt-auto w-full">
@@ -224,5 +246,46 @@ const capsulaHero = [
 
   if (!prefersReducedMotion) {
     window.addEventListener('scroll', onScroll, { passive: true });
+  }
+</script>
+
+<script>
+  // Slideshow del hero — orden aleatorio en cada visita, transición cruzada suave, sin flechas ni puntos
+  const slides = document.querySelectorAll<HTMLDivElement>('.hero-slide');
+  const captionEl = document.getElementById('hero-caption');
+  const SLIDE_DURATION = 7000; // ms que cada foto permanece visible
+  const prefersReducedMotionSlides = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (slides.length > 1) {
+    // Empezamos por una foto aleatoria en cada carga de la home
+    let order = Array.from(slides.keys());
+    for (let i = order.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+
+    // Mostramos de inicio el slide aleatorio elegido (sin fundido, para evitar parpadeo al cargar)
+    slides.forEach((s) => (s.style.transitionDuration = '0ms'));
+    slides.forEach((s, i) => (s.style.opacity = i === order[0] ? '1' : '0'));
+    if (captionEl) captionEl.textContent = slides[order[0]].dataset.caption ?? '';
+    requestAnimationFrame(() => {
+      slides.forEach((s) => (s.style.transitionDuration = '1800ms'));
+    });
+
+    if (!prefersReducedMotionSlides) {
+      let pos = 0;
+      setInterval(() => {
+        pos = (pos + 1) % order.length;
+        const activeIndex = order[pos];
+        slides.forEach((s, i) => (s.style.opacity = i === activeIndex ? '1' : '0'));
+        if (captionEl) {
+          captionEl.style.opacity = '0';
+          setTimeout(() => {
+            captionEl.textContent = slides[activeIndex].dataset.caption ?? '';
+            captionEl.style.opacity = '1';
+          }, 400);
+        }
+      }, SLIDE_DURATION);
+    }
   }
 </script>
