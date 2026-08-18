@@ -64,6 +64,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Medio ambiente',
     año: '2025',
     url: 'https://ballenablanca.es/producto/42/',
+    imagen: '/images/trabajos/ostras-mar-menor.webp',
   },
   {
     titulo: 'El Mar Menor, una laguna salada que lucha por sobrevivir',
@@ -82,6 +83,7 @@ export const trabajos: Trabajo[] = [
     año: '2023',
     url: 'https://www.journalismfund.eu/coal-route',
     destacado: 'Investigación',
+    imagen: '/images/trabajos/ruta-carbon.webp',
   },
   {
     titulo: 'Los imprescindibles. Temporeros en la Huerta de Europa',
