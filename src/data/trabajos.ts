@@ -240,6 +240,7 @@ export const trabajos: Trabajo[] = [
     año: '2018',
     url: 'https://www.altairmagazine.com/voces/la-biblioteca-de-las-mujeres/',
     destacado: 'Premio',
+    imagen: '/images/trabajos/biblioteca-mujeres-estambul.webp',
   },
   {
     titulo: 'El deporte femenino que arrasa en el África austral',
@@ -257,6 +258,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Educación',
     año: '2019',
     url: 'https://elpais.com/elpais/2019/09/16/planeta_futuro/1568656526_478331.html',
+    imagen: '/images/trabajos/reine-la-lectura.webp',
   },
   {
     titulo: 'El extremo de la guerra contra el plástico: cárcel por usar bolsas',
@@ -275,6 +277,7 @@ export const trabajos: Trabajo[] = [
     año: '2016',
     url: 'https://elpais.com/elpais/2016/12/02/planeta_futuro/1480682635_609796.html',
     destacado: 'Premio',
+    imagen: '/images/trabajos/calles-recife.webp',
   },
   {
     titulo: 'La solución pasa por eliminar al mosquito',
@@ -283,6 +286,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Salud pública',
     año: '2016',
     url: 'https://elpais.com/elpais/2016/11/29/planeta_futuro/1480440360_379651.html',
+    imagen: '/images/trabajos/solucion-mosquito.webp',
   },
 ];
 
