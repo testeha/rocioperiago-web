@@ -66,6 +66,7 @@ export const trabajos: Trabajo[] = [
     año: '2025',
     url: 'https://www.revistalate.net/las-huellas-del-verano-en-el-invierno-europeo/',
     destacado: 'Investigación',
+    imagen: '/images/trabajos/huellas-verano.webp',
   },
   {
     titulo: 'El polvillo que contamina el mundo. Así es el eje del carbón entre Colombia y Alemania',
@@ -84,6 +85,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Moda y sociedad',
     año: '2024',
     url: 'https://elpais.com/planeta-futuro/2024-06-10/el-estilista-ghanes-que-usa-la-moda-para-denunciar-los-efectos-de-la-moda-rapida-en-su-pais.html',
+    imagen: '/images/trabajos/estilista-ghanes.webp',
   },
   {
     titulo: 'El Mar Menor, una laguna salada que lucha por sobrevivir',
@@ -102,6 +104,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Viajes',
     año: '2023',
     url: 'https://www.altairmagazine.com/pasos/no-hay-postales-en-joao-pessoa/',
+    imagen: '/images/trabajos/joao-pessoa.webp',
   },
   {
     titulo: 'Un plan para que el punto más oriental de las Américas no desaparezca',
@@ -110,6 +113,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Medio ambiente',
     año: '2023',
     url: 'https://elpais.com/america-futura/2023-03-04/un-plan-para-que-el-punto-mas-oriental-de-las-americas-no-desaparezca.html',
+    imagen: '/images/trabajos/punto-mas-oriental.webp',
   },
   {
     titulo: 'Las nuevas generaciones quieren hablar de la regla',
@@ -118,6 +122,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Derechos de la mujer',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/2022-06-16/las-nuevas-generaciones-quieren-hablar-de-la-regla.html',
+    imagen: '/images/trabajos/nuevas-generaciones-regla.webp',
   },
   {
     titulo: 'Perseguir por África entera el sueño de estudiar',
@@ -126,6 +131,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Migración · Educación',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/que-mueve-a/2022-04-03/perseguir-por-africa-entera-el-sueno-de-estudiar.html',
+    imagen: '/images/trabajos/perseguir-africa-estudiar.webp',
   },
   {
     titulo: 'La comunidad q\u2019eqchi\u2019 contra Guatemala, un precedente en la lucha de los derechos indígenas',
@@ -134,6 +140,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Derechos indígenas',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/2022-02-11/la-comunidad-qeqchi-contra-guatemala-un-precedente-en-la-lucha-de-los-derechos-indigenas.html',
+    imagen: '/images/trabajos/comunidad-qeqchi.webp',
   },
   {
     titulo: 'La primera indígena emberá abogada es líder en la lucha por la igualdad de género en Panamá',
@@ -142,6 +149,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Derechos indígenas',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/que-mueve-a/2022-01-10/la-primera-indigena-embera-abogada-es-lider-en-la-lucha-por-la-igualdad-de-genero-en-panama.html',
+    imagen: '/images/trabajos/indigena-embera-abogada.webp',
   },
   {
     titulo: 'Nadino Calapucha, el músico que canta a la Amazonía',
@@ -150,6 +158,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Cultura indígena',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/que-mueve-a/2021-12-02/nadino-calapucha-el-musico-que-canta-a-la-amazonia.html',
+    imagen: '/images/trabajos/nadino-calapucha.webp',
   },
   {
     titulo: 'Las playas aún salvajes de Murcia',
@@ -158,6 +167,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Viajes · Naturaleza',
     año: '2022',
     url: 'https://viajes.nationalgeographic.com.es/a/calnegre-cabo-cope-playas-aun-salvajes-murcia_16866',
+    imagen: '/images/trabajos/playas-salvajes-murcia.webp',
   },
   {
     titulo: 'Ameer Jubran, el químico que brinda esperanza a los desplazados en Yemen',
@@ -166,6 +176,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Migración',
     año: '2021',
     url: 'https://elpais.com/planeta-futuro/que-mueve-a/2021-10-04/ameer-jubran-el-quimico-que-brinda-esperanza-a-los-desplazados-en-yemen.html',
+    imagen: '/images/trabajos/ameer-jubran.webp',
   },
   {
     titulo: 'Dorothy Estrada-Tanck, defendiendo los derechos humanos desde las aulas',
@@ -174,6 +185,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Derechos humanos',
     año: '2021',
     url: 'https://elpais.com/planeta-futuro/2021-09-13/dorothy-estrada-tanck-defendiendo-los-derechos-humanos-desde-las-aulas.html',
+    imagen: '/images/trabajos/dorothy-estrada-tanck.webp',
   },
   {
     titulo: 'Los pueblos indígenas ganan protagonismo como garantes de la biodiversidad en el planeta',
@@ -182,6 +194,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Biodiversidad',
     año: '2021',
     url: 'https://elpais.com/planeta-futuro/2021-09-11/los-pueblos-indigenas-ganan-protagonismo-como-garantes-de-la-biodiversidad-en-el-planeta.html',
+    imagen: '/images/trabajos/pueblos-indigenas-biodiversidad.webp',
   },
   {
     titulo: 'Los indígenas piden descolonizar la conservación de la naturaleza',
@@ -190,6 +203,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Conservación',
     año: '2021',
     url: 'https://elpais.com/planeta-futuro/2021-09-07/un-congreso-indigena-alternativo-para-descolonizar-la-conservacion-de-la-naturaleza.html',
+    imagen: '/images/trabajos/indigenas-descolonizar-conservacion.webp',
   },
   {
     titulo: 'Los imprescindibles',
@@ -198,6 +212,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Migración',
     año: '2021',
     url: 'https://mundonegro.es/los-imprescindibles/',
+    imagen: '/images/trabajos/los-imprescindibles.webp',
   },
   {
     titulo: 'La paz que llega con la salud',
@@ -206,6 +221,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Salud · Paz',
     año: '2020',
     url: 'https://mundonegro.es/la-paz-que-llega-con-la-salud/',
+    imagen: '/images/trabajos/paz-que-llega-salud.webp',
   },
   {
     titulo: 'Tuvimos que comprarle a una chica su orina para poder beberla y sobrevivir',
@@ -214,6 +230,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Crisis humanitaria',
     año: '2020',
     url: 'https://elpais.com/planeta-futuro/2020-12-26/tuvimos-que-comprarle-a-una-chica-su-orina-para-poder-beberla-y-sobrevivir.html',
+    imagen: '/images/trabajos/tuvimos-que-comprarle.webp',
   },
   {
     titulo: 'La biblioteca de las mujeres de Estambul',
@@ -231,6 +248,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Deporte y género',
     año: '2019',
     url: 'https://elpais.com/elpais/2019/09/24/planeta_futuro/1569334038_227402.html',
+    imagen: '/images/trabajos/deporte-femenino-africa.webp',
   },
   {
     titulo: 'Conseguir que reine la lectura en un país en el que solo el 31% acaba secundaria',
@@ -247,6 +265,7 @@ export const trabajos: Trabajo[] = [
     temaLabel: 'Medio ambiente',
     año: '2019',
     url: 'https://elpais.com/elpais/2019/09/02/planeta_futuro/1567424192_335073.html',
+    imagen: '/images/trabajos/extremo-guerra-plastico.webp',
   },
   {
     titulo: 'De las calles de Recife a los fogones',
