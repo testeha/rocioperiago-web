@@ -51,7 +51,7 @@ textarea:focus-visible {
 /* ── Componentes reutilizables ─────────────────────────────── */
 
 .dateline {
-  @apply font-mono uppercase text-sage;
+  @apply font-mono uppercase text-ochre-light;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.4px;
