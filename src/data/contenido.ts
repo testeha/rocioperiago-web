@@ -164,26 +164,26 @@ export const proyectosPropios = [
   {
     nombre: 'Testeha Estudio',
     url: '',
-    formato: 'Estudio de comunicación · Codirectora',
+    formato: 'Comunicación, estrategia y desarrollo web con un enfoque centrado en las personas.',
     años: '',
   },
   {
     nombre: 'Juntos Cambiamos el Mundo',
     url: 'https://juntoscambiamoselmundo.com',
-    formato: 'Podcast de impacto social',
+    formato: 'Historias y proyectos de personas que apuestan por el cambio social.',
     años: '2019–2025',
   },
   {
     nombre: 'Abriendo el Foco',
     url: 'https://open.spotify.com/show/5wPNHi6kYZxniKMRBTlJhE',
-    formato: 'Podcast Achalay',
-    años: '2025',
+    formato: 'Podcasts sobre el tercer sector, realizados para Asociación Achalay.',
+    años: '2025–2026',
   },
   {
     nombre: 'Soplalebeche',
     url: 'https://soplalebeche.com',
-    formato: 'Blog de viajes y narrativa',
-    años: '2015–2021',
+    formato: 'Blog de viajes y buenas historias con nombre de viento del sur.',
+    años: '2014–2021',
   },
 ];
 
