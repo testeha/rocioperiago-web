@@ -166,24 +166,32 @@ export const proyectosPropios = [
     url: '',
     formato: 'Comunicación, estrategia y desarrollo web con un enfoque centrado en las personas.',
     años: '',
+    color: 'ochre',
+    logo: '',
   },
   {
     nombre: 'Juntos Cambiamos el Mundo',
     url: 'https://juntoscambiamoselmundo.com',
     formato: 'Historias y proyectos de personas que apuestan por el cambio social.',
     años: '2019–2025',
+    color: 'sage',
+    logo: '',
   },
   {
     nombre: 'Abriendo el Foco',
     url: 'https://achalay.es/abriendoelfoco/',
     formato: 'Podcasts sobre el tercer sector, realizados para Asociación Achalay.',
     años: '2025–2026',
+    color: 'ochre',
+    logo: '',
   },
   {
     nombre: 'Soplalebeche',
     url: 'https://soplalebeche.com',
     formato: 'Blog de viajes y buenas historias con nombre de viento del sur.',
     años: '2014–2021',
+    color: 'sage',
+    logo: '',
   },
 ];
 

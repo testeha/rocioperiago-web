@@ -204,22 +204,48 @@ const pinesMapa = [
       <p class="eyebrow-sage mb-3">Fuera de la redacción</p>
       <h2 class="font-sans font-extrabold text-2xl md:text-3xl mb-8">Proyectos propios</h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {proyectosPropios.map((p) =>
-          p.url ? (
-            <a href={p.url} target="_blank" rel="noopener" class="group block bg-sea-2 rounded-md p-6 hover:bg-sea-3 transition-colors">
-              {p.años && <div class="font-mono text-[.68rem] text-sage tracking-[.04em] mb-2">{p.años}</div>}
-              <div class="font-sans font-extrabold text-lg leading-snug mb-1.5 group-hover:text-ochre transition-colors">{p.nombre}</div>
-              <div class="text-sm text-cream/55">{p.formato}</div>
-            </a>
-          ) : (
-            <div class="bg-sea-2 rounded-md p-6">
-              {p.años && <div class="font-mono text-[.68rem] text-sage tracking-[.04em] mb-2">{p.años}</div>}
-              <div class="font-sans font-extrabold text-lg leading-snug mb-1.5">{p.nombre}</div>
-              <div class="text-sm text-cream/55">{p.formato}</div>
-            </div>
-          )
-        )}
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {proyectosPropios.map((p) => {
+          const esOchre = p.color === 'ochre';
+          const claseBorde = esOchre ? 'border-t-ochre' : 'border-t-sage';
+          const claseMonogramaBg = esOchre ? 'bg-ochre/15' : 'bg-sage/15';
+          const claseMonogramaTexto = esOchre ? 'text-ochre-light' : 'text-sage';
+          const claseCta = esOchre ? 'text-ochre-light group-hover:text-ochre' : 'text-sage group-hover:text-sage-light';
+          const Wrapper = p.url ? 'a' : 'div';
+          return (
+            <Wrapper
+              href={p.url || undefined}
+              target={p.url ? '_blank' : undefined}
+              rel={p.url ? 'noopener' : undefined}
+              class:list={[
+                'group relative flex flex-col rounded-lg p-6 bg-sea-2 border-t-2 transition-all duration-300',
+                claseBorde,
+                p.url && 'hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 hover:bg-sea-3',
+              ]}
+            >
+              <div class="flex items-center justify-between mb-4">
+                {p.logo ? (
+                  <img src={p.logo} alt={p.nombre} class="w-11 h-11 rounded-full object-cover" />
+                ) : (
+                  <div class:list={['w-11 h-11 rounded-full flex items-center justify-center font-sans font-extrabold text-lg', claseMonogramaBg, claseMonogramaTexto]}>
+                    {p.nombre.charAt(0)}
+                  </div>
+                )}
+                {p.años && <span class="font-mono text-[.65rem] text-cream/40 tracking-[.04em]">{p.años}</span>}
+              </div>
+
+              <div class="font-sans font-extrabold text-lg leading-snug mb-2">{p.nombre}</div>
+              <p class="text-sm text-cream/60 leading-relaxed flex-1">{p.formato}</p>
+
+              {p.url && (
+                <span class:list={['inline-flex items-center gap-1.5 mt-4 text-xs font-mono uppercase tracking-wide transition-colors', claseCta]}>
+                  Visitar
+                  <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+                </span>
+              )}
+            </Wrapper>
+          );
+        })}
       </div>
     </div>
   </section>
