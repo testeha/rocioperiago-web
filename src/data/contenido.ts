@@ -175,7 +175,7 @@ export const proyectosPropios = [
   },
   {
     nombre: 'Abriendo el Foco',
-    url: 'https://open.spotify.com/show/5wPNHi6kYZxniKMRBTlJhE',
+    url: 'https://achalay.es/abriendoelfoco/',
     formato: 'Podcasts sobre el tercer sector, realizados para Asociación Achalay.',
     años: '2025–2026',
   },
