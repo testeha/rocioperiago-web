@@ -189,6 +189,7 @@ const pinesMapa = [
           target="_blank"
           rel="noopener"
           data-tema={t.tema}
+          data-ancha={esAncha[i] ? 'true' : 'false'}
           class:list={[
             'trabajo-card group relative rounded-md overflow-hidden block',
             esAncha[i] ? 'col-span-2' : 'aspect-[4/5]',
@@ -289,9 +290,22 @@ const pinesMapa = [
       btn.classList.remove('border-cream/25', 'text-cream/70');
 
       const filter = btn.dataset.filter;
+      const esTodos = filter === 'todos';
+
       cards.forEach((card) => {
-        const show = filter === 'todos' || card.dataset.tema === filter;
+        const show = esTodos || card.dataset.tema === filter;
         card.style.display = show ? '' : 'none';
+
+        // El patrón de filas 3/2 solo tiene sentido viendo todos los trabajos en su orden
+        // original; al filtrar por tema, volvemos a una rejilla simple y uniforme.
+        const eraAncha = card.dataset.ancha === 'true';
+        if (esTodos && eraAncha) {
+          card.classList.add('col-span-2');
+          card.classList.remove('aspect-[4/5]');
+        } else {
+          card.classList.remove('col-span-2');
+          card.classList.add('aspect-[4/5]');
+        }
       });
     });
   });
