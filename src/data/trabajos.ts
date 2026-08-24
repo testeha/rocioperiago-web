@@ -1,4 +1,4 @@
-export type Tema = 'ambiente' | 'migracion' | 'social' | 'viajes' | 'rsc';
+export type Tema = 'ambiente' | 'migracion' | 'desarrollo' | 'viajes' | 'entrevistas' | 'rsc';
 
 export interface Trabajo {
   titulo: string;
@@ -14,9 +14,10 @@ export interface Trabajo {
 
 export const temas: Record<Tema, { label: string; color: string }> = {
   ambiente: { label: 'Medio ambiente', color: 'sage' },
-  migracion: { label: 'Migración', color: 'ochre' },
-  social: { label: 'Justicia social', color: 'sand' },
+  migracion: { label: 'Migraciones', color: 'ochre' },
+  desarrollo: { label: 'Desarrollo sostenible', color: 'sand' },
   viajes: { label: 'Viajes', color: 'sage' },
+  entrevistas: { label: 'Entrevistas', color: 'sand' },
   rsc: { label: 'RSC', color: 'ochre' },
 };
 
@@ -24,7 +25,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'La biblioteca de barrio que lleva 20 años construyendo convivencia en Cartagena',
     medio: 'Revista Haz',
-    tema: 'social',
+    tema: 'migracion',
     temaLabel: 'Periodismo de soluciones',
     año: '2026',
     url: 'https://hazrevista.org/soluciones/2026/07/biblioteca-barrio-lleva-20-anos-construyendo-convivencia-cartagena/',
@@ -81,7 +82,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'El estilista ghanés que usa la ropa para denunciar los efectos de la moda rápida en su país',
     medio: 'El País',
-    tema: 'social',
+    tema: 'desarrollo',
     temaLabel: 'Moda y sociedad',
     año: '2024',
     url: 'https://elpais.com/planeta-futuro/2024-06-10/el-estilista-ghanes-que-usa-la-moda-para-denunciar-los-efectos-de-la-moda-rapida-en-su-pais.html',
@@ -109,7 +110,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'Un plan para que el punto más oriental de las Américas no desaparezca',
     medio: 'El País',
-    tema: 'ambiente',
+    tema: 'desarrollo',
     temaLabel: 'Medio ambiente',
     año: '2023',
     url: 'https://elpais.com/america-futura/2023-03-04/un-plan-para-que-el-punto-mas-oriental-de-las-americas-no-desaparezca.html',
@@ -118,7 +119,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'Las nuevas generaciones quieren hablar de la regla',
     medio: 'El País',
-    tema: 'social',
+    tema: 'desarrollo',
     temaLabel: 'Derechos de la mujer',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/2022-06-16/las-nuevas-generaciones-quieren-hablar-de-la-regla.html',
@@ -127,7 +128,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'Perseguir por África entera el sueño de estudiar',
     medio: 'El País',
-    tema: 'migracion',
+    tema: 'desarrollo',
     temaLabel: 'Migración · Educación',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/que-mueve-a/2022-04-03/perseguir-por-africa-entera-el-sueno-de-estudiar.html',
@@ -136,7 +137,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'La comunidad q\u2019eqchi\u2019 contra Guatemala, un precedente en la lucha de los derechos indígenas',
     medio: 'El País',
-    tema: 'social',
+    tema: 'desarrollo',
     temaLabel: 'Derechos indígenas',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/2022-02-11/la-comunidad-qeqchi-contra-guatemala-un-precedente-en-la-lucha-de-los-derechos-indigenas.html',
@@ -145,7 +146,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'La primera indígena emberá abogada es líder en la lucha por la igualdad de género en Panamá',
     medio: 'El País',
-    tema: 'social',
+    tema: 'entrevistas',
     temaLabel: 'Derechos indígenas',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/que-mueve-a/2022-01-10/la-primera-indigena-embera-abogada-es-lider-en-la-lucha-por-la-igualdad-de-genero-en-panama.html',
@@ -154,7 +155,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'Nadino Calapucha, el músico que canta a la Amazonía',
     medio: 'El País',
-    tema: 'social',
+    tema: 'entrevistas',
     temaLabel: 'Cultura indígena',
     año: '2022',
     url: 'https://elpais.com/planeta-futuro/que-mueve-a/2021-12-02/nadino-calapucha-el-musico-que-canta-a-la-amazonia.html',
@@ -172,7 +173,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'Ameer Jubran, el químico que brinda esperanza a los desplazados en Yemen',
     medio: 'El País',
-    tema: 'migracion',
+    tema: 'entrevistas',
     temaLabel: 'Migración',
     año: '2021',
     url: 'https://elpais.com/planeta-futuro/que-mueve-a/2021-10-04/ameer-jubran-el-quimico-que-brinda-esperanza-a-los-desplazados-en-yemen.html',
@@ -181,7 +182,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'Dorothy Estrada-Tanck, defendiendo los derechos humanos desde las aulas',
     medio: 'El País',
-    tema: 'social',
+    tema: 'entrevistas',
     temaLabel: 'Derechos humanos',
     año: '2021',
     url: 'https://elpais.com/planeta-futuro/2021-09-13/dorothy-estrada-tanck-defendiendo-los-derechos-humanos-desde-las-aulas.html',
@@ -190,7 +191,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'Los pueblos indígenas ganan protagonismo como garantes de la biodiversidad en el planeta',
     medio: 'El País',
-    tema: 'ambiente',
+    tema: 'desarrollo',
     temaLabel: 'Biodiversidad',
     año: '2021',
     url: 'https://elpais.com/planeta-futuro/2021-09-11/los-pueblos-indigenas-ganan-protagonismo-como-garantes-de-la-biodiversidad-en-el-planeta.html',
@@ -199,7 +200,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'Los indígenas piden descolonizar la conservación de la naturaleza',
     medio: 'El País',
-    tema: 'ambiente',
+    tema: 'desarrollo',
     temaLabel: 'Conservación',
     año: '2021',
     url: 'https://elpais.com/planeta-futuro/2021-09-07/un-congreso-indigena-alternativo-para-descolonizar-la-conservacion-de-la-naturaleza.html',
@@ -217,11 +218,20 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'La paz que llega con la salud',
     medio: 'Mundo Negro',
-    tema: 'social',
+    tema: 'desarrollo',
     temaLabel: 'Salud · Paz',
     año: '2020',
     url: 'https://mundonegro.es/la-paz-que-llega-con-la-salud/',
     imagen: '/images/trabajos/paz-que-llega-salud.webp',
+  },
+  {
+    titulo: 'Ruta abierta al interior del continente africano',
+    medio: 'Revista Late',
+    tema: 'viajes',
+    temaLabel: 'Viajes',
+    año: '2020',
+    url: 'https://www.revistalate.net/ruta-abierta-hacia-el-interior-del-continente-africano/',
+    imagen: '/images/trabajos/ruta-africana.webp',
   },
   {
     titulo: 'Tuvimos que comprarle a una chica su orina para poder beberla y sobrevivir',
@@ -235,7 +245,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'La biblioteca de las mujeres de Estambul',
     medio: 'Altaïr Magazine',
-    tema: 'social',
+    tema: 'viajes',
     temaLabel: 'Derechos de la mujer',
     año: '2018',
     url: 'https://www.altairmagazine.com/voces/la-biblioteca-de-las-mujeres/',
@@ -243,9 +253,18 @@ export const trabajos: Trabajo[] = [
     imagen: '/images/trabajos/biblioteca-mujeres-estambul.webp',
   },
   {
+    titulo: 'Fieltro, pluma, paja',
+    medio: 'Revista Late',
+    tema: 'desarrollo',
+    temaLabel: 'Desarrollo sostenible',
+    año: '2018',
+    url: 'https://www.revistalate.net/fieltro-pluma-y-paja/',
+    imagen: '/images/trabajos/fieltro-pluma-paja.webp',
+  },
+  {
     titulo: 'El deporte femenino que arrasa en el África austral',
     medio: 'El País',
-    tema: 'social',
+    tema: 'desarrollo',
     temaLabel: 'Deporte y género',
     año: '2019',
     url: 'https://elpais.com/elpais/2019/09/24/planeta_futuro/1569334038_227402.html',
@@ -254,7 +273,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'Conseguir que reine la lectura en un país en el que solo el 31% acaba secundaria',
     medio: 'El País',
-    tema: 'social',
+    tema: 'desarrollo',
     temaLabel: 'Educación',
     año: '2019',
     url: 'https://elpais.com/elpais/2019/09/16/planeta_futuro/1568656526_478331.html',
@@ -263,7 +282,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'El extremo de la guerra contra el plástico: cárcel por usar bolsas',
     medio: 'El País',
-    tema: 'ambiente',
+    tema: 'desarrollo',
     temaLabel: 'Medio ambiente',
     año: '2019',
     url: 'https://elpais.com/elpais/2019/09/02/planeta_futuro/1567424192_335073.html',
@@ -272,7 +291,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'De las calles de Recife a los fogones',
     medio: 'El País',
-    tema: 'social',
+    tema: 'desarrollo',
     temaLabel: 'Desarrollo social',
     año: '2016',
     url: 'https://elpais.com/elpais/2016/12/02/planeta_futuro/1480682635_609796.html',
@@ -282,7 +301,7 @@ export const trabajos: Trabajo[] = [
   {
     titulo: 'La solución pasa por eliminar al mosquito',
     medio: 'El País',
-    tema: 'social',
+    tema: 'desarrollo',
     temaLabel: 'Salud pública',
     año: '2016',
     url: 'https://elpais.com/elpais/2016/11/29/planeta_futuro/1480440360_379651.html',
