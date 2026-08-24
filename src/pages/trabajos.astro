@@ -8,21 +8,24 @@ const temaKeys = Object.keys(temas) as (keyof typeof temas)[];
 
 // Patrón de filas para romper la monotonía visual del grid: fila de 3 columnas iguales,
 // luego fila de 2 (una ancha 2/3 + una normal 1/3), y así sucesivamente.
+// Si en una fila "ancha" no queda una segunda tarjeta para completarla, se deja normal
+// (evita una tarjeta ancha huérfana, sin pareja que le marque la altura de fila).
 function calcularAnchos(total: number): boolean[] {
   const anchos: boolean[] = [];
   let i = 0;
   let filaAncha = false; // empezamos con una fila normal de 3
   while (i < total) {
-    if (filaAncha) {
+    if (filaAncha && total - i >= 2) {
       anchos.push(true, false); // primera tarjeta ancha, segunda normal
       i += 2;
     } else {
-      anchos.push(false, false, false);
-      i += 3;
+      const restantes = Math.min(3, total - i);
+      for (let k = 0; k < restantes; k++) anchos.push(false);
+      i += restantes;
     }
     filaAncha = !filaAncha;
   }
-  return anchos.slice(0, total);
+  return anchos;
 }
 const esAncha = calcularAnchos(trabajos.length);
 
@@ -188,7 +191,7 @@ const pinesMapa = [
           data-tema={t.tema}
           class:list={[
             'trabajo-card group relative rounded-md overflow-hidden block',
-            esAncha[i] ? 'col-span-2 aspect-[16/9]' : 'aspect-[4/5]',
+            esAncha[i] ? 'col-span-2' : 'aspect-[4/5]',
             !t.imagen && 'bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]',
           ]}
         >
