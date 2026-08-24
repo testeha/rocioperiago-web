@@ -89,14 +89,14 @@ export const servicios: Servicio[] = [
   },
   {
     num: '04',
-    nombre: 'Lorem ipsum dolor sit amet',
+    nombre: 'Creatividad',
     descripcion:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+      'Porque siempre hay espacio para los momentos creativos en nuestra cotidianeidad. Volver a hacer cosas con las manos, sin prisas. (Re)enfocar la mirada, desconectar de lo digital y (re)aprender a contarnos.',
     incluye: [
-      'Lorem ipsum dolor sit amet',
-      'Consectetur adipiscing elit',
-      'Sed do eiusmod tempor incididunt',
-      'Ut labore et dolore magna aliqua',
+      'Organizo talleres y actividades grupales para empresas. Afterwork y teambuilding.',
+      'Creación de cuadernos de viaje y journaling.',
+      'Fotografía y escritura creativa. Procesos artesanales.',
+      'Desarrollo de herramientas y técnicas para trabajar la creatividad.',
     ],
   },
 ];

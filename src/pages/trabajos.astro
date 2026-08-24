@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import MapaMundi from '../components/MapaMundi.astro';
 import { trabajos, temas } from '../data/trabajos';
 import { proyectosPropios } from '../data/contenido';
 
@@ -48,68 +47,6 @@ const investigacionesDestacadas = [
   },
 ];
 
-const pinesMapa = [
-  {
-    codigo: 'co',
-    nombre: 'Colombia',
-    left: 25.97,
-    top: 55.97,
-    kicker: 'Journalismfund Europe · 2023',
-    titulo: 'El polvillo que contamina el mundo: la ruta del carbón',
-    url: 'https://www.journalismfund.eu/coal-route',
-    cta: 'Leer investigación',
-  },
-  {
-    codigo: 'de',
-    nombre: 'Alemania',
-    left: 49.93,
-    top: 31.1,
-    kicker: 'Journalismfund Europe · 2023',
-    titulo: 'El polvillo que contamina el mundo: la ruta del carbón',
-    url: 'https://www.journalismfund.eu/coal-route',
-    cta: 'Leer investigación',
-  },
-  {
-    codigo: 'es',
-    nombre: 'España',
-    left: 47.42,
-    top: 38.1,
-    kicker: 'Revista Late · 2023',
-    titulo: 'El Mar Menor, una laguna salada que lucha por sobrevivir',
-    url: 'https://www.revistalate.net/el-mar-menor-una-laguna-salada-que-lucha-por-sobrevivir/',
-    cta: 'Leer artículo',
-  },
-  {
-    codigo: 'it',
-    nombre: 'Italia',
-    left: 50.06,
-    top: 36.59,
-    kicker: 'Journalismfund Europe · 2025',
-    titulo: 'The not-so-sunny side of sunscreen',
-    url: 'https://www.journalismfund.eu/not-so-sunny-side-of-sunscreen',
-    cta: 'Leer investigación',
-  },
-  {
-    codigo: 'tr',
-    nombre: 'Turquía',
-    left: 56.38,
-    top: 39.31,
-    kicker: 'Altaïr Magazine · 2020',
-    titulo: 'La biblioteca de las mujeres de Estambul',
-    url: 'https://www.altairmagazine.com/voces/la-biblioteca-de-las-mujeres/',
-    cta: 'Leer artículo',
-  },
-  {
-    codigo: 'br',
-    nombre: 'Brasil',
-    left: 32.63,
-    top: 82.17,
-    kicker: 'El País · 2016',
-    titulo: 'De las calles de Recife a los fogones',
-    url: 'https://elpais.com/elpais/2016/11/29/planeta_futuro/1480440360_379651.html',
-    cta: 'Leer artículo',
-  },
-];
 ---
 
 <Layout
@@ -120,8 +57,7 @@ const pinesMapa = [
     <p class="eyebrow-ochre mb-3">Portfolio</p>
     <h1 class="font-sans font-extrabold text-4xl md:text-5xl mb-4">Trabajos publicados</h1>
     <p class="text-cream/70 max-w-xl">
-      Reportajes y crónicas sobre medio ambiente, migración, justicia social y viajes,
-      publicados en medios nacionales e internacionales desde 2012.
+      Aquí puedes leer algunos de mis reportajes y artículos publicados en medios.
     </p>
   </section>
 
@@ -130,9 +66,6 @@ const pinesMapa = [
     <p class="eyebrow-ochre mb-3">Periodismo de investigación</p>
     <h2 class="font-sans font-extrabold text-2xl md:text-3xl mb-8">Proyectos de largo aliento transfronterizos</h2>
 
-    <div class="mb-10">
-      <MapaMundi pines={pinesMapa} />
-    </div>
     <div class="grid md:grid-cols-2 gap-5">
       {investigacionesDestacadas.map((inv, i) => (
         <div class:list={['rounded-xl p-8 md:p-10', i % 2 === 0 ? 'bg-ochre' : 'bg-sea-2']}>
