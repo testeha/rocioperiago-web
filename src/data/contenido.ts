@@ -195,23 +195,23 @@ export const proyectosPropios = [
   },
 ];
 
-export const bioLarga = `Soy periodista española especializada en desarrollo, migraciones, derechos humanos y medio ambiente, con un enfoque de periodismo de soluciones. Con formación en derecho europeo y RSC, intento aplicar esta experiencia multidisciplinar en todo lo que hago.
+export const bioLarga = `Soy periodista especializada en desarrollo, migraciones, derechos humanos y medio ambiente, con un enfoque de periodismo de soluciones. Con formación en derecho europeo y RSC, intento aplicar esta experiencia multidisciplinar en todo lo que hago.
 
-He trabajado durante más de diez años en el ámbito social, como técnico y responsable de proyectos y entidades que me han permitido conocer realidades muy complejas y diferentes, viviendo y viajando por numerosos países. Esta dualidad de perfiles y experiencia creo que es un punto a mi favor, ya que me permite contar con los conocimientos y herramientas para explicar qué pasa en el mundo a través de pequeñas historias.
+Con base en el sureste español, he trabajado durante más de diez años en el ámbito social, como técnico y responsable de proyectos y entidades que me han permitido conocer realidades muy complejas y diferentes, viviendo y viajando por numerosas ciudades y países. También he podido aprender diferentes herramientas creativas y de storytelling, que he ido aplicando en talleres y actividades formativas. Esta dualidad de perfiles y experiencia creo que es un punto a mi favor, ya que me permite contar con los conocimientos y herramientas para explicar qué pasa en el mundo a través de pequeñas historias.
 
-Mis trabajos han sido publicados en El País, Viajes National Geographic, France 24, Altaïr Magazine, Ballena Blanca o Mundo Negro entre otros. He sido galardonada con el LI Premio Ciudad de Alcalá de Periodismo en 2020 y el 2º Premio de Prensa Manos Unidas en 2017.`;
+Mis trabajos han sido publicados en El País, Viajes National Geographic, France 24, Altaïr Magazine, Revista Late, Ballena Blanca o Mundo Negro entre otros.`;
 
-export const bioLargaEN = `I'm a Spanish journalist specialising in development, migration, human rights and the environment, with a focus on solutions journalism. With a background in European law and CSR, I try to bring this multidisciplinary experience to everything I do.
+export const bioLargaEN = `I'm a journalist specialising in development, migration, human rights and the environment, with a focus on solutions journalism. With a background in European law and CSR, I try to bring this multidisciplinary experience to everything I do.
 
-I've worked for more than ten years in the social sector, as a project officer and manager for organisations that have let me get to know very complex and different realities, living and travelling across numerous countries. I believe this dual background works in my favour, as it gives me the knowledge and tools to explain what's happening in the world through small stories.
+Based in southeastern Spain, I've worked for more than ten years in the social sector, as a project officer and manager for organisations that have let me get to know very complex and different realities, living and travelling across numerous cities and countries. I've also learned different creative and storytelling tools, which I've applied in workshops and training activities. I believe this dual background works in my favour, as it gives me the knowledge and tools to explain what's happening in the world through small stories.
 
-My work has been published in El País, National Geographic Traveler, France 24, Altaïr Magazine, Ballena Blanca and Mundo Negro, among others. I was awarded the LI Ciudad de Alcalá Journalism Prize in 2020 and the 2nd Manos Unidas Press Prize in 2017.`;
+My work has been published in El País, National Geographic Traveler, France 24, Altaïr Magazine, Revista Late, Ballena Blanca and Mundo Negro, among others.`;
 
-export const bioLargaIT = `Sono una giornalista spagnola specializzata in sviluppo, migrazioni, diritti umani e ambiente, con un approccio di giornalismo delle soluzioni. Con una formazione in diritto europeo e RSI, cerco di applicare questa esperienza multidisciplinare in tutto ciò che faccio.
+export const bioLargaIT = `Sono una giornalista specializzata in sviluppo, migrazioni, diritti umani e ambiente, con un approccio di giornalismo delle soluzioni. Con una formazione in diritto europeo e RSI, cerco di applicare questa esperienza multidisciplinare in tutto ciò che faccio.
 
-Ho lavorato per più di dieci anni nell'ambito sociale, come tecnico e responsabile di progetti ed enti che mi hanno permesso di conoscere realtà molto complesse e diverse, vivendo e viaggiando in numerosi paesi. Credo che questa dualità di profili ed esperienza sia un punto a mio favore, perché mi permette di avere le conoscenze e gli strumenti per spiegare cosa succede nel mondo attraverso piccole storie.
+Con base nel sud-est della Spagna, ho lavorato per più di dieci anni nell'ambito sociale, come tecnico e responsabile di progetti ed enti che mi hanno permesso di conoscere realtà molto complesse e diverse, vivendo e viaggiando in numerose città e paesi. Ho anche potuto imparare diversi strumenti creativi e di storytelling, che ho applicato in laboratori e attività formative. Credo che questa dualità di profili ed esperienza sia un punto a mio favore, perché mi permette di avere le conoscenze e gli strumenti per spiegare cosa succede nel mondo attraverso piccole storie.
 
-I miei lavori sono stati pubblicati su El País, Viajes National Geographic, France 24, Altaïr Magazine, Ballena Blanca e Mundo Negro, tra gli altri. Ho ricevuto il LI Premio Ciudad de Alcalá di Giornalismo nel 2020 e il 2° Premio Stampa Manos Unidas nel 2017.`;
+I miei lavori sono stati pubblicati su El País, Viajes National Geographic, France 24, Altaïr Magazine, Revista Late, Ballena Blanca e Mundo Negro, tra gli altri.`;
 
 export const formacion = [
   { titulo: 'Máster en Derecho Constitucional Europeo', sub: 'Univ. de Granada · Políticas Migratorias UE · Investigación en Colombia', años: '2010–2011' },
