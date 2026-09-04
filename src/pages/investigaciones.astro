@@ -1,62 +1,134 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import RouteMap from '../components/RouteMap.astro';
-import { investigaciones } from '../data/contenido';
+import MapaMundi from '../components/MapaMundi.astro';
 
-const totalFinanciado = '€35.100';
+const pinesMapa = [
+  {
+    codigo: 'co',
+    nombre: 'Colombia',
+    left: 25.97,
+    top: 55.97,
+    kicker: 'Espacio Angular · 2024',
+    titulo: 'El polvillo que contamina el mundo: la ruta del carbón',
+    url: 'https://espacioangular.org/el-polvillo-que-contamina-el-mundo-asi-es-el-eje-del-carbon-entre-colombia-y-alemania/',
+    cta: 'Leer investigación',
+  },
+  {
+    codigo: 'de',
+    nombre: 'Alemania',
+    left: 49.93,
+    top: 31.1,
+    kicker: 'Espacio Angular · 2024',
+    titulo: 'El polvillo que contamina el mundo: la ruta del carbón',
+    url: 'https://espacioangular.org/el-polvillo-que-contamina-el-mundo-asi-es-el-eje-del-carbon-entre-colombia-y-alemania/',
+    cta: 'Leer investigación',
+  },
+  {
+    codigo: 'es',
+    nombre: 'España',
+    left: 47.42,
+    top: 38.1,
+    kicker: 'Revista Late · 2023',
+    titulo: 'El Mar Menor, una laguna salada que lucha por sobrevivir',
+    url: 'https://www.revistalate.net/el-mar-menor-una-laguna-salada-que-lucha-por-sobrevivir/',
+    cta: 'Leer artículo',
+  },
+  {
+    codigo: 'it',
+    nombre: 'Italia',
+    left: 50.06,
+    top: 36.59,
+    kicker: 'Revolve · 2025',
+    titulo: 'The not-so-sunny side of sunscreen',
+    url: 'https://revolve.media/features/impact-sunscreen-environment-pollution',
+    cta: 'Leer investigación',
+  },
+  {
+    codigo: 'tr',
+    nombre: 'Turquía',
+    left: 56.38,
+    top: 39.31,
+    kicker: 'Altaïr Magazine · 2018',
+    titulo: 'La biblioteca de las mujeres de Estambul',
+    url: 'https://www.altairmagazine.com/voces/la-biblioteca-de-las-mujeres/',
+    cta: 'Leer artículo',
+  },
+  {
+    codigo: 'br',
+    nombre: 'Brasil',
+    left: 32.63,
+    top: 82.17,
+    kicker: 'El País · 2016',
+    titulo: 'De las calles de Recife a los fogones',
+    url: 'https://elpais.com/elpais/2016/12/02/planeta_futuro/1480682635_609796.html',
+    cta: 'Leer artículo',
+  },
+];
+
+const investigacionesDestacadas = [
+  {
+    titulo: 'El polvillo que contamina el mundo: la ruta del carbón Colombia–Alemania',
+    url: 'https://espacioangular.org/el-polvillo-que-contamina-el-mundo-asi-es-el-eje-del-carbon-entre-colombia-y-alemania/',
+    resumen:
+      'El impacto humano, social y ambiental del carbón extraído en La Guajira colombiana y consumido en centrales alemanas. Investigación transfronteriza sobre cadenas de suministro, comunidades afectadas y transición energética. Proyecto realizado durante 2023 y 2024 con la financiación de JournalismFund Europe junto con G. Jaramillo Rojas y Anita Pouchard Serra.',
+    publicadoEn: 'Público, Espacio Angular, Brecha, Revista Late',
+    presentadoEn: null,
+  },
+  {
+    titulo: 'The not-so-sunny side of sunscreen',
+    url: 'https://revolve.media/features/impact-sunscreen-environment-pollution',
+    resumen:
+      'Los filtros solares contaminan el Mediterráneo. Investigación y entrevistas a científicos, investigadores y activistas en España e Italia, y cobertura en medios internacionales. Proyecto realizado durante 2024 y 2025 con la financiación de JournalismFund Europe junto con Cush Munger.',
+    publicadoEn: 'Revista Late, France 24, Revolve, Inside Story',
+    presentadoEn: { texto: 'DIG Festival', url: 'https://dig-awards.org/eng/', resto: '(2025) en Modena, Italia.' },
+  },
+];
 ---
 
 <Layout
-  title="Investigaciones"
-  description="Investigaciones periodísticas transfronterizas de Rocío Periago financiadas por Journalismfund Europe: la ruta del carbón Colombia–Alemania y los filtros solares en el Mediterráneo."
+  title="Periodismo de investigación"
+  description="Investigaciones periodísticas transfronterizas de Rocío Periago: la ruta del carbón Colombia–Alemania y los filtros solares en el Mediterráneo."
 >
-  <section class="relative overflow-hidden">
-    <RouteMap class="absolute top-0 -right-20 w-[480px] h-[380px] opacity-30 hidden md:block" />
-    <div class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-10 relative z-10">
-      <p class="eyebrow-ochre mb-3">Periodismo transfronterizo</p>
-      <h1 class="font-sans font-extrabold text-4xl md:text-5xl mb-4">Investigaciones financiadas</h1>
-      <p class="text-cream/70 max-w-xl mb-8">
-        Proyectos de largo aliento financiados por convocatorias competitivas europeas,
-        con trabajo de campo en varios países y publicación simultánea en medios internacionales.
-      </p>
-      <div class="flex gap-8 flex-wrap font-mono text-xs uppercase tracking-wide text-cream/60">
-        <span><strong class="text-ochre text-sm">{totalFinanciado}</strong> financiados</span>
-        <span><strong class="text-ochre text-sm">2</strong> investigaciones</span>
-        <span><strong class="text-ochre text-sm">5</strong> países cubiertos</span>
-      </div>
-    </div>
+  <section class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-8">
+    <p class="eyebrow-ochre mb-3">Editores y medios</p>
+    <h1 class="font-sans font-extrabold text-4xl md:text-5xl mb-4">Proyectos de largo aliento transfronterizos</h1>
+    <p class="text-cream/70 max-w-xl">
+      Investigaciones financiadas por convocatorias competitivas europeas, con trabajo de campo en varios
+      países y publicación simultánea en medios internacionales.
+    </p>
   </section>
 
-  <section class="max-w-content mx-auto px-6 md:px-8 pb-24 space-y-8">
-    {investigaciones.map((inv) => (
-      <article class="card-sand rounded-md p-8 md:p-10">
-        <div class="flex flex-wrap items-center gap-3 mb-4">
-          <span class="font-mono text-[.68rem] uppercase tracking-wide bg-sea text-cream px-2.5 py-1 rounded-sm">
-            Ref. {inv.ref}
+  <section class="max-w-content mx-auto px-6 md:px-8 pb-24">
+    <div class="mb-10">
+      <MapaMundi pines={pinesMapa} />
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      {investigacionesDestacadas.map((inv, i) => (
+        <div class:list={['rounded-xl p-8 md:p-10', i % 2 === 0 ? 'bg-ochre' : 'bg-sea-2']}>
+          <span class:list={['block font-mono uppercase mb-4 font-medium', i % 2 === 0 ? 'text-sea' : 'text-ochre-light']} style="font-size:0.72rem; letter-spacing:0.4px;">
+            Journalismfund Europe
           </span>
-          <span class="font-mono text-[.68rem] uppercase tracking-wide text-ink/50">{inv.año}</span>
+          <a
+            href={inv.url}
+            target="_blank"
+            rel="noopener"
+            class:list={['font-sans font-extrabold text-xl leading-snug transition-colors block mb-4', i % 2 === 0 ? 'text-sea hover:text-sea/70' : 'text-cream hover:text-ochre-light']}
+          >
+            {inv.titulo}
+          </a>
+          <p class:list={['text-sm leading-relaxed mb-5', i % 2 === 0 ? 'text-sea' : 'text-cream/70']}>{inv.resumen}</p>
+          <p class:list={['text-xs leading-relaxed', i % 2 === 0 ? 'text-sea' : 'text-cream/55']}>
+            <strong class:list={i % 2 === 0 ? 'text-sea' : 'text-cream'}>Publicado en</strong> {inv.publicadoEn}
+            {inv.presentadoEn && (
+              <>
+                <br />
+                <strong class:list={i % 2 === 0 ? 'text-sea' : 'text-cream'}>Presentado en</strong> el <a href={inv.presentadoEn.url} target="_blank" rel="noopener" class="underline underline-offset-2 hover:opacity-70">{inv.presentadoEn.texto}</a> {inv.presentadoEn.resto}
+              </>
+            )}
+          </p>
         </div>
-
-        <h2 class="font-sans font-extrabold text-2xl md:text-[1.9rem] leading-tight mb-5">{inv.titulo}</h2>
-        <p class="text-ink/75 max-w-2xl mb-7">{inv.resumen}</p>
-
-        <div class="grid sm:grid-cols-3 gap-6 pt-6 border-t border-ink/10">
-          <div>
-            <div class="kicker text-ink/40 mb-1.5">Financiación</div>
-            <div class="text-sm font-medium">{inv.financiacion}</div>
-            <div class="text-sm text-ink/60">{inv.cantidad}</div>
-          </div>
-          <div>
-            <div class="kicker text-ink/40 mb-1.5">Países</div>
-            <div class="text-sm">{inv.paises.join(' → ')}</div>
-          </div>
-          <div>
-            <div class="kicker text-ink/40 mb-1.5">Medios &amp; idiomas</div>
-            <div class="text-sm">{inv.medios}</div>
-            <div class="text-sm text-ink/60">{inv.idiomas}</div>
-          </div>
-        </div>
-      </article>
-    ))}
+      ))}
+    </div>
   </section>
 </Layout>

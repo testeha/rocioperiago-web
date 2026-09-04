@@ -27,26 +27,6 @@ function calcularAnchos(total: number): boolean[] {
   return anchos;
 }
 const esAncha = calcularAnchos(trabajos.length);
-
-const investigacionesDestacadas = [
-  {
-    titulo: 'El polvillo que contamina el mundo: la ruta del carbón Colombia–Alemania',
-    url: 'https://www.journalismfund.eu/coal-route',
-    resumen:
-      'El impacto humano, social y ambiental del carbón extraído en La Guajira colombiana y consumido en centrales alemanas. Investigación transfronteriza sobre cadenas de suministro, comunidades afectadas y transición energética. Proyecto realizado durante 2023 y 2024 con la financiación de JournalismFund Europe junto con G. Jaramillo Rojas y Anita Pouchard Serra.',
-    publicadoEn: 'Público, Espacio Angular, Brecha, Revista Late',
-    presentadoEn: null,
-  },
-  {
-    titulo: 'The not-so-sunny side of sunscreen',
-    url: 'https://www.journalismfund.eu/not-so-sunny-side-of-sunscreen',
-    resumen:
-      'Los filtros solares contaminan el Mediterráneo. Investigación y entrevistas a científicos, investigadores y activistas en España e Italia, y cobertura en medios internacionales. Proyecto realizado durante 2024 y 2025 con la financiación de JournalismFund Europe junto con Cush Munger.',
-    publicadoEn: 'Revista Late, France 24, Revolve, Inside Story',
-    presentadoEn: { texto: 'DIG Festival', url: 'https://dig-awards.org/eng/', resto: '(2025) en Modena, Italia.' },
-  },
-];
-
 ---
 
 <Layout
@@ -54,45 +34,12 @@ const investigacionesDestacadas = [
   description="Reportajes, crónicas e investigaciones de Rocío Periago publicados en El País, National Geographic, France 24, Altaïr Magazine y otros medios."
 >
   <section class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-8">
-    <p class="eyebrow-ochre mb-3">Portfolio</p>
-    <h1 class="font-sans font-extrabold text-4xl md:text-5xl mb-4">Trabajos publicados</h1>
+    <p class="eyebrow-ochre mb-3">Editores y medios</p>
+    <h1 class="font-sans font-extrabold text-4xl md:text-5xl mb-4">Reportajes y artículos</h1>
     <p class="text-cream/70 max-w-xl">
       Aquí puedes leer algunos de mis reportajes y artículos publicados en medios.
+      ¿Buscas los proyectos de investigación transfronteriza? Los tienes en <a href="/investigaciones" class="underline underline-offset-2 hover:text-cream transition-colors">Periodismo de investigación</a>.
     </p>
-  </section>
-
-  <!-- PERIODISMO DE INVESTIGACIÓN -->
-  <section class="max-w-content mx-auto px-6 md:px-8 pb-16">
-    <p class="eyebrow-ochre mb-3">Periodismo de investigación</p>
-    <h2 class="font-sans font-extrabold text-2xl md:text-3xl mb-8">Proyectos de largo aliento transfronterizos</h2>
-
-    <div class="grid md:grid-cols-2 gap-5">
-      {investigacionesDestacadas.map((inv, i) => (
-        <div class:list={['rounded-xl p-8 md:p-10', i % 2 === 0 ? 'bg-ochre' : 'bg-sea-2']}>
-          <span class:list={['block font-mono uppercase mb-4 font-medium', i % 2 === 0 ? 'text-sea' : 'text-ochre-light']} style="font-size:0.72rem; letter-spacing:0.4px;">
-            Journalismfund Europe
-          </span>
-          <a
-            href={inv.url}
-            target="_blank"
-            rel="noopener"
-            class:list={['font-sans font-extrabold text-xl leading-snug transition-colors block mb-4', i % 2 === 0 ? 'text-sea hover:text-sea/70' : 'text-cream hover:text-ochre-light']}
-          >
-            {inv.titulo}
-          </a>
-          <p class:list={['text-sm leading-relaxed mb-5', i % 2 === 0 ? 'text-sea' : 'text-cream/70']}>{inv.resumen}</p>
-          <p class:list={['text-xs leading-relaxed', i % 2 === 0 ? 'text-sea' : 'text-cream/55']}>
-            <strong class:list={i % 2 === 0 ? 'text-sea' : 'text-cream'}>Publicado en</strong> {inv.publicadoEn}
-            {inv.presentadoEn && (
-              <>
-                <br />
-                <strong class:list={i % 2 === 0 ? 'text-sea' : 'text-cream'}>Presentado en</strong> el <a href={inv.presentadoEn.url} target="_blank" rel="noopener" class="underline underline-offset-2 hover:opacity-70">{inv.presentadoEn.texto}</a> {inv.presentadoEn.resto}
-              </>
-            )}
-          </p>
-        </div>
-      ))}
-    </div>
   </section>
 
   <!-- FILTROS -->
