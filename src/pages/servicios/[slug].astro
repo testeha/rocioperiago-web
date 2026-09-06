@@ -140,8 +140,8 @@ const otrosProyectos = proyectosCliente.filter((p) => p.slug !== proyecto.slug).
         )}
 
         {proyecto.cita && (
-          <blockquote class="m-0 p-0 border-0 !mt-12">
-            <span aria-hidden="true" class="block font-serif text-[4.5rem] font-semibold leading-[0.65] text-ochre-light mb-3">&ldquo;</span>
+          <blockquote class="m-0 p-0 border-0 !mt-8">
+            <span aria-hidden="true" class="block font-serif text-[4.5rem] font-semibold leading-[0.65] text-ochre-light -mb-2">&ldquo;</span>
             <p class="m-0 font-serif text-[clamp(1.45rem,2vw,2rem)] font-normal italic leading-tight text-cream max-w-[430px]">{proyecto.cita.texto}</p>
             <span class="block w-9 h-0.5 bg-ochre mt-[1.6rem] mb-5"></span>
             <cite class="font-sans text-[0.9rem] font-medium not-italic text-cream">{proyecto.cita.autor}</cite>
