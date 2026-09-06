@@ -25,21 +25,24 @@ import { servicios, procesoServicio, clientes } from '../data/contenido';
   <!-- SERVICIOS -->
   <section class="max-w-content mx-auto px-6 md:px-8 pb-20">
     <div class="grid md:grid-cols-2 gap-5">
-      {servicios.map((s, i) => (
-        <div class:list={['rounded-md p-8 border', i % 2 === 0 ? 'bg-ochre border-ochre' : 'bg-sea-2 border-cream/10']}>
-          <div class:list={['font-mono text-sm mb-3', i % 2 === 0 ? 'text-sea/50' : 'text-cream/30']}>{s.num}</div>
-          <h2 class:list={['font-sans font-extrabold text-xl mb-3', i % 2 === 0 ? 'text-sea' : 'text-cream']}>{s.nombre}</h2>
-          <p class:list={['text-sm mb-5', i % 2 === 0 ? 'text-sea/80' : 'text-cream/65']}>{s.descripcion}</p>
+      {servicios.map((s, i) => {
+        const esOchre = i === 0 || i === 3;
+        return (
+        <div class:list={['rounded-md p-8 border', esOchre ? 'bg-ochre border-ochre' : 'bg-sea-2 border-cream/10']}>
+          <div class:list={['font-mono text-sm mb-3', esOchre ? 'text-sea/50' : 'text-cream/30']}>{s.num}</div>
+          <h2 class:list={['font-sans font-extrabold text-xl mb-3', esOchre ? 'text-sea' : 'text-cream']}>{s.nombre}</h2>
+          <p class:list={['text-sm mb-5', esOchre ? 'text-sea/80' : 'text-cream/65']}>{s.descripcion}</p>
           <ul class="space-y-2 list-none">
             {s.incluye.map((item) => (
-              <li class:list={['text-sm flex items-start gap-2', i % 2 === 0 ? 'text-sea/85' : 'text-cream/70']}>
-                <span class:list={['mt-1.5 flex-shrink-0 w-2 h-2 rounded-full inline-block', i % 2 === 0 ? 'bg-sea' : 'bg-ochre']}></span>
+              <li class:list={['text-sm flex items-start gap-2', esOchre ? 'text-sea/85' : 'text-cream/70']}>
+                <span class:list={['mt-1.5 flex-shrink-0 w-2 h-2 rounded-full inline-block', esOchre ? 'bg-sea' : 'bg-ochre']}></span>
                 {item}
               </li>
             ))}
           </ul>
         </div>
-      ))}
+        );
+      })}
     </div>
   </section>
 
