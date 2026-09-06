@@ -13,6 +13,11 @@ export const categoriasProyecto: Record<CategoriaProyecto, string> = {
   creatividad: 'Creatividad',
 };
 
+export interface EntidadLogo {
+  nombre: string;
+  logo?: string; // ruta a la imagen del logo; si no hay, se muestra el nombre en texto
+}
+
 export interface ProyectoCliente {
   slug: string;
   categoria: CategoriaProyecto;
@@ -32,6 +37,9 @@ export interface ProyectoCliente {
   resultado: string;
   cta?: { texto: string; url: string };
   galeria?: string[];
+  // Bloque "comodín" tras los párrafos del cuerpo: o bien una galería de fotos, o bien
+  // un bloque de agradecimientos (proyecto para / agradecimientos a), según convenga a cada ficha.
+  agradecimientos?: { proyectoPara: EntidadLogo; agradecimientosA: EntidadLogo[] };
   cita?: { texto: string; autor: string };
   pendiente?: boolean; // true = ficha con contenido de ejemplo, a la espera de los datos reales
 }
@@ -69,6 +77,10 @@ export const proyectosCliente: ProyectoCliente[] = [
     resultado:
       'Una serie de conversaciones cercanas y profundas que conectan con la realidad del tercer sector y acercan al público historias de impacto positivo.',
     cta: { texto: 'Escuchar el podcast', url: 'https://achalay.es/abriendoelfoco/' },
+    agradecimientos: {
+      proyectoPara: { nombre: 'Achalay' },
+      agradecimientosA: [{ nombre: 'Havas Village' }, { nombre: 'Fundación Lealtad' }],
+    },
     cita: {
       texto: 'Escuchar estas historias me recuerda por qué vale la pena contar lo que otros hacen.',
       autor: 'Rocío Periago',

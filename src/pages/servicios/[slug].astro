@@ -75,19 +75,37 @@ const otrosProyectos = proyectosCliente.filter((p) => p.slug !== proyecto.slug).
           ))}
         </div>
 
-        {proyecto.galeria && proyecto.galeria.length > 0 && (
+        {proyecto.agradecimientos ? (
+          <div class="grid sm:grid-cols-2 gap-8 mb-4 pt-2">
+            <div>
+              <p class="kicker text-sage mb-4">Proyecto para</p>
+              <div class="flex items-center">
+                {proyecto.agradecimientos.proyectoPara.logo ? (
+                  <img src={proyecto.agradecimientos.proyectoPara.logo} alt={proyecto.agradecimientos.proyectoPara.nombre} class="h-12 object-contain" />
+                ) : (
+                  <span class="font-sans font-extrabold text-lg text-cream/85">{proyecto.agradecimientos.proyectoPara.nombre}</span>
+                )}
+              </div>
+            </div>
+            <div>
+              <p class="kicker text-sage mb-4">Agradecimientos a</p>
+              <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+                {proyecto.agradecimientos.agradecimientosA.map((ent) => (
+                  ent.logo ? (
+                    <img src={ent.logo} alt={ent.nombre} class="h-10 object-contain" />
+                  ) : (
+                    <span class="font-sans font-semibold text-cream/70">{ent.nombre}</span>
+                  )
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : proyecto.galeria && proyecto.galeria.length > 0 && (
           <div class="grid grid-cols-3 gap-4 mb-10">
             {proyecto.galeria.map((img) => (
               <img src={img} alt="" class="w-full aspect-square object-cover rounded-md" />
             ))}
           </div>
-        )}
-
-        {proyecto.cita && (
-          <blockquote class="border-l-2 border-ochre pl-6 py-1 mb-4">
-            <p class="text-xl font-sans italic text-cream/90 mb-3">"{proyecto.cita.texto}"</p>
-            <cite class="text-sm text-cream/50 not-italic">{proyecto.cita.autor}</cite>
-          </blockquote>
         )}
       </div>
 
@@ -119,6 +137,13 @@ const otrosProyectos = proyectosCliente.filter((p) => p.slug !== proyecto.slug).
             {proyecto.cta.texto}
             <span aria-hidden="true">↗</span>
           </a>
+        )}
+
+        {proyecto.cita && (
+          <blockquote class="border-l-2 border-ochre pl-6 py-1 pt-2">
+            <p class="text-lg font-sans italic text-cream/90 mb-3">"{proyecto.cita.texto}"</p>
+            <cite class="text-sm text-cream/50 not-italic">{proyecto.cita.autor}</cite>
+          </blockquote>
         )}
       </aside>
     </div>
