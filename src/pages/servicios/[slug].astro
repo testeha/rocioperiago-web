@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { proyectosCliente } from '../../data/portfolio';
+
+export function getStaticPaths() {
+  return proyectosCliente.map((p) => ({
+    params: { slug: p.slug },
+    props: { proyecto: p },
+  }));
+}
+
+const { proyecto } = Astro.props;
+
+const otrosProyectos = proyectosCliente.filter((p) => p.slug !== proyecto.slug).slice(0, 3);
+---
+
+<Layout
+  title={proyecto.titulo}
+  description={proyecto.subtitulo}
+>
+  <section class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-4">
+    <nav class="text-sm text-cream/45 mb-6 flex flex-wrap items-center gap-2">
+      <a href="/" class="hover:text-cream/70 transition-colors">Inicio</a>
+      <span>/</span>
+      <a href="/servicios" class="hover:text-cream/70 transition-colors">Servicios</a>
+      <span>/</span>
+      <span class="text-cream/70">{proyecto.titulo}</span>
+    </nav>
+
+    <a href="/servicios#portfolio" class="inline-flex items-center gap-2 text-sm text-cream/60 hover:text-cream transition-colors mb-8">
+      <span aria-hidden="true">←</span> Volver a proyectos
+    </a>
+
+    <p class="eyebrow-ochre mb-3">{proyecto.categoriaLabel}</p>
+    <h1 class="font-sans font-extrabold text-4xl md:text-5xl mb-4">{proyecto.titulo}</h1>
+    <p class="text-cream/70 max-w-2xl mb-8">{proyecto.subtitulo}</p>
+
+    <div class="flex flex-wrap items-start gap-x-12 gap-y-4 mb-6">
+      <div>
+        <div class="kicker text-cream/40 mb-1">Año</div>
+        <div class="text-sm font-medium">{proyecto.año}</div>
+      </div>
+      <div>
+        <div class="kicker text-cream/40 mb-1">Cliente</div>
+        <div class="text-sm font-medium">{proyecto.cliente}</div>
+      </div>
+      <div>
+        <div class="kicker text-cream/40 mb-1">Ubicación</div>
+        <div class="text-sm font-medium">{proyecto.ubicacion}</div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mb-10">
+      {proyecto.tags.map((tag) => (
+        <span class="text-xs font-mono uppercase tracking-wide border border-cream/20 text-cream/70 px-3 py-1.5 rounded-full">{tag}</span>
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-content mx-auto px-6 md:px-8 pb-16">
+    <div class="grid lg:grid-cols-[1fr_320px] gap-10">
+      <div>
+        {proyecto.imagenPortada ? (
+          <img src={proyecto.imagenPortada} alt={proyecto.titulo} class="w-full rounded-md mb-10 object-cover" />
+        ) : (
+          <div class="w-full aspect-video rounded-md mb-10 flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
+            <span class="font-mono text-xs uppercase tracking-wide text-cream/30">Imagen pendiente</span>
+          </div>
+        )}
+
+        <h2 class="font-sans font-extrabold text-2xl md:text-3xl mb-6">{proyecto.cuerpoTitulo}</h2>
+        <div class="space-y-4 max-w-2xl mb-10">
+          {proyecto.cuerpoParrafos.map((p) => (
+            <p class="text-cream/70 leading-relaxed">{p}</p>
+          ))}
+        </div>
+
+        {proyecto.galeria && proyecto.galeria.length > 0 && (
+          <div class="grid grid-cols-3 gap-4 mb-10">
+            {proyecto.galeria.map((img) => (
+              <img src={img} alt="" class="w-full aspect-square object-cover rounded-md" />
+            ))}
+          </div>
+        )}
+
+        {proyecto.cita && (
+          <blockquote class="border-l-2 border-ochre pl-6 py-1 mb-4">
+            <p class="text-xl font-sans italic text-cream/90 mb-3">"{proyecto.cita.texto}"</p>
+            <cite class="text-sm text-cream/50 not-italic">{proyecto.cita.autor}</cite>
+          </blockquote>
+        )}
+      </div>
+
+      <aside class="space-y-8">
+        <div>
+          <p class="kicker text-sage mb-3">El proyecto</p>
+          <p class="text-sm text-cream/70 leading-relaxed">{proyecto.elProyecto}</p>
+        </div>
+
+        <div class="pt-6 border-t border-cream/10">
+          <p class="kicker text-sage mb-3">Mi trabajo</p>
+          <ul class="space-y-2 list-none">
+            {proyecto.miTrabajo.map((item) => (
+              <li class="text-sm text-cream/70 flex items-start gap-2">
+                <span class="wp-dot mt-1.5 flex-shrink-0"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="pt-6 border-t border-cream/10">
+          <p class="kicker text-sage mb-3">Resultado</p>
+          <p class="text-sm text-cream/70 leading-relaxed">{proyecto.resultado}</p>
+        </div>
+
+        {proyecto.cta && (
+          <a href={proyecto.cta.url} target="_blank" rel="noopener" class="btn-ochre inline-flex items-center gap-2">
+            {proyecto.cta.texto}
+            <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </aside>
+    </div>
+  </section>
+
+  {otrosProyectos.length > 0 && (
+    <section class="border-t border-cream/10 bg-sea-2/30">
+      <div class="max-w-content mx-auto px-6 md:px-8 py-16">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="font-sans font-extrabold text-2xl">Más proyectos</h2>
+          <a href="/servicios#portfolio" class="inline-flex items-center gap-2 text-sm text-ochre-light hover:text-ochre transition-colors">
+            Ver todos los proyectos <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5">
+          {otrosProyectos.map((p) => (
+            <a href={`/servicios/${p.slug}`} class="group block">
+              {p.imagenPortada ? (
+                <img src={p.imagenPortada} alt={p.titulo} class="w-full aspect-[4/3] object-cover rounded-md mb-4" />
+              ) : (
+                <div class="w-full aspect-[4/3] rounded-md mb-4 flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
+                  <span class="font-mono text-[.65rem] uppercase tracking-wide text-cream/30">Imagen pendiente</span>
+                </div>
+              )}
+              <div class="font-mono text-[.65rem] uppercase tracking-wide text-cream/40 mb-1.5">{p.año}</div>
+              <h3 class="font-sans font-extrabold text-lg mb-2 group-hover:text-ochre-light transition-colors">{p.titulo}</h3>
+              <div class="flex flex-wrap gap-1.5">
+                {p.tags.slice(0, 2).map((tag) => (
+                  <span class="text-[.7rem] font-mono uppercase tracking-wide border border-cream/20 text-cream/60 px-2 py-1 rounded-full">{tag}</span>
+                ))}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>
