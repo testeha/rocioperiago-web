@@ -78,8 +78,11 @@ export const proyectosCliente: ProyectoCliente[] = [
       'Una serie de conversaciones cercanas y profundas que conectan con la realidad del tercer sector y acercan al público historias de impacto positivo.',
     cta: { texto: 'Escuchar el podcast', url: 'https://achalay.es/abriendoelfoco/' },
     agradecimientos: {
-      proyectoPara: { nombre: 'Achalay' },
-      agradecimientosA: [{ nombre: 'Havas Village' }, { nombre: 'Fundación Lealtad' }],
+      proyectoPara: { nombre: 'Achalay', logo: '/images/logos/achalay.png' },
+      agradecimientosA: [
+        { nombre: 'Havas Village', logo: '/images/logos/havas-village.png' },
+        { nombre: 'Fundación Lealtad', logo: '/images/logos/fundacion-lealtad.png' },
+      ],
     },
     cita: {
       texto: 'Escuchar estas historias me recuerda por qué vale la pena contar lo que otros hacen.',
