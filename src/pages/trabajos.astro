@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { trabajos, temas } from '../data/trabajos';
-import { proyectosPropios } from '../data/contenido';
 
 const temaKeys = Object.keys(temas) as (keyof typeof temas)[];
 
@@ -106,51 +105,122 @@ const esAncha = calcularAnchos(trabajos.length);
   <!-- PROYECTOS PROPIOS -->
   <section class="border-t border-cream/10 bg-sea-2/30">
     <div class="max-w-content mx-auto px-6 md:px-8 py-16">
-      <p class="eyebrow-sage mb-3">Fuera de la redacción</p>
-      <h2 class="font-sans font-extrabold text-2xl md:text-3xl mb-8">Proyectos propios</h2>
+      <p class="flex items-center gap-2 mb-3">
+        <span class="w-1.5 h-1.5 rounded-full bg-ochre inline-block"></span>
+        <span class="kicker text-ochre-light">Ideas en acción</span>
+      </p>
+      <h2 class="font-serif font-medium text-3xl md:text-4xl mb-3">Proyectos propios</h2>
+      <p class="text-cream/60 max-w-md mb-8">Iniciativas que nacen de la curiosidad, la creatividad y las ganas de generar un impacto positivo.</p>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {proyectosPropios.map((p) => {
-          const esOchre = p.color === 'ochre';
-          const claseBorde = esOchre ? 'border-t-ochre' : 'border-t-sage';
-          const claseMonogramaBg = esOchre ? 'bg-ochre/15' : 'bg-sage/15';
-          const claseMonogramaTexto = esOchre ? 'text-ochre-light' : 'text-sage';
-          const claseCta = esOchre ? 'text-ochre-light group-hover:text-ochre' : 'text-sage group-hover:text-sage-light';
-          const Wrapper = p.url ? 'a' : 'div';
-          return (
-            <Wrapper
-              href={p.url || undefined}
-              target={p.url ? '_blank' : undefined}
-              rel={p.url ? 'noopener' : undefined}
-              class:list={[
-                'group relative flex flex-col rounded-lg p-6 bg-sea-2 border-t-2 transition-all duration-300',
-                claseBorde,
-                p.url && 'hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20 hover:bg-sea-3',
-              ]}
-            >
-              <div class="flex items-center justify-between mb-4">
-                {p.logo ? (
-                  <img src={p.logo} alt={p.nombre} class="w-11 h-11 rounded-full object-cover" />
-                ) : (
-                  <div class:list={['w-11 h-11 rounded-full flex items-center justify-center font-sans font-extrabold text-lg', claseMonogramaBg, claseMonogramaTexto]}>
-                    {p.nombre.charAt(0)}
-                  </div>
-                )}
-                {p.años && <span class="font-mono text-[.65rem] text-cream/40 tracking-[.04em]">{p.años}</span>}
-              </div>
+        <!-- 1. TESTEHA ESTUDIO -->
+        <a
+          href="https://testeha.com/"
+          target="_blank"
+          rel="noopener"
+          style="--accent:#f7bd20"
+          class="group relative flex flex-col min-h-[420px] p-7 rounded-lg border border-[color:var(--accent)]/40 border-t-2 border-t-[color:var(--accent)] bg-gradient-to-br from-cream/[.02] to-transparent hover:-translate-y-1 hover:border-[color:var(--accent)] transition-all duration-300"
+        >
+          <span aria-hidden="true" class="absolute top-4 right-5 text-2xl font-light text-[color:var(--accent)] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
 
-              <div class="font-sans font-extrabold text-lg leading-snug mb-2">{p.nombre}</div>
-              <p class="text-sm text-cream/60 leading-relaxed flex-1">{p.formato}</p>
+          <div class="flex flex-col justify-center min-h-[80px] mb-3">
+            <span class="font-sans font-extrabold text-2xl leading-none text-cream">Testeha</span>
+            <span class="font-sans text-sm text-cream/50 mt-1">estudio</span>
+          </div>
 
-              {p.url && (
-                <span class:list={['inline-flex items-center gap-1.5 mt-4 text-xs font-mono uppercase tracking-wide transition-colors', claseCta]}>
-                  Visitar
-                  <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
-                </span>
-              )}
-            </Wrapper>
-          );
-        })}
+          <span class="block w-10 h-[3px] mb-5 bg-[color:var(--accent)]"></span>
+
+          <p class="text-sm text-cream/80 leading-relaxed flex-1">Comunicación, estrategia y desarrollo web con un enfoque centrado en las personas.</p>
+
+          <span class="mt-6 inline-flex items-center gap-3 text-sm font-semibold text-[color:var(--accent)]">
+            Visitar proyecto
+            <span aria-hidden="true" class="text-lg font-light transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+          </span>
+        </a>
+
+        <!-- 2. JUNTOS CAMBIAMOS EL MUNDO -->
+        <a
+          href="https://juntoscambiamoselmundo.com"
+          target="_blank"
+          rel="noopener"
+          style="--accent:#ff8a00"
+          class="group relative flex flex-col min-h-[420px] p-7 rounded-lg border border-[color:var(--accent)]/40 border-t-2 border-t-[color:var(--accent)] bg-gradient-to-br from-cream/[.02] to-transparent hover:-translate-y-1 hover:border-[color:var(--accent)] transition-all duration-300"
+        >
+          <span aria-hidden="true" class="absolute top-4 right-5 text-2xl font-light text-[color:var(--accent)] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+
+          <div class="flex items-center justify-center w-14 h-14 rounded-full border border-[color:var(--accent)]/50 mb-3">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21s-7.5-4.6-10-9.3C.5 8.2 2.4 4.5 6 4.5c2 0 3.3 1 4.5 2.3 1.5-1.5 2.6-2.3 4.5-2.3 3.6 0 5.5 3.7 4 7.2C19.5 16.4 12 21 12 21z" stroke="#ff8a00" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="font-sans font-extrabold text-lg leading-snug mb-1">Juntos Cambiamos el Mundo</h3>
+          <span class="font-mono text-[.72rem] tracking-[.04em] text-[color:var(--accent)] mb-2 block">2019–2025</span>
+
+          <span class="block w-10 h-[3px] mb-5 bg-[color:var(--accent)]"></span>
+
+          <p class="text-sm text-cream/80 leading-relaxed flex-1">Historias y proyectos de personas que apuestan por el cambio social.</p>
+
+          <span class="mt-6 inline-flex items-center gap-3 text-sm font-semibold text-[color:var(--accent)]">
+            Visitar proyecto
+            <span aria-hidden="true" class="text-lg font-light transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+          </span>
+        </a>
+
+        <!-- 3. ABRIENDO EL FOCO -->
+        <a
+          href="https://achalay.es/abriendoelfoco/"
+          target="_blank"
+          rel="noopener"
+          style="--accent:#ff496c"
+          class="group relative flex flex-col min-h-[420px] p-7 rounded-lg border border-[color:var(--accent)]/40 border-t-2 border-t-[color:var(--accent)] bg-gradient-to-br from-cream/[.02] to-transparent hover:-translate-y-1 hover:border-[color:var(--accent)] transition-all duration-300"
+        >
+          <span aria-hidden="true" class="absolute top-4 right-5 text-2xl font-light text-[color:var(--accent)] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+
+          <div class="flex flex-col justify-center min-h-[80px] mb-3">
+            <span class="font-sans font-extrabold text-sm tracking-wide text-cream leading-none">ABRIENDO EL</span>
+            <span class="font-sans font-extrabold text-4xl leading-[.95] mt-1" style="color:#a6d94f">FOCO</span>
+          </div>
+          <span class="font-mono text-[.72rem] tracking-[.04em] text-[color:var(--accent)] mb-2 block">2025–2026</span>
+
+          <span class="block w-10 h-[3px] mb-5 bg-[color:var(--accent)]"></span>
+
+          <p class="text-sm text-cream/80 leading-relaxed flex-1">Podcasts sobre el tercer sector, realizados para Asociación Achalay.</p>
+
+          <span class="mt-6 inline-flex items-center gap-3 text-sm font-semibold text-[color:var(--accent)]">
+            Visitar proyecto
+            <span aria-hidden="true" class="text-lg font-light transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+          </span>
+        </a>
+
+        <!-- 4. SOPLALEBECHE -->
+        <a
+          href="https://soplalebeche.com"
+          target="_blank"
+          rel="noopener"
+          style="--accent:#96c95c"
+          class="group relative flex flex-col min-h-[420px] p-7 rounded-lg border border-[color:var(--accent)]/40 border-t-2 border-t-[color:var(--accent)] bg-gradient-to-br from-cream/[.02] to-transparent hover:-translate-y-1 hover:border-[color:var(--accent)] transition-all duration-300"
+        >
+          <span aria-hidden="true" class="absolute top-4 right-5 text-2xl font-light text-[color:var(--accent)] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+
+          <div class="flex flex-col justify-center min-h-[80px] mb-3">
+            <svg width="60" height="26" viewBox="0 0 60 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-1.5">
+              <path d="M2 10 Q11 4 20 10 T37 10" stroke="#F7F4EC" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <path d="M2 16 Q9 12 16 16 T29 16" stroke="#F7F4EC" stroke-opacity="0.7" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <path d="M2 22 Q7 19.5 12 22" stroke="#F7F4EC" stroke-opacity="0.5" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            </svg>
+            <span class="font-serif text-2xl text-cream leading-none">Sopla<em class="not-italic italic">lebeche</em></span>
+          </div>
+          <span class="font-mono text-[.72rem] tracking-[.04em] text-[color:var(--accent)] mb-2 block">2014–2021</span>
+
+          <span class="block w-10 h-[3px] mb-5 bg-[color:var(--accent)]"></span>
+
+          <p class="text-sm text-cream/80 leading-relaxed flex-1">Blog de viajes y buenas historias con nombre de viento del sur.</p>
+
+          <span class="mt-6 inline-flex items-center gap-3 text-sm font-semibold text-[color:var(--accent)]">
+            Visitar proyecto
+            <span aria-hidden="true" class="text-lg font-light transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+          </span>
+        </a>
       </div>
     </div>
   </section>
