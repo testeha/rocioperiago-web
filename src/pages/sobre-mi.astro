@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProyectosPropios from '../components/ProyectosPropios.astro';
 import { bioLarga, bioLargaEN, bioLargaIT, premios } from '../data/contenido';
 
 const parrafosES = bioLarga.trim().split('\n\n');
@@ -79,6 +80,8 @@ const parrafosIT = bioLargaIT.trim().split('\n\n');
       <a href="/contacto" class="btn-ochre flex-shrink-0">Contactar</a>
     </div>
   </section>
+
+  <ProyectosPropios />
 </Layout>
 
 <script>
