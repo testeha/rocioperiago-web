@@ -170,19 +170,19 @@ export const proyectosPropios = [
     logo: '',
   },
   {
-    nombre: 'Juntos Cambiamos el Mundo',
-    url: 'https://juntoscambiamoselmundo.com',
-    formato: 'Historias y proyectos de personas que apuestan por el cambio social.',
-    años: '2019–2025',
-    color: 'sage',
-    logo: '',
-  },
-  {
     nombre: 'Abriendo el Foco',
     url: 'https://achalay.es/abriendoelfoco/',
     formato: 'Podcasts sobre el tercer sector, realizados para Asociación Achalay.',
     años: '2025–2026',
     color: 'ochre',
+    logo: '',
+  },
+  {
+    nombre: 'Juntos Cambiamos el Mundo',
+    url: 'https://juntoscambiamoselmundo.com',
+    formato: 'Historias y proyectos de personas que apuestan por el cambio social.',
+    años: '2019–2025',
+    color: 'sage',
     logo: '',
   },
   {
