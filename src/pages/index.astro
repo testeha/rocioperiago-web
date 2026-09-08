@@ -180,34 +180,43 @@ const capsulaHero = [
         </a>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="grid md:grid-cols-3 gap-5">
         {organizacionesDestacadas.map((p) =>
           p ? (
-            <a
-              href={`/servicios/${p.slug}`}
-              class="group relative aspect-[4/5] rounded-md overflow-hidden block"
-            >
+            <a href={`/servicios/${p.slug}`} class="group block rounded-md overflow-hidden bg-sea-2 border border-cream/10 hover:border-cream/25 transition-colors">
               {p.imagenPortada ? (
-                <img src={p.imagenPortada} alt={p.titulo} class="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
+                <img src={p.imagenPortada} alt={p.titulo} class="w-full aspect-[4/3] object-cover" loading="lazy" />
               ) : (
-                <span class="absolute top-3 left-3 font-mono text-[.55rem] uppercase tracking-wide text-cream/20 z-0">Foto pendiente</span>
+                <div class="w-full aspect-[4/3] flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
+                  <span class="font-mono text-[.65rem] uppercase tracking-wide text-cream/30">Imagen pendiente</span>
+                </div>
               )}
-
-              <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,.88)_0%,rgba(0,0,0,.6)_45%,rgba(0,0,0,.05)_75%,transparent_100%)] z-10"></div>
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 z-10"></div>
-
-              <div class="absolute inset-0 z-20 flex flex-col justify-end p-4">
-                <span class="font-sans font-extrabold text-white text-sm md:text-base leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,.6)]">
-                  {p.titulo}
-                </span>
-                <span class="mt-2 font-mono text-[.6rem] uppercase tracking-wide text-cream/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
-                  {p.cliente} · {p.año}
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-mono text-[.68rem] uppercase tracking-wide text-cream/40">{p.año}</span>
+                  <span class="font-mono text-[.68rem] uppercase tracking-wide text-cream/40">{p.cliente}</span>
+                </div>
+                <h4 class="font-sans font-extrabold text-lg mb-2 group-hover:text-sage-light transition-colors">{p.titulo}</h4>
+                <p class="text-sm text-cream/60 mb-4 leading-relaxed">{p.resumenCard}</p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  {p.tags.map((tag) => (
+                    <span class="text-[.7rem] font-mono uppercase tracking-wide border border-cream/20 text-cream/60 px-2 py-1 rounded-full">{tag}</span>
+                  ))}
+                </div>
+                <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wide text-sage group-hover:text-sage-light transition-colors">
+                  Ver proyecto
+                  <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
                 </span>
               </div>
             </a>
           ) : (
-            <div class="aspect-[4/5] rounded-md flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
-              <span class="font-mono text-[.65rem] uppercase tracking-wide text-cream/30">Próximamente</span>
+            <div class="rounded-md overflow-hidden bg-sea-2 border border-cream/10">
+              <div class="w-full aspect-[4/3] flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
+                <span class="font-mono text-[.65rem] uppercase tracking-wide text-cream/30">Imagen pendiente</span>
+              </div>
+              <div class="p-6">
+                <span class="font-mono text-[.68rem] uppercase tracking-wide text-cream/30">Próximamente</span>
+              </div>
             </div>
           )
         )}
