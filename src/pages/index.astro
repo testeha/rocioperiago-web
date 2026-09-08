@@ -2,9 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import ProyectosPropios from '../components/ProyectosPropios.astro';
 import { trabajosDestacados } from '../data/trabajos';
+import { proyectosCliente } from '../data/portfolio';
 
 const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazine', 'Revista Haz', 'Revista Late', 'Ballena Blanca', 'Mundo Negro'];
 const proyectosCon = ['ACCEM', 'Asociación Achalay', 'Instituto de Empresa', 'Aplica', 'Cooperama'];
+
+// De momento solo "Abriendo el Foco" tiene ficha real; las otras 5 celdas quedan
+// como temporales hasta que lleguen el resto de fichas de clientes.
+const organizacionesDestacadas = [
+  proyectosCliente.find((p) => p.slug === 'abriendo-el-foco'),
+  null,
+  null,
+  null,
+  null,
+  null,
+];
 
 // Slideshow del hero — 4 fotos seleccionadas por Rocío, en rotación automática
 // El "caption" es un placeholder de momento; a futuro se sustituye por ubicación · año de cada foto
@@ -151,58 +163,54 @@ const capsulaHero = [
   <!-- BLOQUE 2 · Para ONGs y empresas con valores -->
   <section class="border-t-2 border-sage/40 bg-sage/[0.025]">
     <div class="max-w-content mx-auto px-6 md:px-8 py-16">
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <p class="eyebrow-sage mb-3">Storytelling con impacto social</p>
-          <h2 class="font-sans font-extrabold text-3xl md:text-4xl mb-6">Para ONGs y Empresas</h2>
-          <ul class="space-y-3 list-none">
-            <li class="text-sm text-cream/65 pt-3 border-t border-cream/10">Comunicación y estrategia de contenidos enfocada al tercer sector</li>
-            <li class="text-sm text-cream/65 pt-3 border-t border-cream/10">Redacción, creación de materiales y contenidos, gestión de canales online.</li>
-            <li class="text-sm text-cream/65 pt-3 border-t border-cream/10">Más de 12 años de trabajo en el ámbito social</li>
-          </ul>
-        </div>
+      <p class="eyebrow-sage mb-3">Storytelling con impacto social</p>
+      <h2 class="font-sans font-extrabold text-3xl md:text-4xl mb-4">Para ONGs y Empresas</h2>
+      <p class="text-cream/70 max-w-2xl mb-12">
+        Ayudo a ONGs, fundaciones y empresas a comunicar su trabajo con honestidad, precisión y la narrativa que
+        mejor se ajusta a sus necesidades. Trabajo desde Testeha Estudio, donde un equipo multidisciplinar de
+        profesionales ofrecemos un servicio cercano y un contacto directo con los clientes. Más de 12 años de
+        trabajo en el ámbito social.
+      </p>
 
-        <div>
-          <p class="eyebrow-sage mb-5">¿En qué puedo ayudarte?</p>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <h3 class="font-sans font-extrabold text-xl md:text-2xl">Organizaciones con las que he trabajado</h3>
+        <a href="/servicios" class="inline-flex items-center gap-2 text-sm text-sage hover:text-sage-light transition-colors flex-shrink-0">
+          ONGs y Empresas
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
 
-          <details class="accordion-item border-t border-cream/15 py-4" open>
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-              <span class="font-sans font-extrabold text-lg">Estrategia digital</span>
-              <span class="accordion-icon flex-shrink-0 text-sage text-xl leading-none">+</span>
-            </summary>
-            <p class="mt-3 text-sm text-cream/60 leading-relaxed">Plan de comunicación. Propuestas de contenidos y acciones. Storytelling narrativo. Propuestas realistas y cercanas, poniendo el foco en las necesidades e impacto real de tu entidad.</p>
-          </details>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {organizacionesDestacadas.map((p) =>
+          p ? (
+            <a
+              href={`/servicios/${p.slug}`}
+              class="group relative aspect-[4/5] rounded-md overflow-hidden block"
+            >
+              {p.imagenPortada ? (
+                <img src={p.imagenPortada} alt={p.titulo} class="absolute inset-0 w-full h-full object-cover z-0" loading="lazy" />
+              ) : (
+                <span class="absolute top-3 left-3 font-mono text-[.55rem] uppercase tracking-wide text-cream/20 z-0">Foto pendiente</span>
+              )}
 
-          <details class="accordion-item border-t border-cream/15 py-4">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-              <span class="font-sans font-extrabold text-lg">Comunicación corporativa y redacción</span>
-              <span class="accordion-icon flex-shrink-0 text-sage text-xl leading-none">+</span>
-            </summary>
-            <p class="mt-3 text-sm text-cream/60 leading-relaxed">Realización de memorias, notas y convocatorias de prensa, posts y newsletter. En la era de la IA da mucha confianza saber que hay una persona real detrás de la comunicación de tu organización.</p>
-          </details>
+              <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,.88)_0%,rgba(0,0,0,.6)_45%,rgba(0,0,0,.05)_75%,transparent_100%)] z-10"></div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 z-10"></div>
 
-          <details class="accordion-item border-t border-cream/15 py-4">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-              <span class="font-sans font-extrabold text-lg">Creación de contenidos</span>
-              <span class="accordion-icon flex-shrink-0 text-sage text-xl leading-none">+</span>
-            </summary>
-            <p class="mt-3 text-sm text-cream/60 leading-relaxed">Realización de entrevistas y reportajes. Fotografía documental. Producción y desarrollo de guiones de podcasts y materiales audiovisuales.</p>
-          </details>
-
-          <details class="accordion-item border-t border-b border-cream/15 py-4">
-            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-              <span class="font-sans font-extrabold text-lg">Desarrollo de actividades y talleres sobre creatividad</span>
-              <span class="accordion-icon flex-shrink-0 text-sage text-xl leading-none">+</span>
-            </summary>
-            <p class="mt-3 text-sm text-cream/60 leading-relaxed">Creatividad.</p>
-            <p class="mt-3 text-sm text-cream/60 leading-relaxed">Talleres y actividades formativas. Cuadernos de viaje. Fotografía y escritura creativa. Técnicas y herramientas para trabajar la creatividad.</p>
-          </details>
-
-          <a href="/servicios" class="inline-flex items-center gap-2 mt-8 text-sm text-sage hover:text-sage-light transition-colors">
-            Ver todos los servicios
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
+              <div class="absolute inset-0 z-20 flex flex-col justify-end p-4">
+                <span class="font-sans font-extrabold text-white text-sm md:text-base leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,.6)]">
+                  {p.titulo}
+                </span>
+                <span class="mt-2 font-mono text-[.6rem] uppercase tracking-wide text-cream/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  {p.cliente} · {p.año}
+                </span>
+              </div>
+            </a>
+          ) : (
+            <div class="aspect-[4/5] rounded-md flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
+              <span class="font-mono text-[.65rem] uppercase tracking-wide text-cream/30">Próximamente</span>
+            </div>
+          )
+        )}
       </div>
 
       <!-- BARRA PROYECTOS CON -->
