@@ -1,22 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProyectosPropios from '../components/ProyectosPropios.astro';
+import LogosOrganizaciones from '../components/LogosOrganizaciones.astro';
 import { trabajosDestacados } from '../data/trabajos';
-import { proyectosCliente } from '../data/portfolio';
 
 const medios = ['El País', 'National Geographic', 'France 24', 'Altaïr Magazine', 'Revista Haz', 'Revista Late', 'Ballena Blanca', 'Mundo Negro'];
-const proyectosCon = ['ACCEM', 'Asociación Achalay', 'Instituto de Empresa', 'Aplica', 'Cooperama'];
-
-// De momento solo "Abriendo el Foco" tiene ficha real; las otras 5 celdas quedan
-// como temporales hasta que lleguen el resto de fichas de clientes.
-const organizacionesDestacadas = [
-  proyectosCliente.find((p) => p.slug === 'abriendo-el-foco'),
-  null,
-  null,
-  null,
-  null,
-  null,
-];
 
 // Slideshow del hero — 4 fotos seleccionadas por Rocío, en rotación automática
 // El "caption" es un placeholder de momento; a futuro se sustituye por ubicación · año de cada foto
@@ -165,70 +153,17 @@ const capsulaHero = [
     <div class="max-w-content mx-auto px-6 md:px-8 py-16">
       <p class="eyebrow-sage mb-3">Storytelling con impacto social</p>
       <h2 class="font-sans font-extrabold text-3xl md:text-4xl mb-4">Para ONGs y Empresas</h2>
-      <p class="text-cream/70 max-w-2xl mb-12">
+      <p class="text-cream/70 max-w-2xl mb-16 md:mb-20">
         Ayudo a ONGs, fundaciones y empresas a comunicar su trabajo con honestidad, precisión y la narrativa que
         mejor se ajusta a sus necesidades. Trabajo desde Testeha Estudio, donde un equipo multidisciplinar de
         profesionales ofrecemos un servicio cercano y un contacto directo con los clientes. Más de 12 años de
         trabajo en el ámbito social.
       </p>
 
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-        <h3 class="font-sans font-extrabold text-xl md:text-2xl">Organizaciones con las que he trabajado</h3>
-        <a href="/servicios" class="inline-flex items-center gap-2 text-sm text-sage hover:text-sage-light transition-colors flex-shrink-0">
-          ONGs y Empresas
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
+      <p class="eyebrow-sage mb-3">Colaboraciones · Organizaciones</p>
+      <h3 class="font-sans font-extrabold text-2xl md:text-3xl mb-14 md:mb-16">Organizaciones que han confiado en mi trabajo</h3>
 
-      <div class="grid md:grid-cols-3 gap-5">
-        {organizacionesDestacadas.map((p) =>
-          p ? (
-            <a href={`/servicios/${p.slug}`} class="group block rounded-md overflow-hidden bg-sea-2 border border-cream/10 hover:border-cream/25 transition-colors">
-              {p.imagenPortada ? (
-                <img src={p.imagenPortada} alt={p.titulo} class="w-full aspect-[4/3] object-cover" loading="lazy" />
-              ) : (
-                <div class="w-full aspect-[4/3] flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
-                  <span class="font-mono text-[.65rem] uppercase tracking-wide text-cream/30">Imagen pendiente</span>
-                </div>
-              )}
-              <div class="p-6">
-                <div class="flex items-center justify-between mb-3">
-                  <span class="font-mono text-[.68rem] uppercase tracking-wide text-cream/40">{p.año}</span>
-                  <span class="font-mono text-[.68rem] uppercase tracking-wide text-cream/40">{p.cliente}</span>
-                </div>
-                <h4 class="font-sans font-extrabold text-lg mb-2 group-hover:text-sage-light transition-colors">{p.titulo}</h4>
-                <p class="text-sm text-cream/60 mb-4 leading-relaxed">{p.resumenCard}</p>
-                <div class="flex flex-wrap gap-1.5 mb-4">
-                  {p.tags.map((tag) => (
-                    <span class="text-[.7rem] font-mono uppercase tracking-wide border border-cream/20 text-cream/60 px-2 py-1 rounded-full">{tag}</span>
-                  ))}
-                </div>
-                <span class="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wide text-sage group-hover:text-sage-light transition-colors">
-                  Ver proyecto
-                  <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
-                </span>
-              </div>
-            </a>
-          ) : (
-            <div class="rounded-md overflow-hidden bg-sea-2 border border-cream/10">
-              <div class="w-full aspect-[4/3] flex items-center justify-center bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]">
-                <span class="font-mono text-[.65rem] uppercase tracking-wide text-cream/30">Imagen pendiente</span>
-              </div>
-              <div class="p-6">
-                <span class="font-mono text-[.68rem] uppercase tracking-wide text-cream/30">Próximamente</span>
-              </div>
-            </div>
-          )
-        )}
-      </div>
-
-      <!-- BARRA PROYECTOS CON -->
-      <div class="mt-12 pt-8 border-t border-cream/10 flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
-        <span class="kicker text-cream/40 flex-shrink-0">Proyectos con</span>
-        <div class="flex flex-wrap gap-x-6 gap-y-2">
-          {proyectosCon.map((p) => <span class="text-sm text-cream/60">{p}</span>)}
-        </div>
-      </div>
+      <LogosOrganizaciones />
     </div>
   </section>
 

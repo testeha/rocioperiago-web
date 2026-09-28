@@ -1,0 +1,26 @@
+---
+// Retícula de logos sobre el fondo de la sección: sin tarjetas, marcos ni separadores.
+// Blanco con opacidad reducida en reposo; opacidad completa al pasar el ratón.
+// Escritorio: 5 por fila · móvil: 2 por fila.
+import { organizaciones } from '../data/organizaciones';
+---
+
+<ul class="grid grid-cols-2 md:grid-cols-5 gap-x-8 md:gap-x-12 gap-y-10 md:gap-y-14 list-none p-0 m-0">
+  {organizaciones.map((o) => (
+    <li class="group flex items-center justify-center h-24 [&:last-child:nth-child(odd)]:col-span-2 md:[&:last-child:nth-child(odd)]:col-span-1">
+      {o.logo ? (
+        <img
+          src={o.logo}
+          alt={o.nombre}
+          loading="lazy"
+          style={`max-width:${o.ancho ?? 160}px;max-height:${o.alto ?? 60}px`}
+          class="w-auto h-auto brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+        />
+      ) : (
+        <span class="font-sans font-extrabold text-lg text-center leading-tight text-cream opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+          {o.nombre}
+        </span>
+      )}
+    </li>
+  ))}
+</ul>
