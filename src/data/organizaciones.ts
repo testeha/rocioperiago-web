@@ -13,17 +13,17 @@ export interface Organizacion {
 }
 
 export const organizaciones: Organizacion[] = [
-  { nombre: 'Accem' },
+  { nombre: 'Ayuntamiento de Lorca', logo: '/images/logos/ayuntamiento-lorca.png', alto: 76 },
   { nombre: 'Achalay', logo: '/images/logos/achalay.png', ancho: 150, alto: 76 },
   { nombre: 'IE University', logo: '/images/logos/ie-university.svg', alto: 72 },
   { nombre: 'Aplica', logo: '/images/logos/aplica.png', ancho: 130 },
   { nombre: 'Cooperama', logo: '/images/logos/cooperama.png' },
 
-  { nombre: "Sant'Egidio" },
+  { nombre: "Sant'Egidio", logo: '/images/logos/sant-egidio.png', alto: 88 },
   { nombre: 'Asociación Síndrome de Malan España', logo: '/images/logos/malan.png', alto: 62 },
   { nombre: 'Avant Integración Social', logo: '/images/logos/avant.svg', alto: 76 },
-  { nombre: 'Juntos Cambiamos el Mundo', logo: '/images/logos/juntos-cambiamos-el-mundo.png', alto: 92 },
-  { nombre: 'Atlantic Copper' },
+  { nombre: 'EcoMurcia', logo: '/images/logos/ecomurcia.png', alto: 80 },
+  { nombre: 'Fundación Ángel Linares', logo: '/images/logos/fundacion-angel-linares.png', alto: 70 },
 
   { nombre: 'Mundo Creati', logo: '/images/logos/mundo-creati.png' },
   { nombre: '50 en camino', logo: '/images/logos/50-en-camino.png', alto: 72 },
