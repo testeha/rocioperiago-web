@@ -1,24 +1,85 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LegalPagina from '../components/LegalPagina.astro';
+import { titular } from '../data/legal';
 ---
 
-<Layout
-  title="Aviso legal"
-  description="Aviso legal de rocioperiago.com"
+<LegalPagina
+  titulo="Aviso legal"
+  descripcion="Aviso legal de rocioperiago.com: datos del titular, condiciones de uso y propiedad intelectual."
 >
-  <section class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-24">
-    <p class="eyebrow-ochre mb-3">Información legal</p>
-    <h1 class="font-sans font-extrabold text-4xl md:text-5xl mb-10">Aviso legal</h1>
+  <h2>1. Datos identificativos</h2>
+  <p>
+    En cumplimiento del deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de
+    Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se facilitan los datos de la
+    titular de este sitio web, {titular.web}:
+  </p>
+  <ul>
+    <li><strong>Titular:</strong> {titular.nombre}</li>
+    <li>
+      <strong>NIF:</strong>{' '}
+      {titular.nif ? titular.nif : <span class="font-mono text-xs text-ochre-light">[NIF pendiente de completar]</span>}
+    </li>
+    <li><strong>Domicilio:</strong> {titular.domicilio}</li>
+    <li><strong>Correo electrónico:</strong> <a href={`mailto:${titular.email}`}>{titular.email}</a></li>
+    <li><strong>Actividad:</strong> servicios profesionales de periodismo, comunicación y storytelling.</li>
+  </ul>
+  <p>Diseño y desarrollo web: <a href="https://testeha.com" target="_blank" rel="noopener">Testeha Estudio</a>.</p>
 
-    <div class="max-w-2xl space-y-6 text-cream/70 text-sm leading-relaxed">
-      <div class="bg-sea-2/40 border border-cream/10 rounded-md p-6">
-        <p class="font-mono text-[.72rem] uppercase tracking-wide text-ochre-light mb-2">Contenido pendiente</p>
-        <p>
-          Esta página está a la espera de los datos legales definitivos (titular, NIF/CIF, domicilio,
-          registro, condiciones de uso, propiedad intelectual, etc.). En cuanto se reciban, se sustituirá
-          este aviso por el texto completo.
-        </p>
-      </div>
-    </div>
-  </section>
-</Layout>
+  <h2>2. Objeto</h2>
+  <p>
+    {titular.web} es el sitio web profesional de Rocío Periago. En él se presenta su trabajo periodístico publicado
+    en medios, sus proyectos de investigación y sus servicios de comunicación para organizaciones y empresas. Este
+    Aviso Legal regula las condiciones generales de uso del sitio.
+  </p>
+
+  <h2>3. Condiciones de uso</h2>
+  <p>
+    El acceso al sitio es gratuito y no requiere registro. El simple acceso implica la aceptación de estas
+    condiciones. La persona usuaria se compromete a hacer un uso adecuado y lícito del sitio, conforme a la
+    legislación aplicable, la buena fe y el orden público, y a no emplearlo para dañar, sobrecargar o inutilizar
+    sus servicios.
+  </p>
+
+  <h2>4. Propiedad intelectual e industrial</h2>
+  <p>
+    Los textos, fotografías, diseño y demás elementos originales de este sitio son propiedad de {titular.nombre},
+    salvo indicación expresa en contrario, y están protegidos por la normativa de propiedad intelectual. Queda
+    prohibida su reproducción, distribución o comunicación pública, total o parcial, sin autorización expresa de
+    la titular.
+  </p>
+  <p>
+    Los reportajes y artículos publicados en medios de comunicación que se reseñan o enlazan aquí pertenecen a los
+    medios que los publicaron. En este sitio se muestran como muestra del trabajo profesional y se remite siempre
+    a la publicación original.
+  </p>
+  <p>
+    Los nombres, logotipos y marcas de organizaciones, medios y proyectos que aparecen en el sitio son propiedad de
+    sus respectivos titulares. Se muestran únicamente para identificar colaboraciones profesionales, sin que ello
+    suponga patrocinio, respaldo ni vinculación distinta de la indicada.
+  </p>
+
+  <h2>5. Enlaces a otros sitios</h2>
+  <p>
+    Este sitio contiene enlaces a páginas de terceros (medios, organizaciones y proyectos). La titular no ejerce
+    control sobre esos sitios ni se responsabiliza de sus contenidos, de su disponibilidad ni de sus políticas.
+  </p>
+
+  <h2>6. Responsabilidad</h2>
+  <p>
+    La información del sitio tiene carácter informativo y puede modificarse o retirarse sin previo aviso. La
+    titular no garantiza la disponibilidad continua del sitio y no se hace responsable de los daños que pudieran
+    derivarse de interferencias, interrupciones, virus informáticos o desconexiones en su funcionamiento.
+  </p>
+
+  <h2>7. Protección de datos y cookies</h2>
+  <p>
+    El tratamiento de datos personales se explica en la <a href="/politica-privacidad">Política de Privacidad</a>{' '}
+    y el uso de cookies, en la <a href="/politica-cookies">Política de Cookies</a>.
+  </p>
+
+  <h2>8. Legislación aplicable y jurisdicción</h2>
+  <p>
+    Estas condiciones se rigen por la legislación española. Para cualquier controversia derivada del uso de este
+    sitio, las partes se someten a los juzgados y tribunales que resulten competentes conforme a derecho.
+  </p>
+</LegalPagina>

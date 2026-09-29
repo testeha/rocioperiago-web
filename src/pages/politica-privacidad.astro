@@ -1,24 +1,126 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LegalPagina from '../components/LegalPagina.astro';
+import { titular, ajustes } from '../data/legal';
 ---
 
-<Layout
-  title="Política de privacidad"
-  description="Política de privacidad de rocioperiago.com"
+<LegalPagina
+  titulo="Política de privacidad"
+  descripcion="Cómo se tratan los datos personales en rocioperiago.com: responsable, finalidades, derechos y proveedores."
 >
-  <section class="max-w-content mx-auto px-6 md:px-8 pt-16 pb-24">
-    <p class="eyebrow-ochre mb-3">Información legal</p>
-    <h1 class="font-sans font-extrabold text-4xl md:text-5xl mb-10">Política de privacidad</h1>
+  <p>
+    Esta Política de Privacidad explica cómo se tratan los datos personales de las personas que visitan{' '}
+    {titular.web} o se ponen en contacto a través de él, de acuerdo con el Reglamento (UE) 2016/679 (RGPD) y la Ley
+    Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).
+  </p>
 
-    <div class="max-w-2xl space-y-6 text-cream/70 text-sm leading-relaxed">
-      <div class="bg-sea-2/40 border border-cream/10 rounded-md p-6">
-        <p class="font-mono text-[.72rem] uppercase tracking-wide text-ochre-light mb-2">Contenido pendiente</p>
-        <p>
-          Esta página está a la espera del texto definitivo sobre tratamiento de datos personales
-          (responsable, finalidad, legitimación, destinatarios, derechos ARCO/RGPD, formularios de
-          contacto, etc.). En cuanto se reciban los datos, se sustituirá este aviso por la política completa.
-        </p>
-      </div>
-    </div>
-  </section>
-</Layout>
+  <h2>1. ¿Quién es la responsable del tratamiento?</h2>
+  <ul>
+    <li><strong>Nombre y apellidos:</strong> {titular.nombre}</li>
+    <li>
+      <strong>NIF:</strong>{' '}
+      {titular.nif ? titular.nif : <span class="font-mono text-xs text-ochre-light">[NIF pendiente de completar]</span>}
+    </li>
+    <li><strong>Domicilio:</strong> {titular.domicilio}</li>
+    <li><strong>Correo electrónico:</strong> <a href={`mailto:${titular.email}`}>{titular.email}</a></li>
+  </ul>
+
+  <h2>2. ¿Qué datos se tratan y con qué finalidad?</h2>
+  <ul>
+    <li>
+      <strong>Formulario de contacto:</strong> nombre, correo electrónico, medio u organización (opcional) y el
+      mensaje que escribas. Se usan para atender tu consulta o propuesta de colaboración y responderte.
+    </li>
+    <li>
+      <strong>Analítica web:</strong> datos de navegación agregados (páginas visitadas, tiempo de permanencia,
+      tipo de dispositivo…) mediante Google Analytics, <strong>solo si aceptas</strong> las cookies de analítica.
+      Sirven para entender cómo se usa el sitio y mejorarlo.
+    </li>
+    <li>
+      <strong>Datos técnicos de conexión</strong> (dirección IP, navegador, fecha y hora), que se generan de forma
+      automática al servir la web y son necesarios para su funcionamiento y seguridad.
+    </li>
+  </ul>
+  <p>El sitio no tiene registro de usuarios ni comentarios, y no recoge datos en ningún otro punto.</p>
+
+  <h2>3. ¿Cuál es la legitimación para el tratamiento?</h2>
+  <ul>
+    <li>
+      <strong>Consentimiento</strong> (art. 6.1.a RGPD): al enviar voluntariamente el formulario y al aceptar las
+      cookies de analítica. Puedes retirarlo en cualquier momento.
+    </li>
+    <li>
+      <strong>Medidas precontractuales</strong> (art. 6.1.b RGPD): cuando tu mensaje sea una solicitud de
+      presupuesto o de encargo.
+    </li>
+    <li>
+      <strong>Interés legítimo</strong> (art. 6.1.f RGPD): para los datos técnicos de conexión, con el fin de
+      garantizar el funcionamiento y la seguridad del sitio.
+    </li>
+  </ul>
+
+  <h2>4. ¿Se comparten los datos con terceros?</h2>
+  <p>
+    No se ceden datos a terceros con fines comerciales ni se cederán salvo obligación legal. Para prestar el
+    servicio intervienen los siguientes proveedores, que actúan como encargados del tratamiento y se rigen por sus
+    propias políticas de privacidad:
+  </p>
+  <ul>
+    {ajustes.formularioConFormspree && (
+      <li>
+        <strong>Formspree, Inc.</strong>: gestiona el envío del formulario de contacto y lo reenvía por correo
+        electrónico.
+      </li>
+    )}
+    <li>
+      <strong>Google</strong>: correo electrónico (Gmail), donde se reciben los mensajes, y Google Analytics, solo
+      con tu consentimiento.
+    </li>
+    <li>
+      <strong>Vercel Inc.</strong> (alojamiento del sitio) y <strong>Cloudflare, Inc.</strong> (gestión del dominio
+      y red de distribución de contenidos).
+    </li>
+  </ul>
+
+  <h2>5. Transferencias internacionales</h2>
+  <p>
+    Algunos de estos proveedores tienen su sede en Estados Unidos. Las transferencias se realizan con las garantías
+    que prevé el RGPD, como la decisión de adecuación del Marco de Privacidad de Datos UE-EE. UU. o las cláusulas
+    contractuales tipo, según el proveedor.
+  </p>
+
+  <h2>6. ¿Durante cuánto tiempo se conservan los datos?</h2>
+  <ul>
+    <li>
+      <strong>Formulario de contacto:</strong> el tiempo necesario para atender tu consulta y, si se inicia una
+      relación profesional, durante esa relación y los plazos legales de conservación posteriores.
+    </li>
+    <li>
+      <strong>Analítica web:</strong> durante el periodo de retención configurado en la herramienta, que no supera
+      los 14 meses.
+    </li>
+    <li><strong>Datos técnicos de conexión:</strong> durante el tiempo que establece el proveedor de alojamiento para sus registros de seguridad.</li>
+  </ul>
+
+  <h2>7. ¿Cuáles son tus derechos?</h2>
+  <p>
+    Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y
+    portabilidad, y retirar tu consentimiento en cualquier momento, escribiendo a{' '}
+    <a href={`mailto:${titular.email}`}>{titular.email}</a>. Indica el derecho que quieres ejercer y acredita tu
+    identidad para poder atender la solicitud.
+  </p>
+  <p>
+    Si consideras que el tratamiento de tus datos no se ajusta a la normativa, tienes derecho a presentar una
+    reclamación ante la Agencia Española de Protección de Datos{' '}
+    (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).
+  </p>
+
+  <h2>8. Menores de edad</h2>
+  <p>Este sitio no está dirigido a menores de 14 años y no recoge conscientemente datos de ellos.</p>
+
+  <h2>9. Cambios en esta política</h2>
+  <p>
+    Esta política puede actualizarse para reflejar cambios legales o en el funcionamiento del sitio. La fecha de la
+    última revisión figura al inicio de la página. Sobre el uso de cookies, consulta la{' '}
+    <a href="/politica-cookies">Política de Cookies</a>.
+  </p>
+</LegalPagina>
