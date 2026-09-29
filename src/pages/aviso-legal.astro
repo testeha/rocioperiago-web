@@ -16,8 +16,8 @@ import { titular } from '../data/legal';
   <ul>
     <li><strong>Titular:</strong> {titular.nombre}</li>
     <li>
-      <strong>NIF:</strong>{' '}
-      {titular.nif ? titular.nif : <span class="font-mono text-xs text-ochre-light">[NIF pendiente de completar]</span>}
+      <strong>DNI:</strong>{' '}
+      {titular.nif}
     </li>
     <li><strong>Domicilio:</strong> {titular.domicilio}</li>
     <li><strong>Correo electrónico:</strong> <a href={`mailto:${titular.email}`}>{titular.email}</a></li>

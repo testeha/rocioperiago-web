@@ -3,9 +3,8 @@
 
 export const titular = {
   nombre: 'Rocío Periago Martínez',
-  // PENDIENTE: NIF/DNI de Rocío. Es obligatorio publicarlo en una web con actividad profesional
-  // (art. 10 LSSI-CE). Mientras esté vacío, las páginas muestran un aviso visible de "pendiente".
-  nif: '',
+  // Formato tal y como aparece en soplalebeche.com, donde Rocío es también la titular.
+  nif: '2329****Q',
   domicilio: 'Plaza República de Ecuador 62, 30800 Lorca (Murcia)',
   email: 'rocio.periago@gmail.com',
   web: 'rocioperiago.com',
