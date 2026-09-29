@@ -7,7 +7,7 @@ export const titular = {
   // (art. 10 LSSI-CE). Mientras esté vacío, las páginas muestran un aviso visible de "pendiente".
   nif: '',
   domicilio: 'Plaza República de Ecuador 62, 30800 Lorca (Murcia)',
-  email: 'hola@rocioperiago.com',
+  email: 'rocio.periago@gmail.com',
   web: 'rocioperiago.com',
 };
 
