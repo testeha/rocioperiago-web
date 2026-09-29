@@ -15,8 +15,8 @@ import { titular } from '../data/legal';
   </section>
 
   <section class="max-w-content mx-auto px-6 md:px-8 pb-16">
-    <h2 class="font-serif text-3xl md:text-5xl leading-tight max-w-2xl mb-8">
-      ¿Tienes una historia, un proyecto o <span class="italic text-sage">algo que contarme?</span>
+    <h2 class="font-serif text-3xl md:text-5xl leading-tight max-w-3xl mb-8">
+      Toda historia merece ser contada <span class="block italic text-sage">¿Hablamos?</span>
     </h2>
     <p class="text-cream/70 max-w-xl mb-14">
       Para encargos periodísticos, colaboraciones, proyectos de comunicación o cualquier otra consulta, escríbeme
@@ -28,7 +28,7 @@ import { titular } from '../data/legal';
         <p class="kicker text-sage mb-2">Escríbeme</p>
         <a
           href={`mailto:${titular.email}`}
-          class="font-serif text-3xl md:text-5xl break-all hover:text-ochre-light transition-colors"
+          class="font-serif text-2xl md:text-[2.1rem] md:leading-tight break-all hover:text-ochre-light transition-colors"
         >
           {titular.email}
         </a>
@@ -36,18 +36,15 @@ import { titular } from '../data/legal';
       <a
         href={`mailto:${titular.email}`}
         aria-label={`Escribir a ${titular.email}`}
-        class="flex-shrink-0 w-16 h-16 rounded-full border border-cream/30 flex items-center justify-center text-2xl font-light hover:border-cream/60 hover:text-ochre-light transition-colors"
+        class="flex-shrink-0 w-11 h-11 rounded-full border border-cream/30 flex items-center justify-center text-lg font-light hover:border-cream/60 hover:text-ochre-light transition-colors"
       >
         <span aria-hidden="true">↗</span>
       </a>
     </div>
 
-    <div class="border-t border-cream/10 pt-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
-      <p class="text-sm text-cream/50">Contacto directo · sin formularios</p>
-      <div class="flex gap-6">
-        <a href="https://linkedin.com/in/rocioperiago" target="_blank" rel="noopener" class="text-sm text-cream/60 hover:text-cream transition-colors">LinkedIn</a>
-        <a href="https://www.instagram.com/rocioperiago" target="_blank" rel="noopener" class="text-sm text-cream/60 hover:text-cream transition-colors">Instagram</a>
-      </div>
+    <div class="border-t border-cream/10 pt-6 flex gap-6">
+      <a href="https://linkedin.com/in/rocioperiago" target="_blank" rel="noopener" class="text-sm text-cream/60 hover:text-cream transition-colors">LinkedIn</a>
+      <a href="https://www.instagram.com/rocioperiago" target="_blank" rel="noopener" class="text-sm text-cream/60 hover:text-cream transition-colors">Instagram</a>
     </div>
   </section>
 </Layout>
