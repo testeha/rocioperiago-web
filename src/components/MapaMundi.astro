@@ -54,7 +54,7 @@ for (const codigo of codigosResaltados) {
     />
 
     {pines.map((pin) => (
-      <div class="map-pin" style={`left:${pin.left}%; top:${pin.top}%;`}>
+      <div class="map-pin" tabindex="0" aria-label={pin.nombre} style={`left:${pin.left}%; top:${pin.top}%;`}>
         <div class="map-pin-dot"></div>
         <span class="map-pin-label">{pin.nombre}</span>
         <div class="map-tooltip">
@@ -139,6 +139,10 @@ for (const codigo of codigosResaltados) {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   }
 
+  @media (max-width: 639px) {
+    .map-pin-label { display: none; }
+  }
+
   .map-tooltip {
     position: absolute;
     bottom: 25px;
@@ -164,12 +168,14 @@ for (const codigo of codigosResaltados) {
     height: 11px;
     background: theme('colors.sand.DEFAULT');
   }
-  .map-pin:hover .map-tooltip {
+  .map-pin:hover .map-tooltip,
+  .map-pin:focus-within .map-tooltip {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
     pointer-events: auto;
   }
-  .map-pin:hover .map-pin-dot {
+  .map-pin:hover .map-pin-dot,
+  .map-pin:focus-within .map-pin-dot {
     background: theme('colors.cream');
   }
 

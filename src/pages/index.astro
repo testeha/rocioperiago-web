@@ -41,7 +41,7 @@ const capsulaHero = [
     <div class="absolute inset-0 bg-gradient-to-b from-sea/15 via-sea/40 to-sea pointer-events-none"></div>
 
     <!-- LABEL DE FOTO — esquina inferior derecha, sincronizado con el slide activo -->
-    <div class="absolute bottom-24 md:bottom-8 right-6 z-10">
+    <div class="absolute bottom-8 right-6 z-10 hidden md:block">
       <span id="hero-caption" class="font-mono text-[.68rem] uppercase tracking-wide bg-sea/70 backdrop-blur-sm border border-cream/15 px-3 py-1.5 rounded-full text-cream/75 transition-opacity duration-500">
         {heroSlides[0].caption}
       </span>
@@ -63,9 +63,9 @@ const capsulaHero = [
       </div>
 
       <!-- CÁPSULA DE CRISTAL — 2 bloques (premios) -->
-      <div class="inline-flex items-stretch bg-cream/10 backdrop-blur-md border border-cream/20 rounded-full p-1.5 flex-wrap">
+      <div class="inline-flex flex-col sm:flex-row items-stretch bg-cream/10 backdrop-blur-md border border-cream/20 rounded-2xl sm:rounded-full p-1.5">
         {capsulaHero.map((item, i) => (
-          <div class:list={['px-5 py-3 flex flex-col gap-0.5 justify-center', i < capsulaHero.length - 1 && 'border-r border-cream/15']}>
+          <div class:list={['px-5 py-3 flex flex-col gap-0.5 justify-center', i < capsulaHero.length - 1 && 'border-b sm:border-b-0 sm:border-r border-cream/15']}>
             <span class="font-mono text-[.62rem] uppercase tracking-wide text-ochre-light">{item.label}</span>
             <span class="text-sm text-cream font-medium whitespace-nowrap">{item.valor}</span>
           </div>
@@ -77,7 +77,7 @@ const capsulaHero = [
     <a
       href="#bloque-1"
       aria-label="Bajar al siguiente bloque"
-      class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 w-11 h-11 rounded-full border border-cream/25 flex items-center justify-center text-cream/70 hover:text-cream hover:border-cream/50 transition-colors animate-bounce-slow"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 w-11 h-11 rounded-full border border-cream/25 hidden md:flex items-center justify-center text-cream/70 hover:text-cream hover:border-cream/50 transition-colors animate-bounce-slow"
     >
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
         <path d="M8 2v11M3 9l5 5 5-5" stroke-linecap="round" stroke-linejoin="round" />

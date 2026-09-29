@@ -71,7 +71,7 @@ const esAncha = calcularAnchos(trabajos.length);
           data-ancha={esAncha[i] ? 'true' : 'false'}
           class:list={[
             'trabajo-card group relative rounded-md overflow-hidden block',
-            esAncha[i] ? 'col-span-2' : 'aspect-[4/5]',
+            esAncha[i] ? 'aspect-[4/5] md:aspect-auto md:col-span-2' : 'aspect-[4/5]',
             !t.imagen && 'bg-[repeating-linear-gradient(135deg,theme(colors.sea.3)_0px,theme(colors.sea.3)_2px,theme(colors.sea.2)_2px,theme(colors.sea.2)_4px)]',
           ]}
         >
