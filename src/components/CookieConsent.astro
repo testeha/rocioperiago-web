@@ -70,8 +70,33 @@ const GA_MEASUREMENT_ID = 'G-Y4ZRXQ0HV8';
     banner?.classList.add('hidden');
   });
 
+  // Borra las cookies de Google Analytics (_ga, _ga_XXXX) en el dominio actual y en el dominio raíz.
+  function borrarCookiesAnalitica() {
+    const host = location.hostname;
+    const dominios = ['', host, '.' + host, '.' + host.replace(/^www\./, '')];
+    document.cookie.split(';').forEach((c) => {
+      const nombre = c.split('=')[0].trim();
+      if (!nombre.startsWith('_ga')) return;
+      dominios.forEach((d) => {
+        document.cookie = `${nombre}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/` + (d ? `; domain=${d}` : '');
+      });
+    });
+  }
+
   btnRechazar?.addEventListener('click', () => {
+    const antes = localStorage.getItem(CLAVE);
     localStorage.setItem(CLAVE, 'rechazado');
     banner?.classList.add('hidden');
+    if (antes === 'aceptado') {
+      // Analytics ya estaba cargado: se borran sus cookies y se recarga para que deje de ejecutarse.
+      borrarCookiesAnalitica();
+      location.reload();
+    }
+  });
+
+  // Enlace "Configurar cookies" del pie: vuelve a mostrar el aviso para cambiar la elección.
+  document.getElementById('cookie-configurar')?.addEventListener('click', () => {
+    banner?.classList.remove('hidden');
+    btnAceptar?.focus();
   });
 </script>

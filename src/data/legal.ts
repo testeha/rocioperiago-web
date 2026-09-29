@@ -14,6 +14,6 @@ export const ajustes = {
   actualizado: 'septiembre de 2026',
   // true = el formulario de contacto se envía a través de Formspree (previsto para el lanzamiento).
   // Ponlo a false si se mantiene el envío por correo (mailto): desaparece el párrafo de Formspree.
-  formularioConFormspree: true,
+  formularioConFormspree: false,
   idMedicionGA: 'G-Y4ZRXQ0HV8',
 };

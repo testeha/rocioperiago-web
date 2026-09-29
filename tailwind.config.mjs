@@ -29,8 +29,8 @@ export default {
         cream: '#f7f4ec',    // texto sobre sea
       },
       fontFamily: {
-        serif: ['"Newsreader"', 'Georgia', 'serif'],
-        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+        serif: ['"Newsreader Variable"', '"Newsreader"', 'Georgia', 'serif'],
+        sans: ['"Inter Variable"', '"Inter"', 'system-ui', 'sans-serif'],
         mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
       },
       fontSize: {
