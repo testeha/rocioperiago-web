@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f1c1e">
+  <meta name="description" content="Rocío Periago. Periodismo, storytelling y comunicación de impacto social para medios, ONG y empresas.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://rocioperiago.com/">
+  <link rel="icon" href="/mantenimiento/favicon.svg?v=3" type="image/svg+xml">
+  <link rel="icon" href="/mantenimiento/favicon.ico?v=3" sizes="any">
+  <link rel="icon" href="/mantenimiento/favicon-192.png?v=3" type="image/png" sizes="192x192">
+  <link rel="icon" href="/mantenimiento/favicon-512.png?v=3" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/mantenimiento/apple-touch-icon.png?v=3" sizes="180x180">
+  <link rel="preload" href="/mantenimiento/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <title>Rocío Periago | Periodismo y comunicación de impacto social</title>
+  <style>
+    /* Fuentes alojadas en la propia web (sin peticiones a Google Fonts) */
+    @font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;src:url(/mantenimiento/fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;src:url(/mantenimiento/fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+    @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(/mantenimiento/fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2")}
+    :root{--sea:#0f1c1e;--cream:#f7f4ec;--ochre:#cf9a34;--ochre-light:#e3b458}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--sea);color:var(--cream);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    ::selection{background:var(--ochre);color:var(--sea)}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:2px solid var(--ochre);outline-offset:4px}
+    .wrap{width:min(100% - 48px,1080px);margin-inline:auto}
+    .site-header{position:absolute;z-index:2;top:0;right:0;left:0}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:84px;gap:20px}
+    .brand{font-size:1.12rem;font-weight:800;letter-spacing:-.015em}
+    .contact-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 21px;border-radius:999px;background:var(--ochre);color:var(--sea);font-size:.91rem;font-weight:600;transition:background-color .2s}
+    .contact-link:hover{background:var(--ochre-light)}
+    .hero{position:relative;isolation:isolate;min-height:max(680px,100svh);display:flex;align-items:flex-end;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:#26393c url("/mantenimiento/realidades-invisibles.webp") center 44%/cover no-repeat}
+    .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,28,30,.78),rgba(15,28,30,.5) 52%,rgba(15,28,30,.2)),linear-gradient(0deg,var(--sea),rgba(15,28,30,.3) 53%,transparent)}
+    .hero-content{padding-top:160px;padding-bottom:clamp(58px,9vh,110px)}
+    .kicker{margin:0;color:var(--ochre-light);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.73rem;font-weight:500;letter-spacing:.045em;text-transform:uppercase}
+    h1{max-width:880px;margin:20px 0 26px;font-size:clamp(3.7rem,7.5vw,6.4rem);line-height:1.05;letter-spacing:-.025em;font-weight:800}
+    h1 span{color:var(--ochre-light)}
+    .intro{max-width:645px;margin:0;color:rgba(247,244,236,.9);font-size:clamp(1.08rem,1.7vw,1.3rem);line-height:1.68}
+    .traits{display:flex;flex-wrap:wrap;gap:12px 26px;margin:28px 0 0;padding:0;list-style:none;color:var(--ochre-light);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;font-weight:500;letter-spacing:.035em;text-transform:uppercase}
+    .traits li::before{content:"•";padding-right:10px}
+    .awards{display:flex;flex-wrap:wrap;gap:11px;margin-top:27px}
+    .award{display:flex;flex-direction:column;gap:4px;min-width:185px;padding:13px 18px;border:1px solid rgba(247,244,236,.26);border-radius:999px;background:rgba(15,28,30,.5);backdrop-filter:blur(5px)}
+    .award-year{color:var(--ochre-light);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.04em}
+    .award-name{font-size:.84rem;font-weight:600}
+    .status{margin:33px 0 0;color:rgba(247,244,236,.78);font-size:.89rem;line-height:1.6}
+    .status a{text-decoration:underline;text-decoration-color:rgba(247,244,236,.5);text-underline-offset:4px}
+    .status a:hover{color:var(--ochre-light)}
+    @media(max-width:700px){
+      .wrap{width:min(100% - 36px,1080px)}
+      .header-inner{min-height:70px}.brand{font-size:1rem}
+      .contact-link{min-height:40px;padding:9px 16px;font-size:.84rem}
+      .hero{min-height:max(720px,100svh)}
+      .hero::before{background-position:57% center}
+      .hero::after{background:linear-gradient(0deg,var(--sea) 0%,rgba(15,28,30,.9) 38%,rgba(15,28,30,.38) 100%)}
+      .hero-content{padding-top:160px;padding-bottom:53px}
+      h1{font-size:clamp(3.4rem,12vw,5.4rem);line-height:1.06;letter-spacing:-.02em}
+      .intro{font-size:1.02rem}.traits{margin-top:24px;gap:8px 18px}.awards{margin-top:22px}
+      .award{min-width:0;padding:12px 16px}.status{margin-top:28px}
+    }
+    @media(max-width:440px){.award{width:100%}}
+    @media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio">Rocío Periago</a>
+      <a class="contact-link" href="mailto:rocio.periago@gmail.com">Contactar</a>
+    </div>
+  </header>
+  <main id="inicio">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="wrap hero-content">
+        <p class="kicker">Periodismo · Storytelling</p>
+        <h1 id="titulo">Rocío <span>Periago</span></h1>
+        <p class="intro">Escribo sobre personas, lugares, viajes e historias que tienen un impacto social. También ayudo a organizaciones sociales a comunicar su trabajo con las palabras y la narrativa que mejor se ajustan a ellas.</p>
+        <ul class="traits" aria-label="Experiencia">
+          <li>+10 años en el tercer sector</li>
+          <li>Proyectos transfronterizos</li>
+        </ul>
+        <div class="awards" aria-label="Premios">
+          <div class="award"><span class="award-year">2020</span><span class="award-name">Premio Ciudad de Alcalá</span></div>
+          <div class="award"><span class="award-year">2017</span><span class="award-name">Premio Manos Unidas</span></div>
+        </div>
+        <p class="status">Esta web está en proceso de renovación. <a href="mailto:rocio.periago@gmail.com">Seguimos en contacto.</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
