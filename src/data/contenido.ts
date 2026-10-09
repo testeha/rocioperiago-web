@@ -195,29 +195,29 @@ export const proyectosPropios = [
   },
 ];
 
-export const bioLarga = `Soy periodista especializada en desarrollo, migraciones, derechos humanos y medio ambiente, con un enfoque de periodismo de soluciones. Con formación en derecho europeo y RSC, intento aplicar esta experiencia multidisciplinar en todo lo que hago.
+export const bioLarga = `Soy periodista especializada en desarrollo, migraciones, derechos humanos y medio ambiente, con un enfoque de periodismo de soluciones. Con formación en derecho europeo y RSC, siempre intento aplicar esta experiencia multidisciplinar en todo lo que hago.
 
-Con base en el sureste español, he trabajado durante más de diez años en el ámbito social, como técnico y responsable de proyectos y entidades que me han permitido conocer realidades muy complejas y diferentes, viviendo y viajando por numerosas ciudades y países. También he podido aprender diferentes herramientas creativas y de storytelling, que he ido aplicando en talleres y actividades formativas. Esta dualidad de perfiles y experiencia creo que es un punto a mi favor, ya que me permite contar con los conocimientos y herramientas para explicar qué pasa en el mundo a través de pequeñas historias.
+Mi base está en el sureste español, aunque he trabajado durante más de diez años en el ámbito social, como técnico y responsable de proyectos en diferentes ciudades. He conocido realidades muy complejas y diferentes, viviendo y viajando en Italia, Colombia o Brasil. También por países africanos o con proyectos europeos por Europa, los Balcanes o Asia, porque he tenido etapas de mucho movimiento. A lo largo de estos años he aprendido diferentes herramientas creativas y de storytelling, que he ido incluyendo en mi trabajo, porque lo que me motiva realmente es contar historias y seguir aprendiendo. Esta dualidad de perfiles y experiencia creo que es un punto a mi favor, porque me permite contar con los conocimientos y herramientas para explicar qué pasa en el mundo a través de pequeñas historias, pero sin perder nunca el rigor ni el foco.
 
 Mis trabajos han sido publicados en El País, Viajes National Geographic, France 24, Altaïr Magazine, Revista Late, Ballena Blanca o Mundo Negro entre otros.
 
-Estoy disponible para participar en proyectos o talleres en cualquier parte del mundo.`;
+Estoy disponible para colaboraciones, participar en proyectos o talleres en cualquier parte del mundo.`;
 
-export const bioLargaEN = `I'm a journalist specialising in development, migration, human rights and the environment, with a focus on solutions journalism. With a background in European law and CSR, I try to bring this multidisciplinary experience to everything I do.
+export const bioLargaEN = `I am a journalist specialising in development, migration, human rights and the environment, with a focus on solutions-based journalism. With a background in European law and corporate social responsibility (CSR), I always strive to apply this multidisciplinary experience to everything I do.
 
-Based in southeastern Spain, I've worked for more than ten years in the social sector, as a project officer and manager for organisations that have let me get to know very complex and different realities, living and travelling across numerous cities and countries. I've also learned different creative and storytelling tools, which I've applied in workshops and training activities. I believe this dual background works in my favour, as it gives me the knowledge and tools to explain what's happening in the world through small stories.
+I am based in south-eastern Spain, although I have worked for over ten years in the social sector, as a specialist and project manager in various cities. I have been exposed to very complex and diverse realities, having lived and travelled in Italy, Colombia and Brazil. I have also worked in African countries and on European projects across Europe, the Balkans and Asia, as there have been periods in my life when I've travelled a lot. Over the years, I have learnt various creative and storytelling techniques, which I have gradually incorporated into my work, because what truly motivates me is telling stories and keeping on learning. I believe this duality of background and experience works in my favour, as it equips me with the knowledge and tools to explain what is happening in the world through short stories, whilst never losing sight of rigour or focus.
 
-My work has been published in El País, National Geographic Traveler, France 24, Altaïr Magazine, Revista Late, Ballena Blanca and Mundo Negro, among others.
+My work has been published in El País, Viajes National Geographic, France 24, Altaïr Magazine, Revista Late, Ballena Blanca and Mundo Negro, amongst others.
 
-I'm available for hire in projects or workshops worldwide.`;
+I am available for collaborations, to take part in projects or workshops anywhere in the world.`;
 
-export const bioLargaIT = `Sono una giornalista specializzata in sviluppo, migrazioni, diritti umani e ambiente, con un approccio di giornalismo delle soluzioni. Con una formazione in diritto europeo e RSI, cerco di applicare questa esperienza multidisciplinare in tutto ciò che faccio.
+export const bioLargaIT = `Sono una giornalista specializzata in sostenibilità, migrazioni, diritti umani e questioni ambientali, con un approccio giornalistico orientato alle soluzioni. Grazie alla mia formazione in diritto europeo e in responsabilità sociale d’impresa (CSR), cerco sempre di mettere a frutto questa esperienza multidisciplinare in tutto ciò che faccio.
 
-Con base nel sud-est della Spagna, ho lavorato per più di dieci anni nell'ambito sociale, come tecnico e responsabile di progetti ed enti che mi hanno permesso di conoscere realtà molto complesse e diverse, vivendo e viaggiando in numerose città e paesi. Ho anche potuto imparare diversi strumenti creativi e di storytelling, che ho applicato in laboratori e attività formative. Credo che questa dualità di profili ed esperienza sia un punto a mio favore, perché mi permette di avere le conoscenze e gli strumenti per spiegare cosa succede nel mondo attraverso piccole storie.
+La mia base è nel sud-est della Spagna, anche se ho lavorato per oltre dieci anni nel settore sociale, come esperta e responsabile di progetti in diverse città. Ho conosciuto realtà molto complesse e diverse, vivendo e viaggiando in Italia, Colombia o Brasile. Ho lavorato anche in paesi africani o con progetti europei in Europa, nei Balcani o in Asia, poiché ho attraversato periodi di grande mobilità. Nel corso di questi anni ho appreso diversi strumenti creativi e di storytelling, che ho progressivamente integrato nel mio lavoro, perché ciò che mi motiva davvero è raccontare storie e continuare a imparare. Credo che questa dualità di profili ed esperienze sia un punto a mio favore, perché mi permette di disporre delle conoscenze e degli strumenti necessari per spiegare ciò che accade nel mondo attraverso piccole storie, senza mai perdere il rigore né la visione d'insieme.
 
 I miei lavori sono stati pubblicati su El País, Viajes National Geographic, France 24, Altaïr Magazine, Revista Late, Ballena Blanca e Mundo Negro, tra gli altri.
 
-Sono disponibile a partecipare in progetti o workshop in tutto il mondo.`;
+Sono disponibile per collaborazioni, per partecipare a progetti o workshop in qualsiasi parte del mondo.`;
 
 export const formacion = [
   { titulo: 'Máster en Derecho Constitucional Europeo', sub: 'Univ. de Granada · Políticas Migratorias UE · Investigación en Colombia', años: '2010–2011' },
