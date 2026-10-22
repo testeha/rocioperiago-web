@@ -1,12 +1,12 @@
 ---
 const links = [
   { href: '/', label: 'Inicio' },
-  { href: '/servicios', label: 'ONGs y empresas' },
-  { href: '/sobre-mi', label: 'Sobre mí' },
+  { href: '/servicios/', label: 'ONGs y empresas' },
+  { href: '/sobre-mi/', label: 'Sobre mí' },
 ];
 const submenuEditores = [
-  { href: '/trabajos', label: 'Reportajes y artículos' },
-  { href: '/investigaciones', label: 'Periodismo de investigación' },
+  { href: '/trabajos/', label: 'Reportajes y artículos' },
+  { href: '/investigaciones/', label: 'Periodismo de investigación' },
 ];
 const currentPath = Astro.url.pathname;
 const isActive = (href: string) => (href === '/' ? currentPath === '/' : currentPath.startsWith(href));
@@ -83,7 +83,7 @@ const editoresActivo = submenuEditores.some((l) => isActive(l.href));
     <div class="justify-self-end flex items-center gap-3">
       <!-- Selector de idiomas: oculto por ahora, se activará más adelante -->
       <!-- <div class="hidden md:block font-mono text-xs tracking-wide text-cream/50 border border-cream/20 rounded-full px-3 py-1.5">ES · EN · IT</div> -->
-      <a href="/contacto" class="max-md:!hidden btn-ochre !rounded-full !py-2.5 !px-5 text-sm">Contactar</a>
+      <a href="/contacto/" class="max-md:!hidden btn-ochre !rounded-full !py-2.5 !px-5 text-sm">Contactar</a>
       <button
         id="menu-toggle"
         class="md:hidden font-mono text-xs uppercase tracking-wide text-cream/80 px-3 py-3 -mr-3"
@@ -111,7 +111,7 @@ const editoresActivo = submenuEditores.some((l) => isActive(l.href));
       {links.slice(1).map((link) => (
         <li><a href={link.href} class="text-sm text-cream/80">{link.label}</a></li>
       ))}
-      <li><a href="/contacto" class="text-sm text-ochre">Contactar</a></li>
+      <li><a href="/contacto/" class="text-sm text-ochre">Contactar</a></li>
     </ul>
   </div>
 </nav>

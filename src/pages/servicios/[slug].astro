@@ -22,12 +22,12 @@ const otrosProyectos = proyectosCliente.filter((p) => p.slug !== proyecto.slug).
     <nav class="text-sm text-cream/45 mb-6 flex flex-wrap items-center gap-2">
       <a href="/" class="hover:text-cream/70 transition-colors">Inicio</a>
       <span>/</span>
-      <a href="/servicios" class="hover:text-cream/70 transition-colors">Servicios</a>
+      <a href="/servicios/" class="hover:text-cream/70 transition-colors">Servicios</a>
       <span>/</span>
       <span class="text-cream/70">{proyecto.titulo}</span>
     </nav>
 
-    <a href="/servicios#portfolio" class="inline-flex items-center gap-2 text-sm text-cream/60 hover:text-cream transition-colors mb-8">
+    <a href="/servicios/#portfolio" class="inline-flex items-center gap-2 text-sm text-cream/60 hover:text-cream transition-colors mb-8">
       <span aria-hidden="true">←</span> Volver a proyectos
     </a>
 
@@ -152,13 +152,13 @@ const otrosProyectos = proyectosCliente.filter((p) => p.slug !== proyecto.slug).
       <div class="max-w-content mx-auto px-6 md:px-8 py-16">
         <div class="flex items-center justify-between mb-8">
           <h2 class="font-sans font-extrabold text-2xl">Más proyectos</h2>
-          <a href="/servicios#portfolio" class="inline-flex items-center gap-2 text-sm text-ochre-light hover:text-ochre transition-colors">
+          <a href="/servicios/#portfolio" class="inline-flex items-center gap-2 text-sm text-ochre-light hover:text-ochre transition-colors">
             Ver todos los proyectos <span aria-hidden="true">↗</span>
           </a>
         </div>
         <div class="grid md:grid-cols-3 gap-5">
           {otrosProyectos.map((p) => (
-            <a href={`/servicios/${p.slug}`} class="group block">
+            <a href={`/servicios/${p.slug}/`} class="group block">
               {p.imagenPortada ? (
                 <img src={p.imagenPortada} alt={p.titulo} class="w-full aspect-[4/3] object-cover rounded-md mb-4" />
               ) : (
